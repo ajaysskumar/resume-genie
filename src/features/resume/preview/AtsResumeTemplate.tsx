@@ -1,4 +1,4 @@
-import { Resume } from '../types/resume'
+import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
 
 interface AtsResumeTemplateProps {

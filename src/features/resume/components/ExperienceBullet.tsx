@@ -1,7 +1,7 @@
 import { useResumeStore } from '../store/resumeStore'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { ExperienceBullet as ExperienceBulletType } from '../types/resume'
+import type { ExperienceBullet as ExperienceBulletType } from '../types/resume'
 
 interface ExperienceBulletProps {
   experienceId: string
@@ -22,7 +22,7 @@ export function ExperienceBullet({ experienceId, bullet }: ExperienceBulletProps
       <span className="text-slate-500 flex-shrink-0">•</span>
       <Input
         value={bullet.text}
-        onChange={(e) => updateBullet(experienceId, bullet.id, e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateBullet(experienceId, bullet.id, e.target.value)}
         placeholder="Add achievement or responsibility..."
         className="flex-grow"
       />

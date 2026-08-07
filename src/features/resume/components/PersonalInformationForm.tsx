@@ -30,7 +30,7 @@ export function PersonalInformationForm() {
               id={field.key}
               type={field.type || 'text'}
               value={personal[field.key] || ''}
-              onChange={(e) => updatePersonal(field.key, e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => updatePersonal(field.key, e.target.value)}
               placeholder={`Enter ${field.label.toLowerCase()}`}
             />
           </div>

@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/index'
 import { Card } from '@/components/ui/card'
 import { ExperienceBullet } from './ExperienceBullet'
-import { Experience } from '../types/resume'
+import type { Experience } from '../types/resume'
 
 interface ExperienceItemProps {
   experience: Experience
@@ -32,7 +32,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
             <Input
               id={`company-${experience.id}`}
               value={experience.company}
-              onChange={(e) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 updateExperience(experience.id, 'company', e.target.value)
               }
               placeholder="Company name"
@@ -45,7 +45,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
             <Input
               id={`position-${experience.id}`}
               value={experience.position}
-              onChange={(e) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 updateExperience(experience.id, 'position', e.target.value)
               }
               placeholder="Job title"
@@ -61,7 +61,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
           <Input
             id={`location-${experience.id}`}
             value={experience.location || ''}
-            onChange={(e) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateExperience(experience.id, 'location', e.target.value)
             }
             placeholder="City, State"
@@ -81,7 +81,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
               id={`startDate-${experience.id}`}
               type="month"
               value={experience.startDate}
-              onChange={(e) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 updateExperience(experience.id, 'startDate', e.target.value)
               }
             />
@@ -94,7 +94,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
               id={`endDate-${experience.id}`}
               type="month"
               value={experience.endDate || ''}
-              onChange={(e) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 updateExperience(experience.id, 'endDate', e.target.value)
               }
               disabled={experience.current}
@@ -107,7 +107,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
           <Checkbox
             id={`current-${experience.id}`}
             checked={experience.current}
-            onChange={(e) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateExperience(experience.id, 'current', e.target.checked)
             }
           />

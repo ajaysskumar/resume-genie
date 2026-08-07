@@ -38,15 +38,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
 Checkbox.displayName = 'Checkbox'
 
 // Dialog
-interface DialogState {
-  isOpen: boolean
-  onOpenChange: (open: boolean) => void
-}
-
-let dialogState: DialogState = {
-  isOpen: false,
-  onOpenChange: () => {},
-}
+// dialogState removed - not needed for this implementation
 
 export function useDialog() {
   const [isOpen, setIsOpen] = React.useState(false)

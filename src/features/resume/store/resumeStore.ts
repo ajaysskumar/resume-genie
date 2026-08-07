@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Resume, Experience, ExperienceBullet } from '../types/resume'
+import type { Resume, Experience } from '../types/resume'
 import { generateId } from '@/lib/utils'
 
 interface ResumeStore {

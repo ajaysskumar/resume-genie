@@ -16,7 +16,7 @@ export function SummaryForm() {
         <Textarea
           id="summary"
           value={summary}
-          onChange={(e) => updateSummary(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateSummary(e.target.value)}
           placeholder="Enter your professional summary..."
           rows={5}
         />
