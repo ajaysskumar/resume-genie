@@ -21,12 +21,12 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
   }
 
   return (
-    <Card className="p-4">
+    <Card className="p-5 bg-white border border-slate-200/50 hover:border-slate-300 transition-colors">
       <div className="space-y-4">
         {/* Company and Position */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <Label htmlFor={`company-${experience.id}`} className="block mb-1">
+            <Label htmlFor={`company-${experience.id}`} className="block mb-2 text-sm font-medium text-slate-700">
               Company
             </Label>
             <Input
@@ -39,7 +39,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
             />
           </div>
           <div>
-            <Label htmlFor={`position-${experience.id}`} className="block mb-1">
+            <Label htmlFor={`position-${experience.id}`} className="block mb-2 text-sm font-medium text-slate-700">
               Position
             </Label>
             <Input
@@ -55,7 +55,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
 
         {/* Location */}
         <div>
-          <Label htmlFor={`location-${experience.id}`} className="block mb-1">
+          <Label htmlFor={`location-${experience.id}`} className="block mb-2 text-sm font-medium text-slate-700">
             Location
           </Label>
           <Input
@@ -73,7 +73,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
           <div>
             <Label
               htmlFor={`startDate-${experience.id}`}
-              className="block mb-1"
+              className="block mb-2 text-sm font-medium text-slate-700"
             >
               Start Date
             </Label>
@@ -87,7 +87,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
             />
           </div>
           <div>
-            <Label htmlFor={`endDate-${experience.id}`} className="block mb-1">
+            <Label htmlFor={`endDate-${experience.id}`} className="block mb-2 text-sm font-medium text-slate-700">
               End Date
             </Label>
             <Input
@@ -113,17 +113,17 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
           />
           <Label
             htmlFor={`current-${experience.id}`}
-            className="cursor-pointer"
+            className="cursor-pointer text-sm font-medium text-slate-700"
           >
             Currently working here
           </Label>
         </div>
 
         {/* Bullets */}
-        <div className="space-y-2">
-          <h4 className="text-sm font-medium">Achievements</h4>
+        <div className="space-y-3 pt-2 border-t border-slate-100">
+          <h4 className="text-sm font-semibold text-slate-800">Achievements</h4>
           {experience.bullets.length === 0 ? (
-            <p className="text-xs text-slate-500">No bullets added</p>
+            <p className="text-xs text-slate-500">No achievements added yet</p>
           ) : (
             <div className="space-y-2">
               {experience.bullets.map((bullet) => (

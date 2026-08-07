@@ -8,15 +8,13 @@ export function ExperienceForm() {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-semibold">Experience</h2>
-
       {experience.length === 0 ? (
-        <div className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-slate-200 rounded-lg">
-          <p className="text-slate-500 mb-4">
-            No experience added yet. Add your first entry!
+        <div className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-emerald-200/50 bg-emerald-50/30 rounded-lg">
+          <p className="text-slate-600 mb-4 text-center">
+            No experience added yet. Start building your work history!
           </p>
-          <Button onClick={() => addExperience()} type="button">
-            + Add Experience
+          <Button onClick={() => addExperience()} type="button" className="gap-2">
+            <span>+</span> Add Experience
           </Button>
         </div>
       ) : (
@@ -26,8 +24,8 @@ export function ExperienceForm() {
               <ExperienceItem key={exp.id} experience={exp} />
             ))}
           </div>
-          <Button onClick={() => addExperience()} type="button" variant="outline">
-            + Add Experience
+          <Button onClick={() => addExperience()} type="button" variant="outline" className="w-full gap-2">
+            <span>+</span> Add Experience
           </Button>
         </>
       )}
