@@ -24,12 +24,12 @@ export function App() {
       {/* Main Content */}
       <div className="flex flex-1 overflow-hidden">
         {/* Editor Panel */}
-        <div className="w-full lg:w-[450px] border-r border-slate-200 overflow-y-auto bg-white p-6">
+        <div className="w-[450px] border-r border-slate-200 overflow-y-auto bg-white p-6">
           <ResumeEditor />
         </div>
 
         {/* Preview Panel */}
-        <div className="hidden lg:flex flex-1 overflow-y-auto bg-slate-50">
+        <div className="flex flex-1 overflow-y-auto bg-slate-50">
           <ResumePreview />
         </div>
       </div>
