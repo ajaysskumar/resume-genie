@@ -66,13 +66,42 @@ export const personalInfoSchema = z.object({
   website: urlSchema,
 })
 
+export const skillSchema = z.object({
+  id: z.string(),
+  name: z.string().min(1, 'Skill name is required'),
+  level: z.string().optional(),
+})
+
+export const educationSchema = z.object({
+  id: z.string(),
+  institution: z.string().min(1, 'Institution is required'),
+  degree: z.string().min(1, 'Degree is required'),
+  location: z.string().optional(),
+  startDate: dateStringSchema.optional(),
+  endDate: dateStringSchema.optional(),
+})
+
+export const projectSchema = z.object({
+  id: z.string(),
+  name: z.string().min(1, 'Project name is required'),
+  description: z.string().min(1, 'Project description is required'),
+  url: urlSchema,
+  technologies: z.array(z.string()),
+})
+
 export const resumeSchema = z.object({
   personal: personalInfoSchema,
   summary: z.string(),
   experience: z.array(experienceSchema),
+  skills: z.array(skillSchema),
+  education: z.array(educationSchema),
+  projects: z.array(projectSchema),
 })
 
 export type Resume = z.infer<typeof resumeSchema>
 export type Experience = z.infer<typeof experienceSchema>
 export type PersonalInformation = z.infer<typeof personalInfoSchema>
 export type ExperienceBullet = z.infer<typeof experienceBulletSchema>
+export type Skill = z.infer<typeof skillSchema>
+export type Education = z.infer<typeof educationSchema>
+export type Project = z.infer<typeof projectSchema>

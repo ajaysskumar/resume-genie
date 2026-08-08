@@ -25,10 +25,36 @@ export interface PersonalInformation {
   website?: string
 }
 
+export interface Skill {
+  id: string
+  name: string
+  level?: string
+}
+
+export interface Education {
+  id: string
+  institution: string
+  degree: string
+  location?: string
+  startDate?: string
+  endDate?: string
+}
+
+export interface Project {
+  id: string
+  name: string
+  description: string
+  url?: string
+  technologies: string[]
+}
+
 export interface Resume {
   personal: PersonalInformation
   summary: string
   experience: Experience[]
+  skills: Skill[]
+  education: Education[]
+  projects: Project[]
 }
 
 export interface ValidationError {

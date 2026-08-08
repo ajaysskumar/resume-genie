@@ -1,5 +1,6 @@
 import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
+import { ResumeAdditionalSections } from './ResumeAdditionalSections'
 
 interface MinimalResumeTemplateProps { resume: Resume }
 
@@ -16,6 +17,7 @@ export function MinimalResumeTemplate({ resume }: MinimalResumeTemplateProps) {
       <div className="mt-7 space-y-6">
         {summary && <section><SectionTitle>Summary</SectionTitle><p className="text-sm leading-6">{summary}</p></section>}
         {experience.length > 0 && <section><SectionTitle>Experience</SectionTitle><div className="space-y-5">{experience.map((exp) => <article key={exp.id}><div className="flex justify-between gap-4"><div><h3 className="text-sm font-bold text-slate-950">{exp.position}</h3><p className="text-sm text-rose-600">{exp.company}</p></div><time className="text-xs text-slate-500">{formatDate(exp.startDate)} – {exp.current ? 'Present' : exp.endDate ? formatDate(exp.endDate) : ''}</time></div><ul className="mt-2 list-disc space-y-1 pl-4 text-sm leading-5">{exp.bullets.map((bullet) => <li key={bullet.id}>{bullet.text}</li>)}</ul></article>)}</div></section>}
+        <ResumeAdditionalSections resume={resume} variant="minimal" />
       </div>
     </div>
   )

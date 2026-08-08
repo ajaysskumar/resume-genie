@@ -1,6 +1,9 @@
 import { PersonalInformationForm } from './PersonalInformationForm'
 import { SummaryForm } from './SummaryForm'
 import { ExperienceForm } from './ExperienceForm'
+import { SkillsForm } from './SkillsForm'
+import { EducationForm } from './EducationForm'
+import { ProjectsForm } from './ProjectsForm'
 
 export function ResumeEditor() {
   return (
@@ -33,6 +36,21 @@ export function ResumeEditor() {
         <div className="bg-gradient-to-br from-emerald-50 to-transparent p-4 rounded-lg border border-emerald-100/50 mb-4">
           <ExperienceForm />
         </div>
+      </div>
+
+      <div>
+        <div className="mb-4 flex items-center gap-3"><div className="h-6 w-1 rounded-full bg-amber-600" /><h2 className="text-xl font-bold text-slate-900">Skills</h2></div>
+        <div className="mb-4 rounded-lg border border-amber-100/50 bg-gradient-to-br from-amber-50 to-transparent p-4"><SkillsForm /></div>
+      </div>
+
+      <div>
+        <div className="mb-4 flex items-center gap-3"><div className="h-6 w-1 rounded-full bg-indigo-600" /><h2 className="text-xl font-bold text-slate-900">Education</h2></div>
+        <div className="mb-4 rounded-lg border border-indigo-100/50 bg-gradient-to-br from-indigo-50 to-transparent p-4"><EducationForm /></div>
+      </div>
+
+      <div>
+        <div className="mb-4 flex items-center gap-3"><div className="h-6 w-1 rounded-full bg-rose-600" /><h2 className="text-xl font-bold text-slate-900">Projects</h2></div>
+        <div className="mb-4 rounded-lg border border-rose-100/50 bg-gradient-to-br from-rose-50 to-transparent p-4"><ProjectsForm /></div>
       </div>
     </div>
   )

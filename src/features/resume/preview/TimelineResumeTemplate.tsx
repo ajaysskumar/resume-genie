@@ -1,5 +1,6 @@
 import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
+import { ResumeAdditionalSections } from './ResumeAdditionalSections'
 
 interface TimelineResumeTemplateProps {
   resume: Resume
@@ -33,6 +34,7 @@ export function TimelineResumeTemplate({ resume }: TimelineResumeTemplateProps) 
             </div>
           </section>
         )}
+        <ResumeAdditionalSections resume={resume} variant="timeline" />
       </div>
     </div>
   )

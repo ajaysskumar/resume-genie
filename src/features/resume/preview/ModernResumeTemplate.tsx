@@ -1,5 +1,6 @@
 import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
+import { ResumeAdditionalSections } from './ResumeAdditionalSections'
 
 interface ModernResumeTemplateProps { resume: Resume }
 
@@ -33,6 +34,7 @@ export function ModernResumeTemplate({ resume }: ModernResumeTemplateProps) {
             <ul className="mt-2 space-y-1 text-sm leading-6 text-slate-600">{exp.bullets.map((bullet) => <li key={bullet.id} className="flex gap-2"><span className="text-cyan-500">◆</span><span>{bullet.text}</span></li>)}</ul>
           </article>
         ))}</div></section>}
+        <ResumeAdditionalSections resume={resume} variant="modern" />
       </div>
     </div>
   )

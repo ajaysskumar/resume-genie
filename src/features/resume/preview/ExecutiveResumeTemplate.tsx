@@ -1,5 +1,6 @@
 import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
+import { ResumeAdditionalSections } from './ResumeAdditionalSections'
 
 interface ExecutiveResumeTemplateProps { resume: Resume }
 
@@ -27,6 +28,7 @@ export function ExecutiveResumeTemplate({ resume }: ExecutiveResumeTemplateProps
       <div className="mt-9 space-y-8">
         {summary && <section><SectionTitle>About</SectionTitle><p className="font-serif text-sm leading-7 text-stone-600">{summary}</p></section>}
         {experience.length > 0 && <section><SectionTitle>Career History</SectionTitle><div className="space-y-6">{experience.map((exp) => <article key={exp.id} className="grid grid-cols-[1fr_auto] gap-5 border-t border-stone-200 pt-4"><div><h3 className="font-serif text-lg font-bold text-slate-950">{exp.position}</h3><p className="mt-1 text-sm font-semibold text-amber-700">{exp.company}{exp.location ? ` · ${exp.location}` : ''}</p><ul className="mt-3 space-y-1 text-sm leading-6 text-stone-600">{exp.bullets.map((bullet) => <li key={bullet.id}>• {bullet.text}</li>)}</ul></div><time className="text-right text-xs font-semibold uppercase tracking-wide text-stone-500">{formatDate(exp.startDate)}<br />{exp.current ? 'Present' : exp.endDate ? formatDate(exp.endDate) : ''}</time></article>)}</div></section>}
+        <ResumeAdditionalSections resume={resume} variant="executive" />
       </div>
     </div>
   )
