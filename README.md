@@ -66,6 +66,12 @@ npm run test              # Run all tests
 npm run test:ui          # Interactive dashboard
 ```
 
+## GitHub Pages
+
+The `Deploy to GitHub Pages` workflow builds and deploys the app when changes are pushed to `main`, and can also be started manually from the Actions tab. Before the first deployment, set the repository's Pages source to **GitHub Actions** in **Settings > Pages**.
+
+The workflow sets the Vite base path from the repository name so project Pages URLs load assets correctly. For a custom domain, set `VITE_BASE_PATH` to `/` in the workflow.
+
 ## Project Structure
 
 ```
