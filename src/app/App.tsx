@@ -29,7 +29,7 @@ export function App() {
         </div>
 
         {/* Preview Panel */}
-        <div className="flex flex-1 overflow-y-auto bg-gradient-to-br from-slate-100/50 via-slate-50 to-white p-8 justify-center">
+        <div className="min-w-0 flex flex-1 overflow-auto bg-gradient-to-br from-slate-100/50 via-slate-50 to-white p-8">
           <ResumePreview />
         </div>
       </div>
