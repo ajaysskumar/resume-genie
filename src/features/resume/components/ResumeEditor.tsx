@@ -1,7 +1,6 @@
 import { PersonalInformationForm } from './PersonalInformationForm'
 import { SummaryForm } from './SummaryForm'
 import { ExperienceForm } from './ExperienceForm'
-import { Separator } from '@/components/ui/index'
 
 export function ResumeEditor() {
   return (
