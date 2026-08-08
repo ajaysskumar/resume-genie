@@ -68,8 +68,8 @@ export const personalInfoSchema = z.object({
 
 export const skillSchema = z.object({
   id: z.string(),
-  name: z.string().min(1, 'Skill name is required'),
-  level: z.string().optional(),
+  category: z.string(),
+  skills: z.array(z.string().min(1, 'Skill is required')).min(1, 'At least one skill is required'),
 })
 
 export const educationSchema = z.object({

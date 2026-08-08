@@ -8,10 +8,10 @@ export function SkillsForm() {
   return (
     <div className="space-y-3">
       {resume.skills.map((skill) => (
-        <div key={skill.id} className="grid gap-3 sm:grid-cols-[1fr_10rem_auto]">
-          <Input aria-label="Skill name" value={skill.name} onChange={(event) => updateSkill(skill.id, 'name', event.target.value)} placeholder="Skill name" />
-          <Input aria-label="Skill level" value={skill.level ?? ''} onChange={(event) => updateSkill(skill.id, 'level', event.target.value)} placeholder="Level" />
-          <Button type="button" variant="ghost" onClick={() => deleteSkill(skill.id)} aria-label={`Delete ${skill.name || 'skill'}`}>Remove</Button>
+        <div key={skill.id} className="grid gap-3 sm:grid-cols-[minmax(10rem,0.7fr)_minmax(0,2fr)_auto]">
+          <Input aria-label="Skill category" value={skill.category} onChange={(event) => updateSkill(skill.id, 'category', event.target.value)} placeholder="Category (optional)" />
+          <Input aria-label="Skills" value={skill.skills.join(', ')} onChange={(event) => updateSkill(skill.id, 'skills', event.target.value.split(',').map((value) => value.trim()).filter(Boolean))} placeholder="Skills separated by commas" />
+          <Button type="button" variant="ghost" onClick={() => deleteSkill(skill.id)} aria-label={`Delete ${skill.category || 'skill group'}`}>Remove</Button>
         </div>
       ))}
       <Button type="button" variant="outline" onClick={addSkill} className="w-full">+ Add Skill</Button>

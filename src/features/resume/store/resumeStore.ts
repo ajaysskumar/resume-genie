@@ -7,13 +7,13 @@ interface ResumeStore {
   updatePersonal: (field: keyof Resume['personal'], value: string) => void
   updateSummary: (text: string) => void
   addExperience: () => void
-  updateExperience: (id: string, field: keyof Experience, value: any) => void
+  updateExperience: (id: string, field: keyof Experience, value: Experience[keyof Experience]) => void
   deleteExperience: (id: string) => void
   addBullet: (experienceId: string) => void
   updateBullet: (experienceId: string, bulletId: string, text: string) => void
   deleteBullet: (experienceId: string, bulletId: string) => void
   addSkill: () => void
-  updateSkill: (id: string, field: keyof Skill, value: string) => void
+  updateSkill: (id: string, field: keyof Skill, value: string | string[]) => void
   deleteSkill: (id: string) => void
   addEducation: () => void
   updateEducation: (id: string, field: keyof Education, value: string) => void
@@ -83,12 +83,9 @@ const demoResume: Resume = {
     },
   ],
   skills: [
-    { id: generateId(), name: 'Product Strategy', level: 'Expert' },
-    { id: generateId(), name: 'Interaction Design', level: 'Expert' },
-    { id: generateId(), name: 'Design Systems', level: 'Advanced' },
-    { id: generateId(), name: 'User Research', level: 'Advanced' },
-    { id: generateId(), name: 'Figma', level: 'Expert' },
-    { id: generateId(), name: 'Prototyping', level: 'Advanced' },
+    { id: generateId(), category: 'Product Design', skills: ['Product Strategy', 'Interaction Design', 'Design Systems'] },
+    { id: generateId(), category: 'Tools', skills: ['Figma', 'FigJam', 'Storybook'] },
+    { id: generateId(), category: '', skills: ['User Research', 'Prototyping', 'Accessibility'] },
   ],
   education: [
     {
@@ -220,7 +217,7 @@ export const useResumeStore = create<ResumeStore>((set) => ({
 
   addSkill: () =>
     set((state) => ({
-      resume: { ...state.resume, skills: [...state.resume.skills, { id: generateId(), name: '', level: '' }] },
+      resume: { ...state.resume, skills: [...state.resume.skills, { id: generateId(), category: '', skills: [''] }] },
     })),
 
   updateSkill: (id, field, value) =>

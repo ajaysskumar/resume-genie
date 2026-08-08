@@ -27,9 +27,7 @@ export function ResumeAdditionalSections({ resume, variant }: ResumeAdditionalSe
       {resume.skills.length > 0 && (
         <section>
           <SectionTitle className={style.heading}><span className={style.title}>Skills</span></SectionTitle>
-          <div className="flex flex-wrap gap-x-3 gap-y-2">
-            {resume.skills.map((skill) => <span key={skill.id} className={`${style.text} ${style.accent}`}>{skill.name}{skill.level ? ` · ${skill.level}` : ''}</span>)}
-          </div>
+          <SkillsContent resume={resume} style={style} />
         </section>
       )}
       {resume.education.length > 0 && (
@@ -60,4 +58,18 @@ export function ResumeAdditionalSections({ resume, variant }: ResumeAdditionalSe
 
 function SectionTitle({ children, className }: { children: React.ReactNode; className?: string }) {
   return <h2 className={`mb-3 text-xs ${className ?? ''}`}>{children}</h2>
+}
+
+function SkillsContent({ resume, style }: { resume: Resume; style: (typeof styles)[AdditionalSectionsVariant] }) {
+  const namedSkills = resume.skills.filter((group) => group.category.trim())
+  const additionalSkills = resume.skills.flatMap((group) => group.category.trim() ? [] : group.skills).filter(Boolean)
+
+  if (namedSkills.length === 0) {
+    return <div className="flex flex-wrap gap-x-3 gap-y-2">{additionalSkills.map((skill, index) => <span key={`${skill}-${index}`} className={`${style.text} ${style.accent}`}>{skill}{index < additionalSkills.length - 1 ? ' ·' : ''}</span>)}</div>
+  }
+
+  return <div className="space-y-2">
+    {namedSkills.map((group) => <div key={group.id} className={`grid grid-cols-[minmax(5rem,0.7fr)_minmax(0,2fr)] gap-3 ${style.text}`}><strong className="text-slate-950">{group.category}</strong><span>{group.skills.filter(Boolean).join(', ')}</span></div>)}
+    {additionalSkills.length > 0 && <div className={`grid grid-cols-[minmax(5rem,0.7fr)_minmax(0,2fr)] gap-3 ${style.text}`}><strong className="text-slate-950">Additional Skills</strong><span>{additionalSkills.join(', ')}</span></div>}
+  </div>
 }
