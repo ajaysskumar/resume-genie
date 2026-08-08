@@ -6,6 +6,7 @@ import { Checkbox } from '@/components/ui/index'
 import { Card } from '@/components/ui/card'
 import { ExperienceBullet } from './ExperienceBullet'
 import type { Experience } from '../types/resume'
+import { Plus, Trash2 } from 'lucide-react'
 
 interface ExperienceItemProps {
   experience: Experience
@@ -138,10 +139,13 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
           <Button
             variant="outline"
             size="sm"
+            className="h-10 w-10 p-0"
             onClick={() => addBullet(experience.id)}
             type="button"
+            aria-label="Add achievement"
+            title="Add achievement"
           >
-            + Add Bullet
+            <Plus className="h-4 w-4" />
           </Button>
         </div>
 
@@ -149,10 +153,13 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
         <Button
           variant="destructive"
           size="sm"
+          className="h-10 w-10 p-0"
           onClick={handleDelete}
           type="button"
+          aria-label="Delete experience"
+          title="Delete experience"
         >
-          Delete Experience
+          <Trash2 className="h-4 w-4" />
         </Button>
       </div>
     </Card>

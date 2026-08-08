@@ -2,6 +2,7 @@ import { useResumeStore } from '../store/resumeStore'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import type { ExperienceBullet as ExperienceBulletType } from '../types/resume'
+import { X } from 'lucide-react'
 
 interface ExperienceBulletProps {
   experienceId: string
@@ -31,9 +32,11 @@ export function ExperienceBullet({ experienceId, bullet }: ExperienceBulletProps
         size="sm"
         onClick={handleDelete}
         type="button"
+        aria-label="Delete achievement"
+        title="Delete achievement"
         className="opacity-0 group-hover:opacity-100 transition-opacity text-red-600 hover:bg-red-50 hover:text-red-700"
       >
-        ✕
+        <X className="h-4 w-4" />
       </Button>
     </div>
   )

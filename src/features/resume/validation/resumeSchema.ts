@@ -76,6 +76,7 @@ export const educationSchema = z.object({
   id: z.string(),
   institution: z.string().min(1, 'Institution is required'),
   degree: z.string().min(1, 'Degree is required'),
+  grade: z.string().optional(),
   location: z.string().optional(),
   startDate: dateStringSchema.optional(),
   endDate: dateStringSchema.optional(),

@@ -35,7 +35,7 @@ export function ResumeAdditionalSections({ resume, variant }: ResumeAdditionalSe
           <SectionTitle className={style.heading}><span className={style.title}>Education</span></SectionTitle>
           <div className="space-y-3">
             {resume.education.map((item) => <article key={item.id} className={style.text}>
-              <div className="flex items-start justify-between gap-4"><div><h3 className={`font-bold text-slate-950`}>{item.degree}</h3><p className={style.accent}>{item.institution}{item.location ? ` · ${item.location}` : ''}</p></div><time className="whitespace-nowrap text-right">{item.startDate && formatDate(item.startDate)}{item.startDate && item.endDate ? ' – ' : ''}{item.endDate && formatDate(item.endDate)}</time></div>
+              <div className="flex items-start justify-between gap-4"><div><h3 className="font-bold text-slate-950">{item.degree}</h3><p className={style.accent}>{item.institution}{item.location ? ` · ${item.location}` : ''}</p>{item.grade && <p className="mt-0.5 text-xs">Grade: {item.grade}</p>}</div><time className="whitespace-nowrap text-right">{item.startDate && formatDate(item.startDate)}{item.startDate && item.endDate ? ' – ' : ''}{item.endDate && formatDate(item.endDate)}</time></div>
             </article>)}
           </div>
         </section>

@@ -92,6 +92,7 @@ const demoResume: Resume = {
       id: generateId(),
       institution: 'National Institute of Design',
       degree: 'Bachelor of Design, Communication Design',
+      grade: '8.7 / 10',
       location: 'Ahmedabad, India',
       startDate: '2016-07',
       endDate: '2020-05',
@@ -230,7 +231,7 @@ export const useResumeStore = create<ResumeStore>((set) => ({
 
   addEducation: () =>
     set((state) => ({
-      resume: { ...state.resume, education: [...state.resume.education, { id: generateId(), institution: '', degree: '', location: '', startDate: '', endDate: '' }] },
+      resume: { ...state.resume, education: [...state.resume.education, { id: generateId(), institution: '', degree: '', grade: '', location: '', startDate: '', endDate: '' }] },
     })),
 
   updateEducation: (id, field, value) =>

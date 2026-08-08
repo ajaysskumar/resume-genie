@@ -1,6 +1,7 @@
 import { useResumeStore } from '../store/resumeStore'
 import { Button } from '@/components/ui/button'
 import { ExperienceItem } from './ExperienceItem'
+import { Plus } from 'lucide-react'
 
 export function ExperienceForm() {
   const { resume, addExperience } = useResumeStore()
@@ -13,8 +14,8 @@ export function ExperienceForm() {
           <p className="text-slate-600 mb-4 text-center">
             No experience added yet. Start building your work history!
           </p>
-          <Button onClick={() => addExperience()} type="button" className="gap-2">
-            <span>+</span> Add Experience
+          <Button onClick={() => addExperience()} type="button" className="h-10 w-10 p-0" aria-label="Add experience" title="Add experience">
+            <Plus className="h-4 w-4" />
           </Button>
         </div>
       ) : (
@@ -24,8 +25,8 @@ export function ExperienceForm() {
               <ExperienceItem key={exp.id} experience={exp} />
             ))}
           </div>
-          <Button onClick={() => addExperience()} type="button" variant="outline" className="w-full gap-2">
-            <span>+</span> Add Experience
+          <Button onClick={() => addExperience()} type="button" variant="outline" className="h-10 w-10 p-0" aria-label="Add experience" title="Add experience">
+            <Plus className="h-4 w-4" />
           </Button>
         </>
       )}
