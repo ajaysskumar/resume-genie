@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Resume, Experience, ExperienceBullet } from '../types/resume'
+import type { Resume, Experience, Skill, Education, Project } from '../types/resume'
 import { generateId } from '@/lib/utils'
 
 interface ResumeStore {
@@ -7,89 +7,110 @@ interface ResumeStore {
   updatePersonal: (field: keyof Resume['personal'], value: string) => void
   updateSummary: (text: string) => void
   addExperience: () => void
-  updateExperience: (id: string, field: keyof Experience, value: any) => void
+  updateExperience: (id: string, field: keyof Experience, value: Experience[keyof Experience]) => void
   deleteExperience: (id: string) => void
   addBullet: (experienceId: string) => void
   updateBullet: (experienceId: string, bulletId: string, text: string) => void
   deleteBullet: (experienceId: string, bulletId: string) => void
+  addSkill: () => void
+  updateSkill: (id: string, field: keyof Skill, value: string | string[]) => void
+  deleteSkill: (id: string) => void
+  addEducation: () => void
+  updateEducation: (id: string, field: keyof Education, value: string) => void
+  deleteEducation: (id: string) => void
+  addProject: () => void
+  updateProject: (id: string, field: keyof Project, value: string | string[]) => void
+  deleteProject: (id: string) => void
   setResume: (resume: Resume) => void
   loadDemoResume: () => void
 }
 
-const initialResume: Resume = {
-  personal: {
-    fullName: '',
-    headline: '',
-    email: '',
-    phone: '',
-    location: '',
-    linkedin: '',
-    website: '',
-  },
-  summary: '',
-  experience: [],
-}
-
 const demoResume: Resume = {
   personal: {
-    fullName: 'Ajay Kumar',
-    headline: 'Lead Software Consultant',
-    email: 'ajay@example.com',
-    phone: '+91 9876543210',
-    location: 'India',
-    linkedin: 'https://linkedin.com/in/ajaykumar',
-    website: 'https://ajaykumar.dev',
+    fullName: 'Maya Sharma',
+    headline: 'Senior Product Designer',
+    email: 'maya.sharma@example.com',
+    phone: '+91 98765 43210',
+    location: 'Bengaluru, India',
+    profileImage: '',
+    linkedin: 'https://linkedin.com/in/mayasharma',
+    website: 'https://mayasharma.dev',
   },
   summary:
-    'Experienced lead software consultant with 10+ years of expertise in building scalable systems, leading high-performance teams, and delivering transformative digital solutions. Specialized in cloud architecture, microservices, and full-stack development.',
+    'Senior product designer with 7+ years of experience turning complex workflows into simple, accessible products. Skilled at connecting customer insight, visual systems, and business goals to ship thoughtful experiences that people enjoy using.',
   experience: [
     {
       id: generateId(),
-      company: 'THOUT',
-      position: 'Lead Consultant',
-      location: 'Remote',
-      startDate: '2025-08-01',
+      company: 'Northstar Labs',
+      position: 'Senior Product Designer',
+      location: 'Bengaluru, India',
+      startDate: '2023-04',
       endDate: '',
       current: true,
       bullets: [
         {
           id: generateId(),
-          text: 'Designed and architected scalable microservices platform serving 1M+ requests daily',
+          text: 'Led the redesign of the customer dashboard, improving task completion by 28% across three key workflows',
         },
         {
           id: generateId(),
-          text: 'Led cross-functional team of 8 engineers, mentoring junior developers and establishing best practices',
+          text: 'Built a shared design system used by four product teams, reducing duplicate UI work and speeding up delivery',
         },
         {
           id: generateId(),
-          text: 'Reduced infrastructure costs by 40% through optimization and migration to cloud-native solutions',
+          text: 'Partnered with research and engineering to turn customer interviews into a clearer onboarding experience',
         },
       ],
     },
     {
       id: generateId(),
-      company: 'TechCorp',
-      position: 'Senior Software Engineer',
-      location: 'Remote',
-      startDate: '2021-06-01',
-      endDate: '2025-07-31',
+      company: 'Brightside Technologies',
+      position: 'Product Designer',
+      location: 'Pune, India',
+      startDate: '2020-07',
+      endDate: '2023-03',
       current: false,
       bullets: [
         {
           id: generateId(),
-          text: 'Implemented comprehensive testing strategy increasing code coverage from 45% to 89%',
+          text: 'Created end-to-end flows for a B2B analytics platform used by more than 20,000 monthly users',
         },
         {
           id: generateId(),
-          text: 'Delivered 15+ production features across React and Node.js stack',
+          text: 'Introduced usability testing into the product cycle and helped resolve the top five customer pain points',
         },
       ],
+    },
+  ],
+  skills: [
+    { id: generateId(), category: 'Product Design', skills: ['Product Strategy', 'Interaction Design', 'Design Systems'] },
+    { id: generateId(), category: 'Tools', skills: ['Figma', 'FigJam', 'Storybook'] },
+    { id: generateId(), category: '', skills: ['User Research', 'Prototyping', 'Accessibility'] },
+  ],
+  education: [
+    {
+      id: generateId(),
+      institution: 'National Institute of Design',
+      degree: 'Bachelor of Design, Communication Design',
+      grade: '8.7 / 10',
+      location: 'Ahmedabad, India',
+      startDate: '2016-07',
+      endDate: '2020-05',
+    },
+  ],
+  projects: [
+    {
+      id: generateId(),
+      name: 'Northstar Design System',
+      description: 'A scalable component library and contribution model that helps product teams ship consistent, accessible workflows.',
+      url: 'https://mayasharma.dev/northstar',
+      technologies: ['Figma', 'Storybook', 'Accessibility'],
     },
   ],
 }
 
 export const useResumeStore = create<ResumeStore>((set) => ({
-  resume: initialResume,
+  resume: demoResume,
 
   updatePersonal: (field, value) =>
     set((state) => ({
@@ -194,6 +215,45 @@ export const useResumeStore = create<ResumeStore>((set) => ({
         ),
       },
     })),
+
+  addSkill: () =>
+    set((state) => ({
+      resume: { ...state.resume, skills: [...state.resume.skills, { id: generateId(), category: '', skills: [''] }] },
+    })),
+
+  updateSkill: (id, field, value) =>
+    set((state) => ({
+      resume: { ...state.resume, skills: state.resume.skills.map((skill) => skill.id === id ? { ...skill, [field]: value } : skill) },
+    })),
+
+  deleteSkill: (id) =>
+    set((state) => ({ resume: { ...state.resume, skills: state.resume.skills.filter((skill) => skill.id !== id) } })),
+
+  addEducation: () =>
+    set((state) => ({
+      resume: { ...state.resume, education: [...state.resume.education, { id: generateId(), institution: '', degree: '', grade: '', location: '', startDate: '', endDate: '' }] },
+    })),
+
+  updateEducation: (id, field, value) =>
+    set((state) => ({
+      resume: { ...state.resume, education: state.resume.education.map((item) => item.id === id ? { ...item, [field]: value } : item) },
+    })),
+
+  deleteEducation: (id) =>
+    set((state) => ({ resume: { ...state.resume, education: state.resume.education.filter((item) => item.id !== id) } })),
+
+  addProject: () =>
+    set((state) => ({
+      resume: { ...state.resume, projects: [...state.resume.projects, { id: generateId(), name: '', description: '', url: '', technologies: [] }] },
+    })),
+
+  updateProject: (id, field, value) =>
+    set((state) => ({
+      resume: { ...state.resume, projects: state.resume.projects.map((project) => project.id === id ? { ...project, [field]: value } : project) },
+    })),
+
+  deleteProject: (id) =>
+    set((state) => ({ resume: { ...state.resume, projects: state.resume.projects.filter((project) => project.id !== id) } })),
 
   setResume: (resume) =>
     set(() => ({

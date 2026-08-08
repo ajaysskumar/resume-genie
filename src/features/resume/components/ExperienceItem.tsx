@@ -5,7 +5,8 @@ import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/index'
 import { Card } from '@/components/ui/card'
 import { ExperienceBullet } from './ExperienceBullet'
-import { Experience } from '../types/resume'
+import type { Experience } from '../types/resume'
+import { Plus, Trash2 } from 'lucide-react'
 
 interface ExperienceItemProps {
   experience: Experience
@@ -21,50 +22,50 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
   }
 
   return (
-    <Card className="p-4">
+    <Card className="p-5 bg-white border border-slate-200/50 hover:border-slate-300 transition-colors">
       <div className="space-y-4">
         {/* Company and Position */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <Label htmlFor={`company-${experience.id}`} className="block mb-1">
+            <Label htmlFor={`company-${experience.id}`} className="block mb-2 text-sm font-medium text-slate-700">
               Company
             </Label>
             <Input
               id={`company-${experience.id}`}
               value={experience.company}
-              onChange={(e) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 updateExperience(experience.id, 'company', e.target.value)
               }
-              placeholder="Company name"
+              placeholder="e.g. Northstar Labs"
             />
           </div>
           <div>
-            <Label htmlFor={`position-${experience.id}`} className="block mb-1">
+            <Label htmlFor={`position-${experience.id}`} className="block mb-2 text-sm font-medium text-slate-700">
               Position
             </Label>
             <Input
               id={`position-${experience.id}`}
               value={experience.position}
-              onChange={(e) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 updateExperience(experience.id, 'position', e.target.value)
               }
-              placeholder="Job title"
+              placeholder="e.g. Senior Product Designer"
             />
           </div>
         </div>
 
         {/* Location */}
         <div>
-          <Label htmlFor={`location-${experience.id}`} className="block mb-1">
+          <Label htmlFor={`location-${experience.id}`} className="block mb-2 text-sm font-medium text-slate-700">
             Location
           </Label>
           <Input
             id={`location-${experience.id}`}
             value={experience.location || ''}
-            onChange={(e) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateExperience(experience.id, 'location', e.target.value)
             }
-            placeholder="City, State"
+            placeholder="e.g. Bengaluru, India or Remote"
           />
         </div>
 
@@ -73,7 +74,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
           <div>
             <Label
               htmlFor={`startDate-${experience.id}`}
-              className="block mb-1"
+              className="block mb-2 text-sm font-medium text-slate-700"
             >
               Start Date
             </Label>
@@ -81,20 +82,20 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
               id={`startDate-${experience.id}`}
               type="month"
               value={experience.startDate}
-              onChange={(e) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 updateExperience(experience.id, 'startDate', e.target.value)
               }
             />
           </div>
           <div>
-            <Label htmlFor={`endDate-${experience.id}`} className="block mb-1">
+            <Label htmlFor={`endDate-${experience.id}`} className="block mb-2 text-sm font-medium text-slate-700">
               End Date
             </Label>
             <Input
               id={`endDate-${experience.id}`}
               type="month"
               value={experience.endDate || ''}
-              onChange={(e) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 updateExperience(experience.id, 'endDate', e.target.value)
               }
               disabled={experience.current}
@@ -107,23 +108,23 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
           <Checkbox
             id={`current-${experience.id}`}
             checked={experience.current}
-            onChange={(e) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateExperience(experience.id, 'current', e.target.checked)
             }
           />
           <Label
             htmlFor={`current-${experience.id}`}
-            className="cursor-pointer"
+            className="cursor-pointer text-sm font-medium text-slate-700"
           >
             Currently working here
           </Label>
         </div>
 
         {/* Bullets */}
-        <div className="space-y-2">
-          <h4 className="text-sm font-medium">Achievements</h4>
+        <div className="space-y-3 pt-2 border-t border-slate-100">
+          <h4 className="text-sm font-semibold text-slate-800">Achievements</h4>
           {experience.bullets.length === 0 ? (
-            <p className="text-xs text-slate-500">No bullets added</p>
+            <p className="text-xs text-slate-500">No achievements added yet</p>
           ) : (
             <div className="space-y-2">
               {experience.bullets.map((bullet) => (
@@ -138,10 +139,13 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
           <Button
             variant="outline"
             size="sm"
+            className="h-10 w-10 p-0"
             onClick={() => addBullet(experience.id)}
             type="button"
+            aria-label="Add achievement"
+            title="Add achievement"
           >
-            + Add Bullet
+            <Plus className="h-4 w-4" />
           </Button>
         </div>
 
@@ -149,10 +153,13 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
         <Button
           variant="destructive"
           size="sm"
+          className="h-10 w-10 p-0"
           onClick={handleDelete}
           type="button"
+          aria-label="Delete experience"
+          title="Delete experience"
         >
-          Delete Experience
+          <Trash2 className="h-4 w-4" />
         </Button>
       </div>
     </Card>
