@@ -23,7 +23,7 @@ export function ExperienceBullet({ experienceId, bullet }: ExperienceBulletProps
       <Input
         value={bullet.text}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateBullet(experienceId, bullet.id, e.target.value)}
-        placeholder="Add achievement or responsibility..."
+        placeholder="e.g. Launched a redesign that improved activation by 28%"
         className="flex-grow bg-white border-slate-200/50 text-sm"
       />
       <Button

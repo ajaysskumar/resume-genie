@@ -16,72 +16,59 @@ interface ResumeStore {
   loadDemoResume: () => void
 }
 
-const initialResume: Resume = {
-  personal: {
-    fullName: '',
-    headline: '',
-    email: '',
-    phone: '',
-    location: '',
-    linkedin: '',
-    website: '',
-  },
-  summary: '',
-  experience: [],
-}
-
 const demoResume: Resume = {
   personal: {
-    fullName: 'Ajay Kumar',
-    headline: 'Lead Software Consultant',
-    email: 'ajay@example.com',
-    phone: '+91 9876543210',
-    location: 'India',
-    linkedin: 'https://linkedin.com/in/ajaykumar',
-    website: 'https://ajaykumar.dev',
+    fullName: 'Maya Sharma',
+    headline: 'Senior Product Designer',
+    email: 'maya.sharma@example.com',
+    phone: '+91 98765 43210',
+    location: 'Bengaluru, India',
+    profileImage: '',
+    linkedin: 'https://linkedin.com/in/mayasharma',
+    website: 'https://mayasharma.dev',
   },
   summary:
-    'Experienced lead software consultant with 10+ years of expertise in building scalable systems, leading high-performance teams, and delivering transformative digital solutions. Specialized in cloud architecture, microservices, and full-stack development.',
+    'Senior product designer with 7+ years of experience turning complex workflows into simple, accessible products. Skilled at connecting customer insight, visual systems, and business goals to ship thoughtful experiences that people enjoy using.',
   experience: [
     {
       id: generateId(),
-      company: 'THOUT',
-      position: 'Lead Consultant',
-      location: 'Remote',
-      startDate: '2025-08-01',
+      company: 'Northstar Labs',
+      position: 'Senior Product Designer',
+      location: 'Bengaluru, India',
+      startDate: '2023-04',
       endDate: '',
       current: true,
       bullets: [
         {
           id: generateId(),
-          text: 'Designed and architected scalable microservices platform serving 1M+ requests daily',
+          text: 'Led the redesign of the customer dashboard, improving task completion by 28% across three key workflows',
         },
         {
           id: generateId(),
-          text: 'Led cross-functional team of 8 engineers, mentoring junior developers and establishing best practices',
+          text: 'Built a shared design system used by four product teams, reducing duplicate UI work and speeding up delivery',
         },
         {
           id: generateId(),
-          text: 'Reduced infrastructure costs by 40% through optimization and migration to cloud-native solutions',
+          text: 'Partnered with research and engineering to turn customer interviews into a clearer onboarding experience',
         },
       ],
     },
     {
       id: generateId(),
-      company: 'TechCorp',
-      position: 'Senior Software Engineer',
-      location: 'Remote',
-      startDate: '2021-06-01',
-      endDate: '2025-07-31',
+      company: 'Brightside Technologies',
+      position: 'Product Designer',
+      location: 'Pune, India',
+      startDate: '2020-07',
+      endDate: '2023-03',
       current: false,
       bullets: [
         {
           id: generateId(),
-          text: 'Implemented comprehensive testing strategy increasing code coverage from 45% to 89%',
+          text: 'Created end-to-end flows for a B2B analytics platform used by more than 20,000 monthly users',
         },
         {
           id: generateId(),
-          text: 'Delivered 15+ production features across React and Node.js stack',
+          text: 'Introduced usability testing into the product cycle and helped resolve the top five customer pain points',
         },
       ],
     },
@@ -89,7 +76,7 @@ const demoResume: Resume = {
 }
 
 export const useResumeStore = create<ResumeStore>((set) => ({
-  resume: initialResume,
+  resume: demoResume,
 
   updatePersonal: (field, value) =>
     set((state) => ({

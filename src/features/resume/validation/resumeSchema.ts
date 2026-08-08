@@ -61,6 +61,7 @@ export const personalInfoSchema = z.object({
   email: emailSchema,
   phone: z.string().optional(),
   location: z.string().optional(),
+  profileImage: z.string().optional(),
   linkedin: urlSchema,
   website: urlSchema,
 })

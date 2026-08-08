@@ -5,9 +5,11 @@ import { AtsResumeTemplate } from './AtsResumeTemplate'
 import { ModernResumeTemplate } from './ModernResumeTemplate'
 import { ExecutiveResumeTemplate } from './ExecutiveResumeTemplate'
 import { MinimalResumeTemplate } from './MinimalResumeTemplate'
+import { BasicResumeTemplate } from './BasicResumeTemplate'
+import { TimelineResumeTemplate } from './TimelineResumeTemplate'
 import { TemplateSelector } from './TemplateSelector'
 
-export type ResumeTemplate = 'classic' | 'modern' | 'executive' | 'minimal'
+export type ResumeTemplate = 'classic' | 'modern' | 'executive' | 'minimal' | 'basic' | 'timeline'
 
 export function ResumePreview() {
   const resume = useResumeStore((state) => state.resume)
@@ -18,6 +20,8 @@ export function ResumePreview() {
     modern: <ModernResumeTemplate resume={resume} />,
     executive: <ExecutiveResumeTemplate resume={resume} />,
     minimal: <MinimalResumeTemplate resume={resume} />,
+    basic: <BasicResumeTemplate resume={resume} />,
+    timeline: <TimelineResumeTemplate resume={resume} />,
   }[template]
 
   return (

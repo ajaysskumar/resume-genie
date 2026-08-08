@@ -20,6 +20,7 @@ export interface PersonalInformation {
   email: string
   phone: string
   location: string
+  profileImage?: string
   linkedin?: string
   website?: string
 }

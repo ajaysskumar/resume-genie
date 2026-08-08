@@ -16,7 +16,7 @@ export function SummaryForm() {
           id="summary"
           value={summary}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateSummary(e.target.value)}
-          placeholder="Share your professional background and key achievements..."
+          placeholder="e.g. Product designer with 7+ years of experience turning complex workflows into simple, accessible products..."
           rows={4}
         />
         <p className="text-xs text-slate-500 mt-2">

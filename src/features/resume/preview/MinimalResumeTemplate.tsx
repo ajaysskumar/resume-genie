@@ -8,7 +8,9 @@ export function MinimalResumeTemplate({ resume }: MinimalResumeTemplateProps) {
   return (
     <div className="text-slate-700">
       <header className="flex items-end justify-between gap-6 border-b border-slate-300 pb-5">
-        <div><h1 className="text-3xl font-light tracking-[0.08em] text-slate-950">{personal.fullName || 'Your Name'}</h1><p className="mt-2 text-sm text-rose-600">{personal.headline || 'Your Headline'}</p></div>
+        <div className="flex min-w-0 items-center gap-4">
+          <div><h1 className="text-3xl font-light tracking-[0.08em] text-slate-950">{personal.fullName || 'Your Name'}</h1><p className="mt-2 text-sm text-rose-600">{personal.headline || 'Your Headline'}</p></div>
+        </div>
         <ContactLine resume={resume} />
       </header>
       <div className="mt-7 space-y-6">

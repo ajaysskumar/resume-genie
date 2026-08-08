@@ -8,9 +8,20 @@ export function ModernResumeTemplate({ resume }: ModernResumeTemplateProps) {
   return (
     <div className="border-l-8 border-cyan-500 pl-6 text-slate-800">
       <header className="border-b-2 border-cyan-100 pb-6">
-        <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-600">Professional Profile</p>
-        <h1 className="text-4xl font-black tracking-tight text-slate-950">{personal.fullName || 'Your Name'}</h1>
-        <p className="mt-1 text-lg font-medium text-cyan-700">{personal.headline || 'Your Headline'}</p>
+        <div className="flex items-start justify-between gap-5">
+          <div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-600">Professional Profile</p>
+            <h1 className="text-4xl font-black tracking-tight text-slate-950">{personal.fullName || 'Your Name'}</h1>
+            <p className="mt-1 text-lg font-medium text-cyan-700">{personal.headline || 'Your Headline'}</p>
+          </div>
+          {personal.profileImage ? (
+            <img src={personal.profileImage} alt={`${personal.fullName || 'Profile'} photo`} className="h-20 w-20 shrink-0 rounded-2xl object-cover ring-4 ring-cyan-50" />
+          ) : (
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-cyan-100 text-2xl font-black text-cyan-700 ring-4 ring-cyan-50" aria-label="Profile photo placeholder">
+              {(personal.fullName || 'YN').split(' ').map((name) => name[0]).slice(0, 2).join('')}
+            </div>
+          )}
+        </div>
         <ContactLine resume={resume} />
       </header>
       <div className="mt-7 space-y-7">

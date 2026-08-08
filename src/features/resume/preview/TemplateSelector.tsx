@@ -10,6 +10,8 @@ const templates: Array<{ id: ResumeTemplate; name: string; description: string; 
   { id: 'modern', name: 'Modern', description: 'Color rail', accent: 'bg-cyan-500' },
   { id: 'executive', name: 'Executive', description: 'Editorial', accent: 'bg-amber-500' },
   { id: 'minimal', name: 'Minimal', description: 'Clean and compact', accent: 'bg-rose-500' },
+  { id: 'basic', name: 'Basic', description: 'Simple and clear', accent: 'bg-blue-500' },
+  { id: 'timeline', name: 'Timeline', description: 'Career focused', accent: 'bg-violet-500' },
 ]
 
 export function TemplateSelector({ value, onChange }: TemplateSelectorProps) {

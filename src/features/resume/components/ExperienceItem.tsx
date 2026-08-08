@@ -35,7 +35,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 updateExperience(experience.id, 'company', e.target.value)
               }
-              placeholder="Company name"
+              placeholder="e.g. Northstar Labs"
             />
           </div>
           <div>
@@ -48,7 +48,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 updateExperience(experience.id, 'position', e.target.value)
               }
-              placeholder="Job title"
+              placeholder="e.g. Senior Product Designer"
             />
           </div>
         </div>
@@ -64,7 +64,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateExperience(experience.id, 'location', e.target.value)
             }
-            placeholder="City, State"
+            placeholder="e.g. Bengaluru, India or Remote"
           />
         </div>
 
