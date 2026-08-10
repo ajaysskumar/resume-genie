@@ -63,6 +63,7 @@ export const personalInfoSchema = z.object({
   location: z.string().optional(),
   profileImage: z.string().optional(),
   linkedin: urlSchema,
+  github: urlSchema,
   website: urlSchema,
 })
 
@@ -90,6 +91,14 @@ export const projectSchema = z.object({
   technologies: z.array(z.string()),
 })
 
+export const certificationSchema = z.object({
+  id: z.string(),
+  name: z.string().min(1, 'Certification name is required'),
+  issuer: z.string().min(1, 'Issuing organization is required'),
+  issueDate: dateStringSchema.optional(),
+  url: urlSchema,
+})
+
 export const resumeSchema = z.object({
   personal: personalInfoSchema,
   summary: z.string(),
@@ -97,6 +106,7 @@ export const resumeSchema = z.object({
   skills: z.array(skillSchema),
   education: z.array(educationSchema),
   projects: z.array(projectSchema),
+  certifications: z.array(certificationSchema),
 })
 
 export type Resume = z.infer<typeof resumeSchema>
@@ -106,3 +116,4 @@ export type ExperienceBullet = z.infer<typeof experienceBulletSchema>
 export type Skill = z.infer<typeof skillSchema>
 export type Education = z.infer<typeof educationSchema>
 export type Project = z.infer<typeof projectSchema>
+export type Certification = z.infer<typeof certificationSchema>

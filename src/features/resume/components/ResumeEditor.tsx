@@ -4,6 +4,7 @@ import { ExperienceForm } from './ExperienceForm'
 import { SkillsForm } from './SkillsForm'
 import { EducationForm } from './EducationForm'
 import { ProjectsForm } from './ProjectsForm'
+import { CertificationsForm } from './CertificationsForm'
 
 export function ResumeEditor() {
   return (
@@ -51,6 +52,11 @@ export function ResumeEditor() {
       <div>
         <div className="mb-4 flex items-center gap-3"><div className="h-6 w-1 rounded-full bg-rose-600" /><h2 className="text-xl font-bold text-slate-900">Projects</h2></div>
         <div className="mb-4 rounded-lg border border-rose-100/50 bg-gradient-to-br from-rose-50 to-transparent p-4"><ProjectsForm /></div>
+      </div>
+
+      <div>
+        <div className="mb-4 flex items-center gap-3"><div className="h-6 w-1 rounded-full bg-cyan-600" /><h2 className="text-xl font-bold text-slate-900">Certifications</h2></div>
+        <div className="mb-4 rounded-lg border border-cyan-100/50 bg-gradient-to-br from-cyan-50 to-transparent p-4"><CertificationsForm /></div>
       </div>
     </div>
   )

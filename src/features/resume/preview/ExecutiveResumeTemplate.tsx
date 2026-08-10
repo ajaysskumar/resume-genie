@@ -35,4 +35,4 @@ export function ExecutiveResumeTemplate({ resume }: ExecutiveResumeTemplateProps
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) { return <h2 className="mb-4 border-b-2 border-amber-400 pb-2 text-xs font-black uppercase tracking-[0.25em] text-slate-950">{children}</h2> }
-function ContactLine({ resume }: { resume: Resume }) { const { personal } = resume; return <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-400">{[personal.location, personal.email, personal.phone, personal.linkedin && 'LinkedIn', personal.website && 'Website'].filter(Boolean).map((item) => <span key={item}>{item}</span>)}</div> }
+function ContactLine({ resume }: { resume: Resume }) { const { personal } = resume; return <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-400">{[personal.location, personal.email, personal.phone, personal.linkedin && 'LinkedIn', personal.github && 'GitHub', personal.website && 'Website'].filter(Boolean).map((item) => <span key={item}>{item}</span>)}</div> }

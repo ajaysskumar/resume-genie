@@ -7,12 +7,15 @@ import { ExecutiveResumeTemplate } from './ExecutiveResumeTemplate'
 import { MinimalResumeTemplate } from './MinimalResumeTemplate'
 import { BasicResumeTemplate } from './BasicResumeTemplate'
 import { TimelineResumeTemplate } from './TimelineResumeTemplate'
+import { EngineeringResumeTemplate } from './EngineeringResumeTemplate'
+import { TechnicalResumeTemplate } from './TechnicalResumeTemplate'
+import { CompactResumeTemplate } from './CompactResumeTemplate'
 import { TemplateSelector } from './TemplateSelector'
 import { Printer } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { exportResumeToPdf } from '../export/resumePdf'
 
-export type ResumeTemplate = 'classic' | 'modern' | 'executive' | 'minimal' | 'basic' | 'timeline'
+export type ResumeTemplate = 'classic' | 'modern' | 'executive' | 'minimal' | 'basic' | 'timeline' | 'engineering' | 'technical' | 'compact'
 
 export function ResumePreview() {
   const resume = useResumeStore((state) => state.resume)
@@ -26,6 +29,9 @@ export function ResumePreview() {
     minimal: <MinimalResumeTemplate resume={resume} />,
     basic: <BasicResumeTemplate resume={resume} />,
     timeline: <TimelineResumeTemplate resume={resume} />,
+    engineering: <EngineeringResumeTemplate resume={resume} />,
+    technical: <TechnicalResumeTemplate resume={resume} />,
+    compact: <CompactResumeTemplate resume={resume} />,
   }[template]
 
   const handleExport = async () => {

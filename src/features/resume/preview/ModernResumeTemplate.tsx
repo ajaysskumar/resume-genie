@@ -41,4 +41,4 @@ export function ModernResumeTemplate({ resume }: ModernResumeTemplateProps) {
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) { return <h2 className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-slate-950">{children}</h2> }
-function ContactLine({ resume }: { resume: Resume }) { const { personal } = resume; return <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500">{[personal.location, personal.email, personal.phone, personal.linkedin && 'LinkedIn', personal.website && 'Website'].filter(Boolean).map((item) => <span key={item}>{item}</span>)}</div> }
+function ContactLine({ resume }: { resume: Resume }) { const { personal } = resume; return <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500">{[personal.location, personal.email, personal.phone, personal.linkedin && 'LinkedIn', personal.github && 'GitHub', personal.website && 'Website'].filter(Boolean).map((item) => <span key={item}>{item}</span>)}</div> }

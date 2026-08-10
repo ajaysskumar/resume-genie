@@ -42,6 +42,12 @@ export function AtsResumeTemplate({ resume }: AtsResumeTemplateProps) {
               </a>
             </>
           )}
+          {personal.github && (
+            <>
+              <span>•</span>
+              <a href={personal.github} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:no-underline">GitHub</a>
+            </>
+          )}
           {personal.website && (
             <>
               <span>•</span>

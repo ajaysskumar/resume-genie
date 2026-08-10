@@ -24,4 +24,4 @@ export function MinimalResumeTemplate({ resume }: MinimalResumeTemplateProps) {
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) { return <h2 className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-slate-950">{children}</h2> }
-function ContactLine({ resume }: { resume: Resume }) { const { personal } = resume; return <div className="max-w-[180px] text-right text-[10px] leading-5 text-slate-500">{[personal.location, personal.email, personal.phone, personal.linkedin && 'LinkedIn', personal.website && 'Website'].filter(Boolean).join(' · ')}</div> }
+function ContactLine({ resume }: { resume: Resume }) { const { personal } = resume; return <div className="max-w-[180px] text-right text-[10px] leading-5 text-slate-500">{[personal.location, personal.email, personal.phone, personal.linkedin && 'LinkedIn', personal.github && 'GitHub', personal.website && 'Website'].filter(Boolean).join(' · ')}</div> }

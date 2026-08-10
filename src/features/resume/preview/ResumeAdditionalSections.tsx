@@ -1,11 +1,12 @@
 import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
 
-type AdditionalSectionsVariant = 'classic' | 'modern' | 'executive' | 'minimal' | 'basic' | 'timeline'
+type AdditionalSectionsVariant = 'classic' | 'modern' | 'executive' | 'minimal' | 'basic' | 'timeline' | 'engineering' | 'technical' | 'compact'
 
 interface ResumeAdditionalSectionsProps {
   resume: Resume
   variant: AdditionalSectionsVariant
+  showSkills?: boolean
 }
 
 const styles = {
@@ -15,16 +16,19 @@ const styles = {
   minimal: { heading: 'text-slate-950', title: 'font-bold uppercase tracking-[0.25em]', text: 'text-sm text-slate-700', accent: 'text-rose-600' },
   basic: { heading: 'border-b border-slate-300 pb-2 text-slate-950', title: 'font-bold uppercase tracking-[0.2em]', text: 'text-sm text-slate-700', accent: 'text-slate-600' },
   timeline: { heading: 'text-slate-950', title: 'font-bold uppercase tracking-[0.25em]', text: 'text-sm text-slate-600', accent: 'text-violet-700' },
+  engineering: { heading: 'border-b border-teal-200 pb-1.5 text-teal-900', title: 'font-bold uppercase tracking-[0.18em]', text: 'text-xs text-slate-700', accent: 'text-teal-800' },
+  technical: { heading: 'border-b border-slate-300 pb-1 text-slate-950', title: 'font-bold uppercase tracking-[0.15em]', text: 'text-xs text-slate-700', accent: 'text-slate-700' },
+  compact: { heading: 'border-b border-slate-900 pb-1 text-slate-950', title: 'font-bold uppercase tracking-[0.14em]', text: 'text-xs text-slate-700', accent: 'text-slate-600' },
 } as const
 
-export function ResumeAdditionalSections({ resume, variant }: ResumeAdditionalSectionsProps) {
+export function ResumeAdditionalSections({ resume, variant, showSkills = true }: ResumeAdditionalSectionsProps) {
   const style = styles[variant]
-  const hasContent = resume.skills.length > 0 || resume.education.length > 0 || resume.projects.length > 0
+  const hasContent = (showSkills && resume.skills.length > 0) || resume.education.length > 0 || resume.projects.length > 0 || resume.certifications.length > 0
   if (!hasContent) return null
 
   return (
     <div className="space-y-6">
-      {resume.skills.length > 0 && (
+      {showSkills && resume.skills.length > 0 && (
         <section>
           <SectionTitle className={style.heading}><span className={style.title}>Skills</span></SectionTitle>
           <SkillsContent resume={resume} style={style} />
@@ -48,6 +52,20 @@ export function ResumeAdditionalSections({ resume, variant }: ResumeAdditionalSe
               <div className="flex items-baseline justify-between gap-3"><h3 className="font-bold text-slate-950">{project.name}</h3>{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className={`${style.accent} underline`}>View project</a>}</div>
               <p className="mt-1 leading-6">{project.description}</p>
               {project.technologies.length > 0 && <p className={`mt-1 text-xs ${style.accent}`}>{project.technologies.join(' · ')}</p>}
+            </article>)}
+          </div>
+        </section>
+      )}
+      {resume.certifications.length > 0 && (
+        <section>
+          <SectionTitle className={style.heading}><span className={style.title}>Certifications</span></SectionTitle>
+          <div className="space-y-2">
+            {resume.certifications.map((certification) => <article key={certification.id} className={style.text}>
+              <div className="flex items-baseline justify-between gap-3">
+                <div><h3 className="font-bold text-slate-950">{certification.name}</h3><p className={style.accent}>{certification.issuer}</p></div>
+                <time className="whitespace-nowrap text-right">{certification.issueDate && formatDate(certification.issueDate)}</time>
+              </div>
+              {certification.url && <a href={certification.url} target="_blank" rel="noopener noreferrer" className={`${style.accent} text-xs underline`}>Verify credential</a>}
             </article>)}
           </div>
         </section>

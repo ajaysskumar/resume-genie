@@ -14,6 +14,9 @@ const templates: Array<{ id: ResumeTemplate; name: string; description: string; 
   { id: 'minimal', name: 'Minimal', description: 'Clean and compact', accent: 'bg-rose-500' },
   { id: 'basic', name: 'Basic', description: 'Simple and clear', accent: 'bg-blue-500' },
   { id: 'timeline', name: 'Timeline', description: 'Career focused', accent: 'bg-violet-500' },
+  { id: 'engineering', name: 'Engineering', description: 'Tech ATS', accent: 'bg-teal-600' },
+  { id: 'technical', name: 'Technical', description: 'Skills first', accent: 'bg-sky-600' },
+  { id: 'compact', name: 'Compact', description: 'Dense ATS', accent: 'bg-slate-700' },
 ]
 
 export function TemplateSelector({ value, onChange }: TemplateSelectorProps) {

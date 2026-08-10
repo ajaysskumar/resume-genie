@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { Resume, Experience, Skill, Education, Project } from '../types/resume'
+import type { Resume, Experience, Skill, Education, Project, Certification } from '../types/resume'
 import { generateId } from '@/lib/utils'
 
 interface ResumeStore {
@@ -21,6 +21,9 @@ interface ResumeStore {
   addProject: () => void
   updateProject: (id: string, field: keyof Project, value: string | string[]) => void
   deleteProject: (id: string) => void
+  addCertification: () => void
+  updateCertification: (id: string, field: keyof Certification, value: string) => void
+  deleteCertification: (id: string) => void
   setResume: (resume: Resume) => void
   loadDemoResume: () => void
 }
@@ -34,6 +37,7 @@ const demoResume: Resume = {
     location: 'Bengaluru, India',
     profileImage: '',
     linkedin: 'https://linkedin.com/in/mayasharma',
+    github: 'https://github.com/mayasharma',
     website: 'https://mayasharma.dev',
   },
   summary:
@@ -105,6 +109,15 @@ const demoResume: Resume = {
       description: 'A scalable component library and contribution model that helps product teams ship consistent, accessible workflows.',
       url: 'https://mayasharma.dev/northstar',
       technologies: ['Figma', 'Storybook', 'Accessibility'],
+    },
+  ],
+  certifications: [
+    {
+      id: generateId(),
+      name: 'Professional Scrum Product Owner I',
+      issuer: 'Scrum.org',
+      issueDate: '2024-02',
+      url: 'https://www.scrum.org/certificates',
     },
   ],
 }
@@ -254,6 +267,22 @@ export const useResumeStore = create<ResumeStore>((set) => ({
 
   deleteProject: (id) =>
     set((state) => ({ resume: { ...state.resume, projects: state.resume.projects.filter((project) => project.id !== id) } })),
+
+  addCertification: () =>
+    set((state) => ({
+      resume: {
+        ...state.resume,
+        certifications: [...state.resume.certifications, { id: generateId(), name: '', issuer: '', issueDate: '', url: '' }],
+      },
+    })),
+
+  updateCertification: (id, field, value) =>
+    set((state) => ({
+      resume: { ...state.resume, certifications: state.resume.certifications.map((item) => item.id === id ? { ...item, [field]: value } : item) },
+    })),
+
+  deleteCertification: (id) =>
+    set((state) => ({ resume: { ...state.resume, certifications: state.resume.certifications.filter((item) => item.id !== id) } })),
 
   setResume: (resume) =>
     set(() => ({

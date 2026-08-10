@@ -1,0 +1,333 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "Resume Builder" [level=1] [ref=e5]
+    - paragraph [ref=e6]: Craft your story. Watch it transform in real-time.
+  - generic [ref=e7]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - heading "Personal Information" [level=2] [ref=e13]
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - generic [ref=e17]:
+              - generic [ref=e18]: Full Name*
+              - textbox "Full Name*" [ref=e19]:
+                - /placeholder: e.g. Maya Sharma
+                - text: Maya Sharma
+            - generic [ref=e20]:
+              - generic [ref=e21]: Headline*
+              - textbox "Headline*" [ref=e22]:
+                - /placeholder: e.g. Product Designer
+                - text: Senior Product Designer
+          - generic [ref=e23]:
+            - generic [ref=e24]:
+              - generic [ref=e25]: Email*
+              - textbox "Email*" [ref=e26]:
+                - /placeholder: e.g. maya@example.com
+                - text: maya.sharma@example.com
+            - generic [ref=e27]:
+              - generic [ref=e28]: Phone
+              - textbox "Phone" [ref=e29]:
+                - /placeholder: e.g. +91 98765 43210
+                - text: +91 98765 43210
+            - generic [ref=e30]:
+              - generic [ref=e31]: Location
+              - textbox "Location" [ref=e32]:
+                - /placeholder: e.g. Bengaluru, India
+                - text: Bengaluru, India
+            - generic [ref=e33]:
+              - generic [ref=e34]: LinkedIn URL
+              - textbox "LinkedIn URL" [ref=e35]:
+                - /placeholder: e.g. linkedin.com/in/mayasharma
+                - text: https://linkedin.com/in/mayasharma
+            - generic [ref=e36]:
+              - generic [ref=e37]: GitHub URL
+              - textbox "GitHub URL" [ref=e38]:
+                - /placeholder: e.g. github.com/mayasharma
+                - text: https://github.com/mayasharma
+            - generic [ref=e39]:
+              - generic [ref=e40]: Website URL
+              - textbox "Website URL" [ref=e41]:
+                - /placeholder: e.g. mayasharma.dev
+                - text: https://mayasharma.dev
+          - generic [ref=e42]:
+            - generic [ref=e43]: Profile photo (optional)
+            - generic [ref=e44]:
+              - generic [ref=e45]: PHOTO
+              - button "Profile photo (optional)" [ref=e46]
+      - generic [ref=e47]:
+        - heading "Professional Summary" [level=2] [ref=e50]
+        - generic [ref=e53]:
+          - generic [ref=e54]: Professional Summary
+          - textbox "Professional Summary" [ref=e55]:
+            - /placeholder: e.g. Product designer with 7+ years of experience turning complex workflows into simple, accessible products...
+            - text: Senior product designer with 7+ years of experience turning complex workflows into simple, accessible products. Skilled at connecting customer insight, visual systems, and business goals to ship thoughtful experiences that people enjoy using.
+          - paragraph [ref=e56]: 242 characters
+      - generic [ref=e57]:
+        - heading "Experience" [level=2] [ref=e60]
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e65]:
+              - generic [ref=e66]:
+                - generic [ref=e67]:
+                  - generic [ref=e68]: Company
+                  - textbox "Company" [ref=e69]:
+                    - /placeholder: e.g. Northstar Labs
+                    - text: Northstar Labs
+                - generic [ref=e70]:
+                  - generic [ref=e71]: Position
+                  - textbox "Position" [ref=e72]:
+                    - /placeholder: e.g. Senior Product Designer
+                    - text: Senior Product Designer
+              - generic [ref=e73]:
+                - generic [ref=e74]: Location
+                - textbox "Location" [ref=e75]:
+                  - /placeholder: e.g. Bengaluru, India or Remote
+                  - text: Bengaluru, India
+              - generic [ref=e76]:
+                - generic [ref=e77]:
+                  - generic [ref=e78]: Start Date
+                  - textbox "Start Date" [ref=e79]: 2023-04
+                - generic [ref=e80]:
+                  - generic [ref=e81]: End Date
+                  - textbox "End Date" [disabled] [ref=e82]
+              - generic [ref=e83]:
+                - checkbox "Currently working here" [checked] [ref=e84]
+                - generic [ref=e85] [cursor=pointer]: Currently working here
+              - generic [ref=e86]:
+                - heading "Achievements" [level=4] [ref=e87]
+                - generic [ref=e88]:
+                  - generic [ref=e89]:
+                    - generic [ref=e90]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=e91]: Led the redesign of the customer dashboard, improving task completion by 28% across three key workflows
+                    - button "Delete achievement" [ref=e92]
+                  - generic [ref=e96]:
+                    - generic [ref=e97]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=e98]: Built a shared design system used by four product teams, reducing duplicate UI work and speeding up delivery
+                    - button "Delete achievement" [ref=e99]
+                  - generic [ref=e103]:
+                    - generic [ref=e104]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=e105]: Partnered with research and engineering to turn customer interviews into a clearer onboarding experience
+                    - button "Delete achievement" [ref=e106]
+                - button "Add achievement" [ref=e110]
+              - button "Delete experience" [ref=e112]
+            - generic [ref=e117]:
+              - generic [ref=e118]:
+                - generic [ref=e119]:
+                  - generic [ref=e120]: Company
+                  - textbox "Company" [ref=e121]:
+                    - /placeholder: e.g. Northstar Labs
+                    - text: Brightside Technologies
+                - generic [ref=e122]:
+                  - generic [ref=e123]: Position
+                  - textbox "Position" [ref=e124]:
+                    - /placeholder: e.g. Senior Product Designer
+                    - text: Product Designer
+              - generic [ref=e125]:
+                - generic [ref=e126]: Location
+                - textbox "Location" [ref=e127]:
+                  - /placeholder: e.g. Bengaluru, India or Remote
+                  - text: Pune, India
+              - generic [ref=e128]:
+                - generic [ref=e129]:
+                  - generic [ref=e130]: Start Date
+                  - textbox "Start Date" [ref=e131]: 2020-07
+                - generic [ref=e132]:
+                  - generic [ref=e133]: End Date
+                  - textbox "End Date" [ref=e134]: 2023-03
+              - generic [ref=e135]:
+                - checkbox "Currently working here" [ref=e136]
+                - generic [ref=e137] [cursor=pointer]: Currently working here
+              - generic [ref=e138]:
+                - heading "Achievements" [level=4] [ref=e139]
+                - generic [ref=e140]:
+                  - generic [ref=e141]:
+                    - generic [ref=e142]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=e143]: Created end-to-end flows for a B2B analytics platform used by more than 20,000 monthly users
+                    - button "Delete achievement" [ref=e144]
+                  - generic [ref=e148]:
+                    - generic [ref=e149]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=e150]: Introduced usability testing into the product cycle and helped resolve the top five customer pain points
+                    - button "Delete achievement" [ref=e151]
+                - button "Add achievement" [ref=e155]
+              - button "Delete experience" [ref=e157]
+          - button "Add experience" [ref=e161]
+      - generic [ref=e163]:
+        - heading "Skills" [level=2] [ref=e166]
+        - generic [ref=e168]:
+          - generic [ref=e169]:
+            - textbox "Skill category" [ref=e170]:
+              - /placeholder: Category (optional)
+              - text: Product Design
+            - textbox "Skills" [ref=e171]:
+              - /placeholder: Skills separated by commas
+              - text: Product Strategy, Interaction Design, Design Systems
+            - button "Delete Product Design" [ref=e172]
+          - generic [ref=e176]:
+            - textbox "Skill category" [ref=e177]:
+              - /placeholder: Category (optional)
+              - text: Tools
+            - textbox "Skills" [ref=e178]:
+              - /placeholder: Skills separated by commas
+              - text: Figma, FigJam, Storybook
+            - button "Delete Tools" [ref=e179]
+          - generic [ref=e183]:
+            - textbox "Skill category" [ref=e184]:
+              - /placeholder: Category (optional)
+            - textbox "Skills" [ref=e185]:
+              - /placeholder: Skills separated by commas
+              - text: User Research, Prototyping, Accessibility
+            - button "Delete skill group" [ref=e186]
+          - button "Add skill category" [ref=e191]
+      - generic [ref=e193]:
+        - heading "Education" [level=2] [ref=e196]
+        - generic [ref=e198]:
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - textbox "Institution" [ref=e201]: National Institute of Design
+              - textbox "Degree" [ref=e202]:
+                - /placeholder: Degree or certificate
+                - text: Bachelor of Design, Communication Design
+              - textbox "Grade or percentage" [ref=e203]:
+                - /placeholder: Grade or percentage (optional)
+                - text: 8.7 / 10
+              - textbox "Education location" [ref=e204]:
+                - /placeholder: Location
+                - text: Ahmedabad, India
+              - generic [ref=e205]:
+                - textbox "Education start date" [ref=e206]: 2016-07
+                - textbox "Education end date" [ref=e207]: 2020-05
+            - button "Delete Bachelor of Design, Communication Design" [ref=e208]
+          - button "Add education" [ref=e213]
+      - generic [ref=e215]:
+        - heading "Projects" [level=2] [ref=e218]
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - generic [ref=e222]:
+              - textbox "Project name" [ref=e223]: Northstar Design System
+              - textbox "Project URL" [ref=e224]: https://mayasharma.dev/northstar
+            - textbox "Project description" [ref=e225]:
+              - /placeholder: Describe the project and your impact
+              - text: A scalable component library and contribution model that helps product teams ship consistent, accessible workflows.
+            - textbox "Project technologies" [ref=e226]:
+              - /placeholder: Technologies, separated by commas
+              - text: Figma, Storybook, Accessibility
+            - button "Delete Northstar Design System" [ref=e227]
+          - button "Add project" [ref=e232]
+      - generic [ref=e234]:
+        - heading "Certifications" [level=2] [ref=e237]
+        - generic [ref=e239]:
+          - generic [ref=e240]:
+            - generic [ref=e241]:
+              - textbox "Certification name" [ref=e242]: Professional Scrum Product Owner I
+              - textbox "Issuing organization" [ref=e243]: Scrum.org
+              - textbox "Certification issue date" [ref=e244]: 2024-02
+              - textbox "Certification URL" [ref=e245]:
+                - /placeholder: Verification URL (optional)
+                - text: https://www.scrum.org/certificates
+            - button "Delete Professional Scrum Product Owner I" [ref=e246]
+          - button "Add certification" [ref=e251]
+    - generic [ref=e253]:
+      - generic [ref=e254]:
+        - generic [ref=e255]:
+          - generic [ref=e256]: Template
+          - button "Previous template" [ref=e257]
+          - generic "Choose resume template" [ref=e260]:
+            - button "Classic" [pressed] [ref=e262]
+            - button "Modern" [ref=e265]
+            - button "Executive" [ref=e268]
+            - button "Minimal" [ref=e271]
+            - button "Basic" [ref=e274]
+            - button "Timeline" [ref=e277]
+            - button "Engineering" [ref=e280]
+            - button "Technical" [ref=e283]
+            - button "Compact" [ref=e286]
+          - button "Next template" [ref=e290]
+        - button "Download resume as PDF" [ref=e293]:
+          - generic [ref=e298]: Download PDF
+      - generic [ref=e301]:
+        - generic [ref=e302]:
+          - heading "Maya Sharma" [level=1] [ref=e303]
+          - paragraph [ref=e304]: Senior Product Designer
+          - generic [ref=e305]:
+            - generic [ref=e306]: Bengaluru, India
+            - generic [ref=e307]: •
+            - generic [ref=e308]: maya.sharma@example.com
+            - generic [ref=e309]: •
+            - generic [ref=e310]: +91 98765 43210
+            - generic [ref=e311]: •
+            - link "LinkedIn" [ref=e312] [cursor=pointer]:
+              - /url: https://linkedin.com/in/mayasharma
+            - generic [ref=e313]: •
+            - link "GitHub" [ref=e314] [cursor=pointer]:
+              - /url: https://github.com/mayasharma
+            - generic [ref=e315]: •
+            - link "Website" [ref=e316] [cursor=pointer]:
+              - /url: https://mayasharma.dev
+        - generic [ref=e317]:
+          - heading "Professional Summary" [level=2] [ref=e318]
+          - paragraph [ref=e319]: Senior product designer with 7+ years of experience turning complex workflows into simple, accessible products. Skilled at connecting customer insight, visual systems, and business goals to ship thoughtful experiences that people enjoy using.
+        - generic [ref=e320]:
+          - heading "Experience" [level=2] [ref=e321]
+          - generic [ref=e322]:
+            - generic [ref=e323]:
+              - generic [ref=e324]:
+                - generic [ref=e325]:
+                  - heading "Senior Product Designer" [level=3] [ref=e326]
+                  - paragraph [ref=e327]: Northstar Labs
+                - generic [ref=e328]: Apr 2023 – Present
+              - paragraph [ref=e329]: Bengaluru, India
+              - list [ref=e330]:
+                - listitem [ref=e331]: •Led the redesign of the customer dashboard, improving task completion by 28% across three key workflows
+                - listitem [ref=e332]: •Built a shared design system used by four product teams, reducing duplicate UI work and speeding up delivery
+                - listitem [ref=e333]: •Partnered with research and engineering to turn customer interviews into a clearer onboarding experience
+            - generic [ref=e334]:
+              - generic [ref=e335]:
+                - generic [ref=e336]:
+                  - heading "Product Designer" [level=3] [ref=e337]
+                  - paragraph [ref=e338]: Brightside Technologies
+                - generic [ref=e339]: Jul 2020 – Mar 2023
+              - paragraph [ref=e340]: Pune, India
+              - list [ref=e341]:
+                - listitem [ref=e342]: •Created end-to-end flows for a B2B analytics platform used by more than 20,000 monthly users
+                - listitem [ref=e343]: •Introduced usability testing into the product cycle and helped resolve the top five customer pain points
+        - generic [ref=e344]:
+          - generic [ref=e345]:
+            - heading "Skills" [level=2] [ref=e346]
+            - generic [ref=e347]:
+              - generic [ref=e348]:
+                - strong [ref=e349]: Product Design
+                - generic [ref=e350]: Product Strategy, Interaction Design, Design Systems
+              - generic [ref=e351]:
+                - strong [ref=e352]: Tools
+                - generic [ref=e353]: Figma, FigJam, Storybook
+              - generic [ref=e354]:
+                - strong [ref=e355]: Additional Skills
+                - generic [ref=e356]: User Research, Prototyping, Accessibility
+          - generic [ref=e357]:
+            - heading "Education" [level=2] [ref=e358]
+            - article [ref=e360]:
+              - generic [ref=e361]:
+                - generic [ref=e362]:
+                  - heading "Bachelor of Design, Communication Design" [level=3] [ref=e363]
+                  - paragraph [ref=e364]: National Institute of Design · Ahmedabad, India
+                  - paragraph [ref=e365]: "Grade: 8.7 / 10"
+                - time [ref=e366]: Jul 2016 – May 2020
+          - generic [ref=e367]:
+            - heading "Projects" [level=2] [ref=e368]
+            - article [ref=e370]:
+              - generic [ref=e371]:
+                - heading "Northstar Design System" [level=3] [ref=e372]
+                - link "View project" [ref=e373] [cursor=pointer]:
+                  - /url: https://mayasharma.dev/northstar
+              - paragraph [ref=e374]: A scalable component library and contribution model that helps product teams ship consistent, accessible workflows.
+              - paragraph [ref=e375]: Figma · Storybook · Accessibility
+          - generic [ref=e376]:
+            - heading "Certifications" [level=2] [ref=e377]
+            - article [ref=e379]:
+              - generic [ref=e380]:
+                - generic [ref=e381]:
+                  - heading "Professional Scrum Product Owner I" [level=3] [ref=e382]
+                  - paragraph [ref=e383]: Scrum.org
+                - time [ref=e384]: Feb 2024
+              - link "Verify credential" [ref=e385] [cursor=pointer]:
+                - /url: https://www.scrum.org/certificates

@@ -26,6 +26,7 @@ export function PersonalInformationForm() {
     { key: 'phone' as const, label: 'Phone', placeholder: 'e.g. +91 98765 43210', type: 'tel' },
     { key: 'location' as const, label: 'Location', placeholder: 'e.g. Bengaluru, India' },
     { key: 'linkedin' as const, label: 'LinkedIn URL', placeholder: 'e.g. linkedin.com/in/mayasharma', type: 'url' },
+    { key: 'github' as const, label: 'GitHub URL', placeholder: 'e.g. github.com/mayasharma', type: 'url' },
     { key: 'website' as const, label: 'Website URL', placeholder: 'e.g. mayasharma.dev', type: 'url' },
   ]
 

@@ -22,6 +22,7 @@ export interface PersonalInformation {
   location: string
   profileImage?: string
   linkedin?: string
+  github?: string
   website?: string
 }
 
@@ -49,6 +50,14 @@ export interface Project {
   technologies: string[]
 }
 
+export interface Certification {
+  id: string
+  name: string
+  issuer: string
+  issueDate?: string
+  url?: string
+}
+
 export interface Resume {
   personal: PersonalInformation
   summary: string
@@ -56,6 +65,7 @@ export interface Resume {
   skills: Skill[]
   education: Education[]
   projects: Project[]
+  certifications: Certification[]
 }
 
 export interface ValidationError {
