@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .fake
+
+Resume.pdf
+src/features/resume/data/sample-resume-template-2.json

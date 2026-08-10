@@ -49,7 +49,7 @@ export function ResumeAdditionalSections({ resume, variant, showSkills = true }:
           <SectionTitle className={style.heading}><span className={style.title}>Projects</span></SectionTitle>
           <div className="space-y-3">
             {resume.projects.map((project) => <article key={project.id} className={style.text}>
-              <div className="flex items-baseline justify-between gap-3"><h3 className="font-bold text-slate-950">{project.name}</h3>{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className={`${style.accent} underline`}>View project</a>}</div>
+              <div className="flex items-baseline justify-between gap-3"><div><h3 className="font-bold text-slate-950">{project.name}</h3>{project.organization && <p className={style.accent}>{project.organization}</p>}</div>{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className={`${style.accent} underline`}>View project</a>}</div>
               <p className="mt-1 leading-6">{project.description}</p>
               {project.technologies.length > 0 && <p className={`mt-1 text-xs ${style.accent}`}>{project.technologies.join(' · ')}</p>}
             </article>)}

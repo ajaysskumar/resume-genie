@@ -1,0 +1,207 @@
+{
+  "personal": {
+    "fullName": "Arjun Malhotra",
+    "headline": "Technical Lead | .NET and Azure Engineering",
+    "email": "arjun.malhotra@example.com",
+    "phone": "+91 98765 40123",
+    "location": "Gurugram, India",
+    "profileImage": "",
+    "linkedin": "https://www.linkedin.com/in/arjun-malhotra",
+    "github": "https://github.com/arjun-malhotra",
+    "website": "https://arjunmalhotra.dev"
+  },
+  "summary": "Technical Lead with 11+ years of experience designing and delivering cloud-native applications across the complete software development lifecycle. Proven track record leading distributed engineering teams, modernizing .NET platforms, and delivering reliable integrations across Microsoft Azure, Dynamics 365, Salesforce, and enterprise systems. Strong hands-on background in C#, ASP.NET Core, Web API, microservices, event-driven architecture, automated testing, and mobile-enabled workflows.",
+  "experience": [
+    {
+      "id": "experience-northbridge",
+      "company": "Northbridge Digital Systems Pvt. Ltd.",
+      "position": "Technical Lead",
+      "location": "Gurugram, India",
+      "startDate": "2021-04",
+      "endDate": "",
+      "current": true,
+      "bullets": [
+        {
+          "id": "bullet-northbridge-1",
+          "text": "Lead a 12-member engineering team delivering .NET Core and Azure solutions for field service, workflow automation, and customer operations platforms"
+        },
+        {
+          "id": "bullet-northbridge-2",
+          "text": "Defined microservices, CQRS, and event-driven integration patterns that reduced release dependencies and improved service availability to 99.9%"
+        },
+        {
+          "id": "bullet-northbridge-3",
+          "text": "Established engineering standards for code review, automated testing, observability, and secure Azure deployments across four product teams"
+        },
+        {
+          "id": "bullet-northbridge-4",
+          "text": "Partnered with product and business stakeholders to convert complex operational requirements into measurable delivery plans and technical roadmaps"
+        }
+      ]
+    },
+    {
+      "id": "experience-cloudworks",
+      "company": "CloudWorks Consulting India Pvt. Ltd.",
+      "position": "Senior Software Engineer",
+      "location": "Noida, India",
+      "startDate": "2017-01",
+      "endDate": "2021-03",
+      "current": false,
+      "bullets": [
+        {
+          "id": "bullet-cloudworks-1",
+          "text": "Designed and implemented REST APIs, background jobs, and Azure integrations for enterprise systems processing more than 2 million monthly records"
+        },
+        {
+          "id": "bullet-cloudworks-2",
+          "text": "Migrated legacy ASP.NET MVC workloads to ASP.NET Core services with Entity Framework and SQL Server, improving deployment frequency and maintainability"
+        },
+        {
+          "id": "bullet-cloudworks-3",
+          "text": "Built integrations between Dynamics 365, Salesforce, Microsoft Dynamics NAV, and third-party systems using Web API, Logic Apps, and Service Bus"
+        },
+        {
+          "id": "bullet-cloudworks-4",
+          "text": "Introduced NUnit, MSTest, Moq, and NSubstitute test practices that increased regression coverage for critical business workflows"
+        }
+      ]
+    },
+    {
+      "id": "experience-appforge",
+      "company": "AppForge Technologies Pvt. Ltd.",
+      "position": "Software Engineer",
+      "location": "New Delhi, India",
+      "startDate": "2014-07",
+      "endDate": "2016-12",
+      "current": false,
+      "bullets": [
+        {
+          "id": "bullet-appforge-1",
+          "text": "Delivered web applications and service integrations using C#, ASP.NET MVC, Web API, Entity Framework, jQuery, and SQL Server"
+        },
+        {
+          "id": "bullet-appforge-2",
+          "text": "Built responsive mobile workflows with Ionic, Angular, and Xamarin Forms for field operations and internal approval processes"
+        },
+        {
+          "id": "bullet-appforge-3",
+          "text": "Created an IoT monitoring prototype using Arduino, NodeMCU, MQTT, Azure IoT Hub, and Stream Analytics"
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "skills-dotnet",
+      "category": ".NET and Backend",
+      "skills": ["C#", "ASP.NET", ".NET Core", "ASP.NET Core", "MVC", "LINQ", "Entity Framework", "Dapper", "Web API", "SQL Server"]
+    },
+    {
+      "id": "skills-web",
+      "category": "Web Technologies",
+      "skills": ["HTML5", "CSS", "JavaScript", "Bootstrap", "jQuery", "AJAX", "Angular"]
+    },
+    {
+      "id": "skills-architecture",
+      "category": "Architecture and Design Patterns",
+      "skills": ["CQRS", "Microservices", "SOA", "Event-Driven Architecture", "Repository", "Unit of Work", "Dependency Injection"]
+    },
+    {
+      "id": "skills-azure",
+      "category": "Microsoft Azure",
+      "skills": ["iPaaS", "Logic Apps", "Event Hubs", "Service Bus", "Azure Functions", "WebJobs", "Web Apps", "Azure AD Apps", "Key Vault", "Azure SQL", "Azure IoT Hub", "Stream Analytics"]
+    },
+    {
+      "id": "skills-quality-tools",
+      "category": "Testing and Developer Tools",
+      "skills": ["NUnit", "MSTest", "NSubstitute", "Moq", "Postman", "Fiddler", "SoapUI", "Git", "TFS", "Jenkins", "Hangfire"]
+    },
+    {
+      "id": "skills-iot",
+      "category": "IoT and Messaging",
+      "skills": ["Arduino", "NodeMCU ESP8266", "MQTT", "Azure IoT Hub", "RabbitMQ"]
+    },
+    {
+      "id": "skills-mobile-crm",
+      "category": "Mobile and CRM",
+      "skills": ["Apache Cordova", "Ionic", "Angular", "Xamarin Forms", "WCF", "Dynamics 365 CRM", "Dynamics 365 CE", "Salesforce"]
+    }
+  ],
+  "education": [
+    {
+      "id": "education-btech",
+      "institution": "MGM's College of Engineering & Technology",
+      "degree": "B.Tech in Computer Science and Engineering",
+      "grade": "First Division",
+      "location": "Noida, Uttar Pradesh",
+      "startDate": "2010",
+      "endDate": "2014"
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-service-optimization",
+      "name": "Field Service Resource Optimization Platform",
+      "organization": "Northbridge Digital Systems Pvt. Ltd.",
+      "description": "Led the modernization of a map-driven scheduling platform that matches field resources with service requirements using location, availability, and timing constraints. Owned architecture decisions, technical delivery, and integration reliability for a 12-member team.",
+      "url": "",
+      "technologies": [".NET Core", "ASP.NET Web API", "Azure Functions", "Azure Service Bus", "Azure SQL", "Azure Web Apps", "Dynamics 365 Field Service"]
+    },
+    {
+      "id": "project-compliance-workflow",
+      "name": "Candidate Compliance Workflow Platform",
+      "organization": "Northbridge Digital Systems Pvt. Ltd.",
+      "description": "Designed a modular workflow platform for tracking background verification and compliance activities. Introduced service boundaries, asynchronous processing, and operational dashboards for high-volume customer workflows.",
+      "url": "",
+      "technologies": [".NET Core", "Microservices", "CQRS", "Entity Framework", "Dapper", "RabbitMQ", "SQL Server", "Jenkins"]
+    },
+    {
+      "id": "project-enterprise-integration",
+      "name": "Enterprise CRM and ERP Integration Hub",
+      "organization": "CloudWorks Consulting India Pvt. Ltd.",
+      "description": "Built reliable interfaces between Dynamics 365, Salesforce, Microsoft Dynamics NAV, and partner systems. Added retry handling, monitoring, and secure message-based processing for business-critical integrations.",
+      "url": "",
+      "technologies": ["C#", "Web API", "Azure Logic Apps", "Azure API Apps", "Azure Service Bus", "Dynamics 365", "Salesforce"]
+    },
+    {
+      "id": "project-warranty-platform",
+      "name": "Warranty Management Platform",
+      "organization": "CloudWorks Consulting India Pvt. Ltd.",
+      "description": "Delivered a web and mobile warranty tracking solution integrated with Salesforce CRM, enabling customer service teams to manage product claims and service history from a shared workflow.",
+      "url": "",
+      "technologies": ["ASP.NET MVC", "C#", "Entity Framework", "Web API", "Azure Logic Apps", "Salesforce", "Ionic"]
+    },
+    {
+      "id": "project-iot-monitoring",
+      "name": "Temperature-Controlled Inventory Monitoring",
+      "organization": "AppForge Technologies Pvt. Ltd.",
+      "description": "Built an IoT prototype that captured temperature telemetry, evaluated threshold breaches, and raised corrective-action tickets in Dynamics 365 CRM for temperature-sensitive inventory.",
+      "url": "",
+      "technologies": ["C#", "ASP.NET MVC", "Arduino SDK", "NodeMCU", "MQTT", "Azure IoT Hub", "Stream Analytics", "Chart.js", "Google Maps"]
+    },
+    {
+      "id": "project-mobile-approvals",
+      "name": "Executive Purchase Order Mobile App",
+      "organization": "AppForge Technologies Pvt. Ltd.",
+      "description": "Created a mobile approval workflow that gave regional and executive users visibility into purchase orders and enabled decisions across multiple business units.",
+      "url": "",
+      "technologies": ["Xamarin Forms", "C#", "WCF", "Microsoft Flows", "PowerApps", "Dynamics NAV 2009"]
+    }
+  ],
+  "certifications": [
+    {
+      "id": "certification-azure-developer",
+      "name": "Microsoft Certified: Azure Developer Associate",
+      "issuer": "Microsoft",
+      "issueDate": "2023-09",
+      "url": ""
+    },
+    {
+      "id": "certification-azure-fundamentals",
+      "name": "Microsoft Certified: Azure Fundamentals",
+      "issuer": "Microsoft",
+      "issueDate": "2021-08",
+      "url": ""
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import type { Resume, Experience, Skill, Education, Project, Certification } from '../types/resume'
+import sampleResumeTemplate from '../data/sample-resume-template-1.json'
 import { generateId } from '@/lib/utils'
 
 interface ResumeStore {
@@ -28,99 +29,7 @@ interface ResumeStore {
   loadDemoResume: () => void
 }
 
-const demoResume: Resume = {
-  personal: {
-    fullName: 'Maya Sharma',
-    headline: 'Senior Product Designer',
-    email: 'maya.sharma@example.com',
-    phone: '+91 98765 43210',
-    location: 'Bengaluru, India',
-    profileImage: '',
-    linkedin: 'https://linkedin.com/in/mayasharma',
-    github: 'https://github.com/mayasharma',
-    website: 'https://mayasharma.dev',
-  },
-  summary:
-    'Senior product designer with 7+ years of experience turning complex workflows into simple, accessible products. Skilled at connecting customer insight, visual systems, and business goals to ship thoughtful experiences that people enjoy using.',
-  experience: [
-    {
-      id: generateId(),
-      company: 'Northstar Labs',
-      position: 'Senior Product Designer',
-      location: 'Bengaluru, India',
-      startDate: '2023-04',
-      endDate: '',
-      current: true,
-      bullets: [
-        {
-          id: generateId(),
-          text: 'Led the redesign of the customer dashboard, improving task completion by 28% across three key workflows',
-        },
-        {
-          id: generateId(),
-          text: 'Built a shared design system used by four product teams, reducing duplicate UI work and speeding up delivery',
-        },
-        {
-          id: generateId(),
-          text: 'Partnered with research and engineering to turn customer interviews into a clearer onboarding experience',
-        },
-      ],
-    },
-    {
-      id: generateId(),
-      company: 'Brightside Technologies',
-      position: 'Product Designer',
-      location: 'Pune, India',
-      startDate: '2020-07',
-      endDate: '2023-03',
-      current: false,
-      bullets: [
-        {
-          id: generateId(),
-          text: 'Created end-to-end flows for a B2B analytics platform used by more than 20,000 monthly users',
-        },
-        {
-          id: generateId(),
-          text: 'Introduced usability testing into the product cycle and helped resolve the top five customer pain points',
-        },
-      ],
-    },
-  ],
-  skills: [
-    { id: generateId(), category: 'Product Design', skills: ['Product Strategy', 'Interaction Design', 'Design Systems'] },
-    { id: generateId(), category: 'Tools', skills: ['Figma', 'FigJam', 'Storybook'] },
-    { id: generateId(), category: '', skills: ['User Research', 'Prototyping', 'Accessibility'] },
-  ],
-  education: [
-    {
-      id: generateId(),
-      institution: 'National Institute of Design',
-      degree: 'Bachelor of Design, Communication Design',
-      grade: '8.7 / 10',
-      location: 'Ahmedabad, India',
-      startDate: '2016-07',
-      endDate: '2020-05',
-    },
-  ],
-  projects: [
-    {
-      id: generateId(),
-      name: 'Northstar Design System',
-      description: 'A scalable component library and contribution model that helps product teams ship consistent, accessible workflows.',
-      url: 'https://mayasharma.dev/northstar',
-      technologies: ['Figma', 'Storybook', 'Accessibility'],
-    },
-  ],
-  certifications: [
-    {
-      id: generateId(),
-      name: 'Professional Scrum Product Owner I',
-      issuer: 'Scrum.org',
-      issueDate: '2024-02',
-      url: 'https://www.scrum.org/certificates',
-    },
-  ],
-}
+const demoResume: Resume = sampleResumeTemplate
 
 export const useResumeStore = create<ResumeStore>((set) => ({
   resume: demoResume,
@@ -257,7 +166,7 @@ export const useResumeStore = create<ResumeStore>((set) => ({
 
   addProject: () =>
     set((state) => ({
-      resume: { ...state.resume, projects: [...state.resume.projects, { id: generateId(), name: '', description: '', url: '', technologies: [] }] },
+      resume: { ...state.resume, projects: [...state.resume.projects, { id: generateId(), name: '', organization: '', description: '', url: '', technologies: [] }] },
     })),
 
   updateProject: (id, field, value) =>

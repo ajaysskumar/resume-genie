@@ -45,6 +45,7 @@ export interface Education {
 export interface Project {
   id: string
   name: string
+  organization?: string
   description: string
   url?: string
   technologies: string[]
