@@ -4,12 +4,11 @@ import { ResumeEditor } from '@/features/resume/components/ResumeEditor'
 import { ResumePreview } from '@/features/resume/preview/ResumePreview'
 
 export function App() {
-  const { loadDemoResume } = useResumeStore()
+  const { loadDemoResume, loadDraft } = useResumeStore()
 
-  // Load demo resume on mount
   useEffect(() => {
-    loadDemoResume()
-  }, [])
+    if (!loadDraft()) loadDemoResume()
+  }, [loadDraft, loadDemoResume])
 
   return (
     <div className="flex flex-col h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">

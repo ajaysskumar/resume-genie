@@ -1,7 +1,22 @@
 import { create } from 'zustand'
 import type { Resume, Experience, Skill, Education, Project, Certification } from '../types/resume'
 import sampleResumeTemplate from '../data/sample-resume-template-1.json'
+import { resumeSchema } from '../validation/resumeSchema'
 import { generateId } from '@/lib/utils'
+
+export const RESUME_DRAFT_STORAGE_KEY = 'resume-builder-draft-v1'
+
+function readDraft(): Resume | null {
+  try {
+    const storedDraft = localStorage.getItem(RESUME_DRAFT_STORAGE_KEY)
+    if (!storedDraft?.trim()) return null
+
+    const parsedDraft = resumeSchema.safeParse(JSON.parse(storedDraft))
+    return parsedDraft.success ? parsedDraft.data as Resume : null
+  } catch {
+    return null
+  }
+}
 
 interface ResumeStore {
   resume: Resume
@@ -27,6 +42,8 @@ interface ResumeStore {
   deleteCertification: (id: string) => void
   setResume: (resume: Resume) => void
   loadDemoResume: () => void
+  loadDraft: () => boolean
+  saveDraft: () => void
 }
 
 const demoResume: Resume = sampleResumeTemplate
@@ -202,4 +219,19 @@ export const useResumeStore = create<ResumeStore>((set) => ({
     set(() => ({
       resume: demoResume,
     })),
+
+  loadDraft: () => {
+    const draft = readDraft()
+    if (!draft) return false
+
+    set(() => ({
+      resume: draft,
+    }))
+    return true
+  },
+
+  saveDraft: () => {
+    const resume = useResumeStore.getState().resume
+    localStorage.setItem(RESUME_DRAFT_STORAGE_KEY, JSON.stringify(resume))
+  },
 }))
