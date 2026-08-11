@@ -1,6 +1,7 @@
 import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
 import { ResumeAdditionalSections } from './ResumeAdditionalSections'
+import { ResumeContactLine } from './ResumeContactLine'
 
 interface EngineeringResumeTemplateProps {
   resume: Resume
@@ -14,9 +15,7 @@ export function EngineeringResumeTemplate({ resume }: EngineeringResumeTemplateP
       <header className="border-b-4 border-teal-700 pb-4">
         <h1 className="text-3xl font-bold tracking-tight">{personal.fullName || 'Your Name'}</h1>
         <p className="mt-1 text-base font-semibold text-teal-800">{personal.headline || 'Your Headline'}</p>
-        <p className="mt-3 text-xs leading-5 text-slate-600">
-          {[personal.location, personal.email, personal.phone, personal.linkedin, personal.github, personal.website].filter(Boolean).join(' | ')}
-        </p>
+        <ResumeContactLine personal={personal} className="mt-3 text-xs leading-5 text-slate-600" />
       </header>
 
       {summary && (

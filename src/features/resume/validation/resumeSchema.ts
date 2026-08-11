@@ -64,7 +64,9 @@ export const personalInfoSchema = z.object({
   profileImage: z.string().optional(),
   linkedin: urlSchema,
   github: urlSchema,
+  medium: urlSchema,
   website: urlSchema,
+  websiteLabel: z.string().optional(),
 })
 
 export const skillSchema = z.object({

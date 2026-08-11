@@ -1,6 +1,7 @@
 import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
 import { ResumeAdditionalSections } from './ResumeAdditionalSections'
+import { ResumeContactLine } from './ResumeContactLine'
 
 interface CompactResumeTemplateProps {
   resume: Resume
@@ -14,9 +15,7 @@ export function CompactResumeTemplate({ resume }: CompactResumeTemplateProps) {
       <header className="text-center">
         <h1 className="text-3xl font-bold tracking-tight">{personal.fullName || 'Your Name'}</h1>
         <p className="mt-1 text-sm font-semibold text-slate-700">{personal.headline || 'Your Headline'}</p>
-        <p className="mt-2 text-[11px] leading-5 text-slate-600">
-          {[personal.location, personal.email, personal.phone, personal.linkedin, personal.github, personal.website].filter(Boolean).join(' | ')}
-        </p>
+        <ResumeContactLine personal={personal} className="mt-2 text-[11px] leading-5 text-slate-600" />
       </header>
 
       {summary && (

@@ -23,7 +23,9 @@ export interface PersonalInformation {
   profileImage?: string
   linkedin?: string
   github?: string
+  medium?: string
   website?: string
+  websiteLabel?: string
 }
 
 export interface Skill {

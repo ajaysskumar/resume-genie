@@ -1,6 +1,7 @@
 import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
 import { ResumeAdditionalSections } from './ResumeAdditionalSections'
+import { ResumeContactLine } from './ResumeContactLine'
 
 interface ModernResumeTemplateProps { resume: Resume }
 
@@ -23,7 +24,7 @@ export function ModernResumeTemplate({ resume }: ModernResumeTemplateProps) {
             </div>
           )}
         </div>
-        <ContactLine resume={resume} />
+        <ResumeContactLine personal={personal} className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500" />
       </header>
       <div className="mt-7 space-y-7">
         {summary && <section><SectionTitle>Profile</SectionTitle><p className="text-sm leading-7 text-slate-600">{summary}</p></section>}
@@ -41,4 +42,3 @@ export function ModernResumeTemplate({ resume }: ModernResumeTemplateProps) {
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) { return <h2 className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-slate-950">{children}</h2> }
-function ContactLine({ resume }: { resume: Resume }) { const { personal } = resume; return <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500">{[personal.location, personal.email, personal.phone, personal.linkedin && 'LinkedIn', personal.github && 'GitHub', personal.website && 'Website'].filter(Boolean).map((item) => <span key={item}>{item}</span>)}</div> }

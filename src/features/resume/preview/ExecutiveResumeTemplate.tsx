@@ -1,6 +1,7 @@
 import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
 import { ResumeAdditionalSections } from './ResumeAdditionalSections'
+import { ResumeContactLine } from './ResumeContactLine'
 
 interface ExecutiveResumeTemplateProps { resume: Resume }
 
@@ -23,7 +24,7 @@ export function ExecutiveResumeTemplate({ resume }: ExecutiveResumeTemplateProps
             </div>
           )}
         </div>
-        <ContactLine resume={resume} />
+        <ResumeContactLine personal={personal} separator=" · " className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-400" />
       </header>
       <div className="mt-9 space-y-8">
         {summary && <section><SectionTitle>About</SectionTitle><p className="font-serif text-sm leading-7 text-stone-600">{summary}</p></section>}
@@ -35,4 +36,3 @@ export function ExecutiveResumeTemplate({ resume }: ExecutiveResumeTemplateProps
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) { return <h2 className="mb-4 border-b-2 border-amber-400 pb-2 text-xs font-black uppercase tracking-[0.25em] text-slate-950">{children}</h2> }
-function ContactLine({ resume }: { resume: Resume }) { const { personal } = resume; return <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-400">{[personal.location, personal.email, personal.phone, personal.linkedin && 'LinkedIn', personal.github && 'GitHub', personal.website && 'Website'].filter(Boolean).map((item) => <span key={item}>{item}</span>)}</div> }

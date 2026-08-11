@@ -27,7 +27,9 @@ export function PersonalInformationForm() {
     { key: 'location' as const, label: 'Location', placeholder: 'e.g. Bengaluru, India' },
     { key: 'linkedin' as const, label: 'LinkedIn URL', placeholder: 'e.g. linkedin.com/in/mayasharma', type: 'url' },
     { key: 'github' as const, label: 'GitHub URL', placeholder: 'e.g. github.com/mayasharma', type: 'url' },
+    { key: 'medium' as const, label: 'Medium URL', placeholder: 'e.g. medium.com/@mayasharma', type: 'url' },
     { key: 'website' as const, label: 'Website URL', placeholder: 'e.g. mayasharma.dev', type: 'url' },
+    { key: 'websiteLabel' as const, label: 'Website link label', placeholder: 'Blog', type: 'text' },
   ]
 
   return (
@@ -42,7 +44,7 @@ export function PersonalInformationForm() {
             <Input
               id={field.key}
               type={field.type || 'text'}
-              value={personal[field.key] || ''}
+              value={personal[field.key] || (field.key === 'websiteLabel' ? 'Blog' : '')}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => updatePersonal(field.key, e.target.value)}
               placeholder={field.placeholder}
             />
@@ -59,7 +61,7 @@ export function PersonalInformationForm() {
             <Input
               id={field.key}
               type={field.type || 'text'}
-              value={personal[field.key] || ''}
+              value={personal[field.key] || (field.key === 'websiteLabel' ? 'Blog' : '')}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => updatePersonal(field.key, e.target.value)}
               placeholder={field.placeholder}
             />
