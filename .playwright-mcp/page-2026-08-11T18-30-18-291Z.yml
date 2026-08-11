@@ -1,0 +1,531 @@
+- generic [ref=f15e3]:
+  - banner [ref=f15e4]:
+    - heading "Resume Builder" [level=1] [ref=f15e5]
+    - paragraph [ref=f15e6]: Craft your story. Watch it transform in real-time.
+  - generic [ref=f15e7]:
+    - generic [ref=f15e9]:
+      - generic [ref=f15e10]:
+        - heading "Personal Information" [level=2] [ref=f15e13]
+        - generic [ref=f15e15]:
+          - generic [ref=f15e16]:
+            - generic [ref=f15e17]:
+              - generic [ref=f15e18]: Full Name*
+              - textbox "Full Name*" [ref=f15e19]:
+                - /placeholder: e.g. Maya Sharma
+                - text: Arjun Malhotra
+            - generic [ref=f15e20]:
+              - generic [ref=f15e21]: Headline*
+              - textbox "Headline*" [ref=f15e22]:
+                - /placeholder: e.g. Product Designer
+                - text: Technical Lead | .NET, Azure and Cloud Architecture
+          - generic [ref=f15e23]:
+            - generic [ref=f15e24]:
+              - generic [ref=f15e25]: Email*
+              - textbox "Email*" [ref=f15e26]:
+                - /placeholder: e.g. maya@example.com
+                - text: arjun.malhotra@example.com
+            - generic [ref=f15e27]:
+              - generic [ref=f15e28]: Phone
+              - textbox "Phone" [ref=f15e29]:
+                - /placeholder: e.g. +91 98765 43210
+                - text: +91 98765 40123
+            - generic [ref=f15e30]:
+              - generic [ref=f15e31]: Location
+              - textbox "Location" [ref=f15e32]:
+                - /placeholder: e.g. Bengaluru, India
+                - text: Gurugram, India
+            - generic [ref=f15e33]:
+              - generic [ref=f15e34]: LinkedIn URL
+              - textbox "LinkedIn URL" [ref=f15e35]:
+                - /placeholder: e.g. linkedin.com/in/mayasharma
+                - text: https://www.linkedin.com/in/arjun-malhotra
+            - generic [ref=f15e36]:
+              - generic [ref=f15e37]: GitHub URL
+              - textbox "GitHub URL" [ref=f15e38]:
+                - /placeholder: e.g. github.com/mayasharma
+                - text: https://github.com/arjun-malhotra
+            - generic [ref=f15e39]:
+              - generic [ref=f15e40]: Medium URL
+              - textbox "Medium URL" [ref=f15e41]:
+                - /placeholder: e.g. medium.com/@mayasharma
+                - text: https://medium.com/@arjun-malhotra
+            - generic [ref=f15e42]:
+              - generic [ref=f15e43]: Website URL
+              - textbox "Website URL" [ref=f15e44]:
+                - /placeholder: e.g. mayasharma.dev
+                - text: https://arjunmalhotra.dev
+            - generic [ref=f15e45]:
+              - generic [ref=f15e46]: Website link label
+              - textbox "Website link label" [ref=f15e47]:
+                - /placeholder: Blog
+                - text: Portfolio
+          - generic [ref=f15e48]:
+            - generic [ref=f15e49]: Profile photo (optional)
+            - generic [ref=f15e50]:
+              - generic [ref=f15e51]: PHOTO
+              - button "Profile photo (optional)" [ref=f15e52]
+      - generic [ref=f15e53]:
+        - heading "Professional Summary" [level=2] [ref=f15e56]
+        - generic [ref=f15e59]:
+          - generic [ref=f15e60]: Professional Summary
+          - textbox "Professional Summary" [ref=f15e61]:
+            - /placeholder: e.g. Product designer with 7+ years of experience turning complex workflows into simple, accessible products...
+            - text: Technical Lead with 11+ years of experience leading engineering teams and delivering cloud-native software across the complete SDLC. Specializes in .NET, Azure, microservices, event-driven integration, and enterprise platforms including Dynamics 365 and Salesforce. Known for translating business goals into pragmatic architecture, mentoring engineers, and improving delivery quality through clear technical standards and automation.
+          - paragraph [ref=f15e62]: 433 characters
+      - generic [ref=f15e63]:
+        - heading "Experience" [level=2] [ref=f15e66]
+        - generic [ref=f15e68]:
+          - generic [ref=f15e69]:
+            - generic [ref=f15e71]:
+              - generic [ref=f15e72]:
+                - generic [ref=f15e73]:
+                  - generic [ref=f15e74]: Company
+                  - textbox "Company" [ref=f15e75]:
+                    - /placeholder: e.g. Northstar Labs
+                    - text: Northbridge Digital Systems Pvt. Ltd.
+                - generic [ref=f15e76]:
+                  - generic [ref=f15e77]: Position
+                  - textbox "Position" [ref=f15e78]:
+                    - /placeholder: e.g. Senior Product Designer
+                    - text: Technical Lead
+              - generic [ref=f15e79]:
+                - generic [ref=f15e80]: Location
+                - textbox "Location" [ref=f15e81]:
+                  - /placeholder: e.g. Bengaluru, India or Remote
+                  - text: Gurugram, India
+              - generic [ref=f15e82]:
+                - generic [ref=f15e83]:
+                  - generic [ref=f15e84]: Start Date
+                  - textbox "Start Date" [ref=f15e85]: 2021-04
+                - generic [ref=f15e86]:
+                  - generic [ref=f15e87]: End Date
+                  - textbox "End Date" [disabled] [ref=f15e88]
+              - generic [ref=f15e89]:
+                - checkbox "Currently working here" [checked] [ref=f15e90]
+                - generic [ref=f15e91] [cursor=pointer]: Currently working here
+              - generic [ref=f15e92]:
+                - heading "Achievements" [level=4] [ref=f15e93]
+                - generic [ref=f15e94]:
+                  - generic [ref=f15e95]:
+                    - generic [ref=f15e96]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f15e97]: Lead a 12-member engineering team delivering .NET Core and Azure solutions for field service, workflow automation, and customer operations platforms
+                    - button "Delete achievement" [ref=f15e98]
+                  - generic [ref=f15e102]:
+                    - generic [ref=f15e103]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f15e104]: Defined microservices, CQRS, and event-driven integration patterns that reduced release dependencies and supported 99.9% service availability
+                    - button "Delete achievement" [ref=f15e105]
+                  - generic [ref=f15e109]:
+                    - generic [ref=f15e110]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f15e111]: Established standards for architecture reviews, code quality, automated testing, observability, and secure Azure deployments across four product teams
+                    - button "Delete achievement" [ref=f15e112]
+                  - generic [ref=f15e116]:
+                    - generic [ref=f15e117]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f15e118]: Partnered with product and business stakeholders to convert complex operational requirements into measurable delivery plans and technical roadmaps
+                    - button "Delete achievement" [ref=f15e119]
+                - button "Add achievement" [ref=f15e123]
+              - button "Delete experience" [ref=f15e125]
+            - generic [ref=f15e130]:
+              - generic [ref=f15e131]:
+                - generic [ref=f15e132]:
+                  - generic [ref=f15e133]: Company
+                  - textbox "Company" [ref=f15e134]:
+                    - /placeholder: e.g. Northstar Labs
+                    - text: CloudWorks Consulting India Pvt. Ltd.
+                - generic [ref=f15e135]:
+                  - generic [ref=f15e136]: Position
+                  - textbox "Position" [ref=f15e137]:
+                    - /placeholder: e.g. Senior Product Designer
+                    - text: Senior Software Engineer
+              - generic [ref=f15e138]:
+                - generic [ref=f15e139]: Location
+                - textbox "Location" [ref=f15e140]:
+                  - /placeholder: e.g. Bengaluru, India or Remote
+                  - text: Noida, India
+              - generic [ref=f15e141]:
+                - generic [ref=f15e142]:
+                  - generic [ref=f15e143]: Start Date
+                  - textbox "Start Date" [ref=f15e144]: 2017-01
+                - generic [ref=f15e145]:
+                  - generic [ref=f15e146]: End Date
+                  - textbox "End Date" [ref=f15e147]: 2021-03
+              - generic [ref=f15e148]:
+                - checkbox "Currently working here" [ref=f15e149]
+                - generic [ref=f15e150] [cursor=pointer]: Currently working here
+              - generic [ref=f15e151]:
+                - heading "Achievements" [level=4] [ref=f15e152]
+                - generic [ref=f15e153]:
+                  - generic [ref=f15e154]:
+                    - generic [ref=f15e155]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f15e156]: Designed REST APIs, background jobs, and Azure integrations for enterprise systems processing more than 2 million monthly records
+                    - button "Delete achievement" [ref=f15e157]
+                  - generic [ref=f15e161]:
+                    - generic [ref=f15e162]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f15e163]: Migrated legacy ASP.NET MVC workloads to ASP.NET Core services with Entity Framework and SQL Server, improving deployment frequency and maintainability
+                    - button "Delete achievement" [ref=f15e164]
+                  - generic [ref=f15e168]:
+                    - generic [ref=f15e169]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f15e170]: Built integrations between Dynamics 365, Salesforce, Microsoft Dynamics NAV, and third-party systems using Web API, Logic Apps, and Service Bus
+                    - button "Delete achievement" [ref=f15e171]
+                  - generic [ref=f15e175]:
+                    - generic [ref=f15e176]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f15e177]: Guided the adoption of automated testing with NUnit, MSTest, Moq, and NSubstitute for critical business workflows
+                    - button "Delete achievement" [ref=f15e178]
+                - button "Add achievement" [ref=f15e182]
+              - button "Delete experience" [ref=f15e184]
+            - generic [ref=f15e189]:
+              - generic [ref=f15e190]:
+                - generic [ref=f15e191]:
+                  - generic [ref=f15e192]: Company
+                  - textbox "Company" [ref=f15e193]:
+                    - /placeholder: e.g. Northstar Labs
+                    - text: AppForge Technologies Pvt. Ltd.
+                - generic [ref=f15e194]:
+                  - generic [ref=f15e195]: Position
+                  - textbox "Position" [ref=f15e196]:
+                    - /placeholder: e.g. Senior Product Designer
+                    - text: Software Engineer
+              - generic [ref=f15e197]:
+                - generic [ref=f15e198]: Location
+                - textbox "Location" [ref=f15e199]:
+                  - /placeholder: e.g. Bengaluru, India or Remote
+                  - text: New Delhi, India
+              - generic [ref=f15e200]:
+                - generic [ref=f15e201]:
+                  - generic [ref=f15e202]: Start Date
+                  - textbox "Start Date" [ref=f15e203]: 2014-07
+                - generic [ref=f15e204]:
+                  - generic [ref=f15e205]: End Date
+                  - textbox "End Date" [ref=f15e206]: 2016-12
+              - generic [ref=f15e207]:
+                - checkbox "Currently working here" [ref=f15e208]
+                - generic [ref=f15e209] [cursor=pointer]: Currently working here
+              - generic [ref=f15e210]:
+                - heading "Achievements" [level=4] [ref=f15e211]
+                - generic [ref=f15e212]:
+                  - generic [ref=f15e213]:
+                    - generic [ref=f15e214]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f15e215]: Delivered web applications and service integrations using C#, ASP.NET MVC, Web API, Entity Framework, and SQL Server
+                    - button "Delete achievement" [ref=f15e216]
+                  - generic [ref=f15e220]:
+                    - generic [ref=f15e221]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f15e222]: Built mobile and IoT workflows with Ionic, Angular, Xamarin Forms, Arduino, MQTT, and Azure IoT Hub
+                    - button "Delete achievement" [ref=f15e223]
+                - button "Add achievement" [ref=f15e227]
+              - button "Delete experience" [ref=f15e229]
+          - button "Add experience" [ref=f15e233]
+      - generic [ref=f15e235]:
+        - heading "Skills" [level=2] [ref=f15e238]
+        - generic [ref=f15e240]:
+          - generic [ref=f15e241]:
+            - textbox "Skill category" [ref=f15e242]:
+              - /placeholder: Category (optional)
+              - text: Technical Leadership
+            - textbox "Skills" [ref=f15e243]:
+              - /placeholder: Skills separated by commas
+              - text: Technical Strategy, Solution Architecture, Microservices, CQRS, Event-Driven Design, Team Mentoring, Code Reviews, Delivery Planning
+            - button "Delete Technical Leadership" [ref=f15e244]
+          - generic [ref=f15e248]:
+            - textbox "Skill category" [ref=f15e249]:
+              - /placeholder: Category (optional)
+              - text: .NET and Backend
+            - textbox "Skills" [ref=f15e250]:
+              - /placeholder: Skills separated by commas
+              - text: C#, ASP.NET Core, .NET Core, Web API, Entity Framework, Dapper, LINQ, SQL Server
+            - button "Delete .NET and Backend" [ref=f15e251]
+          - generic [ref=f15e255]:
+            - textbox "Skill category" [ref=f15e256]:
+              - /placeholder: Category (optional)
+              - text: Azure and Integration
+            - textbox "Skills" [ref=f15e257]:
+              - /placeholder: Skills separated by commas
+              - text: Azure Functions, Logic Apps, Service Bus, Event Hubs, Azure SQL, Web Apps, Key Vault, API Apps, Dynamics 365, Salesforce
+            - button "Delete Azure and Integration" [ref=f15e258]
+          - generic [ref=f15e262]:
+            - textbox "Skill category" [ref=f15e263]:
+              - /placeholder: Category (optional)
+              - text: Quality and Delivery
+            - textbox "Skills" [ref=f15e264]:
+              - /placeholder: Skills separated by commas
+              - text: NUnit, MSTest, Moq, NSubstitute, Postman, Git, TFS, Jenkins, Hangfire
+            - button "Delete Quality and Delivery" [ref=f15e265]
+          - generic [ref=f15e269]:
+            - textbox "Skill category" [ref=f15e270]:
+              - /placeholder: Category (optional)
+              - text: Web, Mobile and IoT
+            - textbox "Skills" [ref=f15e271]:
+              - /placeholder: Skills separated by commas
+              - text: JavaScript, Angular, jQuery, Ionic, Xamarin Forms, Arduino, MQTT, Azure IoT Hub, RabbitMQ
+            - button "Delete Web, Mobile and IoT" [ref=f15e272]
+          - button "Add skill category" [ref=f15e277]
+      - generic [ref=f15e279]:
+        - heading "Education" [level=2] [ref=f15e282]
+        - generic [ref=f15e284]:
+          - generic [ref=f15e285]:
+            - generic [ref=f15e286]:
+              - textbox "Institution" [ref=f15e287]: MGM's College of Engineering & Technology
+              - textbox "Degree" [ref=f15e288]:
+                - /placeholder: Degree or certificate
+                - text: B.Tech in Computer Science and Engineering
+              - textbox "Grade or percentage" [ref=f15e289]:
+                - /placeholder: Grade or percentage (optional)
+                - text: First Division
+              - textbox "Education location" [ref=f15e290]:
+                - /placeholder: Location
+                - text: Noida, Uttar Pradesh
+              - generic [ref=f15e291]:
+                - textbox "Education start date" [ref=f15e292]
+                - textbox "Education end date" [ref=f15e293]
+            - button "Delete B.Tech in Computer Science and Engineering" [ref=f15e294]
+          - button "Add education" [ref=f15e299]
+      - generic [ref=f15e301]:
+        - heading "Projects" [level=2] [ref=f15e304]
+        - generic [ref=f15e306]:
+          - generic [ref=f15e307]:
+            - generic [ref=f15e308]:
+              - textbox "Project name" [ref=f15e309]: Field Service Resource Optimization Platform
+              - textbox "Project URL" [ref=f15e310]
+            - combobox "Project organization" [ref=f15e311]:
+              - option "No organization (personal project)"
+              - option "Northbridge Digital Systems Pvt. Ltd." [selected]
+              - option "CloudWorks Consulting India Pvt. Ltd."
+              - option "AppForge Technologies Pvt. Ltd."
+              - option "MGM's College of Engineering & Technology"
+            - textbox "Project description" [ref=f15e312]:
+              - /placeholder: Describe the project and your impact
+              - text: Led the modernization of a map-driven scheduling platform matching field resources with service requirements by location, availability, and timing. Owned architecture, technical delivery, and integration reliability for a 12-member team.
+            - textbox "Project technologies" [ref=f15e313]:
+              - /placeholder: Technologies, separated by commas
+              - text: .NET Core, ASP.NET Web API, Azure Functions, Azure Service Bus, Azure SQL, Azure Web Apps, Dynamics 365 Field Service
+            - button "Delete Field Service Resource Optimization Platform" [ref=f15e314]
+          - generic [ref=f15e318]:
+            - generic [ref=f15e319]:
+              - textbox "Project name" [ref=f15e320]: Candidate Compliance Workflow Platform
+              - textbox "Project URL" [ref=f15e321]
+            - combobox "Project organization" [ref=f15e322]:
+              - option "No organization (personal project)"
+              - option "Northbridge Digital Systems Pvt. Ltd." [selected]
+              - option "CloudWorks Consulting India Pvt. Ltd."
+              - option "AppForge Technologies Pvt. Ltd."
+              - option "MGM's College of Engineering & Technology"
+            - textbox "Project description" [ref=f15e323]:
+              - /placeholder: Describe the project and your impact
+              - text: Designed a modular workflow platform for background verification and compliance activities, introducing service boundaries, asynchronous processing, and operational dashboards for high-volume workflows.
+            - textbox "Project technologies" [ref=f15e324]:
+              - /placeholder: Technologies, separated by commas
+              - text: .NET Core, Microservices, CQRS, Entity Framework, Dapper, RabbitMQ, SQL Server, Jenkins
+            - button "Delete Candidate Compliance Workflow Platform" [ref=f15e325]
+          - generic [ref=f15e329]:
+            - generic [ref=f15e330]:
+              - textbox "Project name" [ref=f15e331]: Enterprise CRM and ERP Integration Hub
+              - textbox "Project URL" [ref=f15e332]
+            - combobox "Project organization" [ref=f15e333]:
+              - option "No organization (personal project)"
+              - option "Northbridge Digital Systems Pvt. Ltd."
+              - option "CloudWorks Consulting India Pvt. Ltd." [selected]
+              - option "AppForge Technologies Pvt. Ltd."
+              - option "MGM's College of Engineering & Technology"
+            - textbox "Project description" [ref=f15e334]:
+              - /placeholder: Describe the project and your impact
+              - text: Architected reliable interfaces between Dynamics 365, Salesforce, Microsoft Dynamics NAV, and partner systems with retry handling, monitoring, and secure message processing.
+            - textbox "Project technologies" [ref=f15e335]:
+              - /placeholder: Technologies, separated by commas
+              - text: C#, Web API, Azure Logic Apps, Azure API Apps, Azure Service Bus, Dynamics 365, Salesforce
+            - button "Delete Enterprise CRM and ERP Integration Hub" [ref=f15e336]
+          - generic [ref=f15e340]:
+            - generic [ref=f15e341]:
+              - textbox "Project name" [ref=f15e342]: Temperature-Controlled Inventory Monitoring
+              - textbox "Project URL" [ref=f15e343]
+            - combobox "Project organization" [ref=f15e344]:
+              - option "No organization (personal project)"
+              - option "Northbridge Digital Systems Pvt. Ltd."
+              - option "CloudWorks Consulting India Pvt. Ltd."
+              - option "AppForge Technologies Pvt. Ltd." [selected]
+              - option "MGM's College of Engineering & Technology"
+            - textbox "Project description" [ref=f15e345]:
+              - /placeholder: Describe the project and your impact
+              - text: Built an IoT prototype that captured temperature telemetry, evaluated threshold breaches, and raised corrective-action tickets in Dynamics 365 CRM for temperature-sensitive inventory.
+            - textbox "Project technologies" [ref=f15e346]:
+              - /placeholder: Technologies, separated by commas
+              - text: C#, ASP.NET MVC, Arduino SDK, NodeMCU, MQTT, Azure IoT Hub, Stream Analytics, Chart.js, Google Maps
+            - button "Delete Temperature-Controlled Inventory Monitoring" [ref=f15e347]
+          - button "Add project" [ref=f15e352]
+      - generic [ref=f15e354]:
+        - heading "Certifications" [level=2] [ref=f15e357]
+        - generic [ref=f15e359]:
+          - generic [ref=f15e360]:
+            - generic [ref=f15e361]:
+              - textbox "Certification name" [ref=f15e362]: "Microsoft Certified: Azure Developer Associate"
+              - textbox "Issuing organization" [ref=f15e363]: Microsoft
+              - textbox "Certification issue date" [ref=f15e364]: 2023-09
+              - textbox "Certification URL" [ref=f15e365]:
+                - /placeholder: Verification URL (optional)
+            - 'button "Delete Microsoft Certified: Azure Developer Associate" [ref=f15e366]'
+          - generic [ref=f15e370]:
+            - generic [ref=f15e371]:
+              - textbox "Certification name" [ref=f15e372]: "Microsoft Certified: Azure Fundamentals"
+              - textbox "Issuing organization" [ref=f15e373]: Microsoft
+              - textbox "Certification issue date" [ref=f15e374]: 2021-08
+              - textbox "Certification URL" [ref=f15e375]:
+                - /placeholder: Verification URL (optional)
+            - 'button "Delete Microsoft Certified: Azure Fundamentals" [ref=f15e376]'
+          - button "Add certification" [ref=f15e381]
+    - generic [ref=f15e383]:
+      - generic [ref=f15e384]:
+        - generic [ref=f15e385]:
+          - generic [ref=f15e386]: Template
+          - button "Previous template" [ref=f15e387]
+          - generic "Choose resume template" [ref=f15e390]:
+            - button "Classic" [pressed] [ref=f15e392]
+            - button "Modern" [ref=f15e395]
+            - button "Executive" [ref=f15e398]
+            - button "Minimal" [ref=f15e401]
+            - button "Basic" [ref=f15e404]
+            - button "Timeline" [ref=f15e407]
+            - button "Engineering" [ref=f15e410]
+            - button "Technical" [ref=f15e413]
+            - button "Compact" [ref=f15e416]
+          - button "Next template" [ref=f15e420]
+        - button "Download resume as PDF" [ref=f15e423]:
+          - generic [ref=f15e428]: Download PDF
+        - button "Download resume as DOCX" [ref=f15e429]:
+          - generic [ref=f15e433]: Download DOCX
+      - generic [ref=f15e436]:
+        - generic [ref=f15e437]:
+          - heading "Arjun Malhotra" [level=1] [ref=f15e438]
+          - paragraph [ref=f15e439]: Technical Lead | .NET, Azure and Cloud Architecture
+          - paragraph [ref=f15e440]:
+            - generic [ref=f15e441]: Gurugram, India
+            - generic [ref=f15e442]:
+              - text: •
+              - link "arjun.malhotra@example.com" [ref=f15e443] [cursor=pointer]:
+                - /url: mailto:arjun.malhotra@example.com
+            - generic [ref=f15e444]:
+              - text: •
+              - link "+91 98765 40123" [ref=f15e445] [cursor=pointer]:
+                - /url: tel:+919876540123
+            - generic [ref=f15e446]:
+              - text: •
+              - link "LinkedIn" [ref=f15e447] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/arjun-malhotra
+            - generic [ref=f15e448]:
+              - text: •
+              - link "GitHub" [ref=f15e449] [cursor=pointer]:
+                - /url: https://github.com/arjun-malhotra
+            - generic [ref=f15e450]:
+              - text: •
+              - link "Medium" [ref=f15e451] [cursor=pointer]:
+                - /url: https://medium.com/@arjun-malhotra
+            - generic [ref=f15e452]:
+              - text: •
+              - link "Portfolio" [ref=f15e453] [cursor=pointer]:
+                - /url: https://arjunmalhotra.dev
+        - generic [ref=f15e454]:
+          - heading "Professional Summary" [level=2] [ref=f15e455]
+          - paragraph [ref=f15e456]: Technical Lead with 11+ years of experience leading engineering teams and delivering cloud-native software across the complete SDLC. Specializes in .NET, Azure, microservices, event-driven integration, and enterprise platforms including Dynamics 365 and Salesforce. Known for translating business goals into pragmatic architecture, mentoring engineers, and improving delivery quality through clear technical standards and automation.
+        - generic [ref=f15e457]:
+          - heading "Experience" [level=2] [ref=f15e458]
+          - generic [ref=f15e459]:
+            - generic [ref=f15e460]:
+              - generic [ref=f15e461]:
+                - generic [ref=f15e462]:
+                  - heading "Technical Lead" [level=3] [ref=f15e463]
+                  - paragraph [ref=f15e464]: Northbridge Digital Systems Pvt. Ltd.
+                - generic [ref=f15e465]: Apr 2021 – Present
+              - paragraph [ref=f15e466]: Gurugram, India
+              - list [ref=f15e467]:
+                - listitem [ref=f15e468]: •Lead a 12-member engineering team delivering .NET Core and Azure solutions for field service, workflow automation, and customer operations platforms
+                - listitem [ref=f15e469]: •Defined microservices, CQRS, and event-driven integration patterns that reduced release dependencies and supported 99.9% service availability
+                - listitem [ref=f15e470]: •Established standards for architecture reviews, code quality, automated testing, observability, and secure Azure deployments across four product teams
+                - listitem [ref=f15e471]: •Partnered with product and business stakeholders to convert complex operational requirements into measurable delivery plans and technical roadmaps
+            - generic [ref=f15e472]:
+              - generic [ref=f15e473]:
+                - generic [ref=f15e474]:
+                  - heading "Senior Software Engineer" [level=3] [ref=f15e475]
+                  - paragraph [ref=f15e476]: CloudWorks Consulting India Pvt. Ltd.
+                - generic [ref=f15e477]: Jan 2017 – Mar 2021
+              - paragraph [ref=f15e478]: Noida, India
+              - list [ref=f15e479]:
+                - listitem [ref=f15e480]: •Designed REST APIs, background jobs, and Azure integrations for enterprise systems processing more than 2 million monthly records
+                - listitem [ref=f15e481]: •Migrated legacy ASP.NET MVC workloads to ASP.NET Core services with Entity Framework and SQL Server, improving deployment frequency and maintainability
+                - listitem [ref=f15e482]: •Built integrations between Dynamics 365, Salesforce, Microsoft Dynamics NAV, and third-party systems using Web API, Logic Apps, and Service Bus
+                - listitem [ref=f15e483]: •Guided the adoption of automated testing with NUnit, MSTest, Moq, and NSubstitute for critical business workflows
+            - generic [ref=f15e484]:
+              - generic [ref=f15e485]:
+                - generic [ref=f15e486]:
+                  - heading "Software Engineer" [level=3] [ref=f15e487]
+                  - paragraph [ref=f15e488]: AppForge Technologies Pvt. Ltd.
+                - generic [ref=f15e489]: Jul 2014 – Dec 2016
+              - paragraph [ref=f15e490]: New Delhi, India
+              - list [ref=f15e491]:
+                - listitem [ref=f15e492]: •Delivered web applications and service integrations using C#, ASP.NET MVC, Web API, Entity Framework, and SQL Server
+                - listitem [ref=f15e493]: •Built mobile and IoT workflows with Ionic, Angular, Xamarin Forms, Arduino, MQTT, and Azure IoT Hub
+        - generic [ref=f15e494]:
+          - generic [ref=f15e495]:
+            - heading "Skills" [level=2] [ref=f15e496]
+            - generic [ref=f15e497]:
+              - generic [ref=f15e498]:
+                - strong [ref=f15e499]: Technical Leadership
+                - generic [ref=f15e500]: Technical Strategy, Solution Architecture, Microservices, CQRS, Event-Driven Design, Team Mentoring, Code Reviews, Delivery Planning
+              - generic [ref=f15e501]:
+                - strong [ref=f15e502]: .NET and Backend
+                - generic [ref=f15e503]: C#, ASP.NET Core, .NET Core, Web API, Entity Framework, Dapper, LINQ, SQL Server
+              - generic [ref=f15e504]:
+                - strong [ref=f15e505]: Azure and Integration
+                - generic [ref=f15e506]: Azure Functions, Logic Apps, Service Bus, Event Hubs, Azure SQL, Web Apps, Key Vault, API Apps, Dynamics 365, Salesforce
+              - generic [ref=f15e507]:
+                - strong [ref=f15e508]: Quality and Delivery
+                - generic [ref=f15e509]: NUnit, MSTest, Moq, NSubstitute, Postman, Git, TFS, Jenkins, Hangfire
+              - generic [ref=f15e510]:
+                - strong [ref=f15e511]: Web, Mobile and IoT
+                - generic [ref=f15e512]: JavaScript, Angular, jQuery, Ionic, Xamarin Forms, Arduino, MQTT, Azure IoT Hub, RabbitMQ
+          - generic [ref=f15e513]:
+            - heading "Education" [level=2] [ref=f15e514]
+            - article [ref=f15e516]:
+              - generic [ref=f15e517]:
+                - generic [ref=f15e518]:
+                  - heading "B.Tech in Computer Science and Engineering" [level=3] [ref=f15e519]
+                  - paragraph [ref=f15e520]: MGM's College of Engineering & Technology · Noida, Uttar Pradesh
+                  - paragraph [ref=f15e521]: "Grade: First Division"
+                - time [ref=f15e522]: Jan 2010 – Jan 2014
+          - generic [ref=f15e523]:
+            - heading "Projects" [level=2] [ref=f15e524]
+            - generic [ref=f15e525]:
+              - article [ref=f15e526]:
+                - generic [ref=f15e528]:
+                  - heading "Field Service Resource Optimization Platform" [level=3] [ref=f15e529]
+                  - paragraph [ref=f15e530]: Northbridge Digital Systems Pvt. Ltd.
+                - paragraph [ref=f15e531]: Led the modernization of a map-driven scheduling platform matching field resources with service requirements by location, availability, and timing. Owned architecture, technical delivery, and integration reliability for a 12-member team.
+                - paragraph [ref=f15e532]: .NET Core · ASP.NET Web API · Azure Functions · Azure Service Bus · Azure SQL · Azure Web Apps · Dynamics 365 Field Service
+              - article [ref=f15e533]:
+                - generic [ref=f15e535]:
+                  - heading "Candidate Compliance Workflow Platform" [level=3] [ref=f15e536]
+                  - paragraph [ref=f15e537]: Northbridge Digital Systems Pvt. Ltd.
+                - paragraph [ref=f15e538]: Designed a modular workflow platform for background verification and compliance activities, introducing service boundaries, asynchronous processing, and operational dashboards for high-volume workflows.
+                - paragraph [ref=f15e539]: .NET Core · Microservices · CQRS · Entity Framework · Dapper · RabbitMQ · SQL Server · Jenkins
+              - article [ref=f15e540]:
+                - generic [ref=f15e542]:
+                  - heading "Enterprise CRM and ERP Integration Hub" [level=3] [ref=f15e543]
+                  - paragraph [ref=f15e544]: CloudWorks Consulting India Pvt. Ltd.
+                - paragraph [ref=f15e545]: Architected reliable interfaces between Dynamics 365, Salesforce, Microsoft Dynamics NAV, and partner systems with retry handling, monitoring, and secure message processing.
+                - paragraph [ref=f15e546]: C# · Web API · Azure Logic Apps · Azure API Apps · Azure Service Bus · Dynamics 365 · Salesforce
+              - article [ref=f15e547]:
+                - generic [ref=f15e549]:
+                  - heading "Temperature-Controlled Inventory Monitoring" [level=3] [ref=f15e550]
+                  - paragraph [ref=f15e551]: AppForge Technologies Pvt. Ltd.
+                - paragraph [ref=f15e552]: Built an IoT prototype that captured temperature telemetry, evaluated threshold breaches, and raised corrective-action tickets in Dynamics 365 CRM for temperature-sensitive inventory.
+                - paragraph [ref=f15e553]: C# · ASP.NET MVC · Arduino SDK · NodeMCU · MQTT · Azure IoT Hub · Stream Analytics · Chart.js · Google Maps
+          - generic [ref=f15e554]:
+            - heading "Certifications" [level=2] [ref=f15e555]
+            - generic [ref=f15e556]:
+              - article [ref=f15e557]:
+                - generic [ref=f15e558]:
+                  - generic [ref=f15e559]:
+                    - 'heading "Microsoft Certified: Azure Developer Associate" [level=3] [ref=f15e560]'
+                    - paragraph [ref=f15e561]: Microsoft
+                  - time [ref=f15e562]: Sep 2023
+              - article [ref=f15e563]:
+                - generic [ref=f15e564]:
+                  - generic [ref=f15e565]:
+                    - 'heading "Microsoft Certified: Azure Fundamentals" [level=3] [ref=f15e566]'
+                    - paragraph [ref=f15e567]: Microsoft
+                  - time [ref=f15e568]: Aug 2021
