@@ -47,9 +47,10 @@ interface ResumeStore {
 }
 
 const demoResume: Resume = sampleResumeTemplate
+const initialResume = readDraft() ?? demoResume
 
 export const useResumeStore = create<ResumeStore>((set) => ({
-  resume: demoResume,
+  resume: initialResume,
 
   updatePersonal: (field, value) =>
     set((state) => ({
