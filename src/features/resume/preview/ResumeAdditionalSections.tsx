@@ -7,6 +7,7 @@ interface ResumeAdditionalSectionsProps {
   resume: Resume
   variant: AdditionalSectionsVariant
   showSkills?: boolean
+  showProjects?: boolean
 }
 
 const styles = {
@@ -21,9 +22,9 @@ const styles = {
   compact: { heading: 'border-b border-slate-900 pb-1 text-slate-950', title: 'font-bold uppercase tracking-[0.14em]', text: 'text-xs text-slate-700', accent: 'text-slate-600' },
 } as const
 
-export function ResumeAdditionalSections({ resume, variant, showSkills = true }: ResumeAdditionalSectionsProps) {
+export function ResumeAdditionalSections({ resume, variant, showSkills = true, showProjects = true }: ResumeAdditionalSectionsProps) {
   const style = styles[variant]
-  const hasContent = (showSkills && resume.skills.length > 0) || resume.education.length > 0 || resume.projects.length > 0 || resume.certifications.length > 0
+  const hasContent = (showSkills && resume.skills.length > 0) || resume.education.length > 0 || (showProjects && resume.projects.length > 0) || resume.certifications.length > 0
   if (!hasContent) return null
 
   return (
@@ -44,7 +45,7 @@ export function ResumeAdditionalSections({ resume, variant, showSkills = true }:
           </div>
         </section>
       )}
-      {resume.projects.length > 0 && (
+      {showProjects && resume.projects.length > 0 && (
         <section>
           <SectionTitle className={style.heading}><span className={style.title}>Projects</span></SectionTitle>
           <div className="space-y-3">

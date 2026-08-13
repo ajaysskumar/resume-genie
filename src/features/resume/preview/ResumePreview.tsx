@@ -10,13 +10,15 @@ import { TimelineResumeTemplate } from './TimelineResumeTemplate'
 import { EngineeringResumeTemplate } from './EngineeringResumeTemplate'
 import { TechnicalResumeTemplate } from './TechnicalResumeTemplate'
 import { CompactResumeTemplate } from './CompactResumeTemplate'
+import { IntegratedResumeTemplate } from './IntegratedResumeTemplate'
+import { StructuredResumeTemplate } from './StructuredResumeTemplate'
 import { TemplateSelector } from './TemplateSelector'
 import { Printer, FileText } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { exportResumeToPdf } from '../export/resumePdf'
 import { exportResumeToDocx } from '../export/resumeDocx'
 
-export type ResumeTemplate = 'classic' | 'modern' | 'executive' | 'minimal' | 'basic' | 'timeline' | 'engineering' | 'technical' | 'compact'
+export type ResumeTemplate = 'classic' | 'modern' | 'executive' | 'minimal' | 'basic' | 'timeline' | 'engineering' | 'technical' | 'compact' | 'integrated' | 'structured'
 
 export function ResumePreview() {
   const resume = useResumeStore((state) => state.resume)
@@ -33,6 +35,8 @@ export function ResumePreview() {
     engineering: <EngineeringResumeTemplate resume={resume} />,
     technical: <TechnicalResumeTemplate resume={resume} />,
     compact: <CompactResumeTemplate resume={resume} />,
+    integrated: <IntegratedResumeTemplate resume={resume} />,
+    structured: <StructuredResumeTemplate resume={resume} />,
   }[template]
 
   const handleExport = async () => {
@@ -47,7 +51,7 @@ export function ResumePreview() {
   const handleExportDocx = async () => {
     setIsExporting(true)
     try {
-      await exportResumeToDocx(resume, `${resume.personal.fullName || 'resume'}.docx`)
+      await exportResumeToDocx('resume-page', `${resume.personal.fullName || 'resume'}.docx`)
     } finally {
       setIsExporting(false)
     }

@@ -1,0 +1,646 @@
+- generic [ref=f31e3]:
+  - banner [ref=f31e4]:
+    - heading "Resume Builder" [level=1] [ref=f31e5]
+    - paragraph [ref=f31e6]: Craft your story. Watch it transform in real-time.
+  - generic [ref=f31e7]:
+    - generic [ref=f31e9]:
+      - generic [ref=f31e10]:
+        - generic [ref=f31e11]:
+          - paragraph [ref=f31e12]: Resume details
+          - paragraph [ref=f31e13]: Saved only in this browser
+        - button "Save as draft" [ref=f31e15]
+      - generic [ref=f31e21]:
+        - heading "Personal Information" [level=2] [ref=f31e24]
+        - generic [ref=f31e26]:
+          - generic [ref=f31e27]:
+            - generic [ref=f31e28]:
+              - generic [ref=f31e29]: Full Name*
+              - textbox "Full Name*" [ref=f31e30]:
+                - /placeholder: e.g. Maya Sharma
+                - text: Ajay Kumar
+            - generic [ref=f31e31]:
+              - generic [ref=f31e32]: Headline*
+              - textbox "Headline*" [ref=f31e33]:
+                - /placeholder: e.g. Product Designer
+                - text: Lead Software Consultant | .NET, React and Cloud Architecture
+          - generic [ref=f31e34]:
+            - generic [ref=f31e35]:
+              - generic [ref=f31e36]: Email*
+              - textbox "Email*" [ref=f31e37]:
+                - /placeholder: e.g. maya@example.com
+                - text: ajaysskumar1807@gmail.com
+            - generic [ref=f31e38]:
+              - generic [ref=f31e39]: Phone
+              - textbox "Phone" [ref=f31e40]:
+                - /placeholder: e.g. +91 98765 43210
+                - text: "9958022960"
+            - generic [ref=f31e41]:
+              - generic [ref=f31e42]: Location
+              - textbox "Location" [ref=f31e43]:
+                - /placeholder: e.g. Bengaluru, India
+                - text: New Delhi, India
+            - generic [ref=f31e44]:
+              - generic [ref=f31e45]: LinkedIn URL
+              - textbox "LinkedIn URL" [ref=f31e46]:
+                - /placeholder: e.g. linkedin.com/in/mayasharma
+            - generic [ref=f31e47]:
+              - generic [ref=f31e48]: GitHub URL
+              - textbox "GitHub URL" [ref=f31e49]:
+                - /placeholder: e.g. github.com/mayasharma
+            - generic [ref=f31e50]:
+              - generic [ref=f31e51]: Medium URL
+              - textbox "Medium URL" [ref=f31e52]:
+                - /placeholder: e.g. medium.com/@mayasharma
+                - text: https://medium.com/@ajaykumar1807
+            - generic [ref=f31e53]:
+              - generic [ref=f31e54]: Website URL
+              - textbox "Website URL" [ref=f31e55]:
+                - /placeholder: e.g. mayasharma.dev
+                - text: https://devcodex.in/
+            - generic [ref=f31e56]:
+              - generic [ref=f31e57]: Website link label
+              - textbox "Website link label" [ref=f31e58]:
+                - /placeholder: Blog
+                - text: Blog
+          - generic [ref=f31e59]:
+            - generic [ref=f31e60]: Profile photo (optional)
+            - generic [ref=f31e61]:
+              - generic [ref=f31e62]: PHOTO
+              - button "Profile photo (optional)" [ref=f31e63]
+      - generic [ref=f31e64]:
+        - heading "Professional Summary" [level=2] [ref=f31e67]
+        - generic [ref=f31e70]:
+          - generic [ref=f31e71]: Professional Summary
+          - textbox "Professional Summary" [ref=f31e72]:
+            - /placeholder: e.g. Product designer with 7+ years of experience turning complex workflows into simple, accessible products...
+            - text: Lead Software Consultant with 10+ years of experience designing and delivering scalable, resilient systems across web, mobile, and cloud platforms. Combines technical leadership with hands-on development across .NET, React, React Native, AWS, Azure, microservices, and modern UI architectures. Strong advocate for Test-Driven Development, Clean Architecture, and AI-augmented engineering practices that improve delivery speed, quality, and maintainability.
+          - paragraph [ref=f31e73]: 456 characters
+      - generic [ref=f31e74]:
+        - heading "Experience" [level=2] [ref=f31e77]
+        - generic [ref=f31e79]:
+          - generic [ref=f31e80]:
+            - generic [ref=f31e82]:
+              - generic [ref=f31e83]:
+                - generic [ref=f31e84]:
+                  - generic [ref=f31e85]: Company
+                  - textbox "Company" [ref=f31e86]:
+                    - /placeholder: e.g. Northstar Labs
+                    - text: Thoughtworks
+                - generic [ref=f31e87]:
+                  - generic [ref=f31e88]: Position
+                  - textbox "Position" [ref=f31e89]:
+                    - /placeholder: e.g. Senior Product Designer
+                    - text: Lead - Reed Exhibitions (RX)
+              - generic [ref=f31e90]:
+                - generic [ref=f31e91]: Location
+                - textbox "Location" [ref=f31e92]:
+                  - /placeholder: e.g. Bengaluru, India or Remote
+              - generic [ref=f31e93]:
+                - generic [ref=f31e94]:
+                  - generic [ref=f31e95]: Start Date
+                  - textbox "Start Date" [ref=f31e96]: 2025-08
+                - generic [ref=f31e97]:
+                  - generic [ref=f31e98]: End Date
+                  - textbox "End Date" [disabled] [ref=f31e99]
+              - generic [ref=f31e100]:
+                - checkbox "Currently working here" [checked] [ref=f31e101]
+                - generic [ref=f31e102] [cursor=pointer]: Currently working here
+              - generic [ref=f31e103]:
+                - heading "Achievements" [level=4] [ref=f31e104]
+                - generic [ref=f31e105]:
+                  - generic [ref=f31e106]:
+                    - generic [ref=f31e107]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e108]: Lead the design and delivery of scalable, resilient systems using .NET, React, and AWS, aligning architecture and engineering decisions with business objectives
+                    - button "Delete achievement" [ref=f31e109]
+                  - generic [ref=f31e113]:
+                    - generic [ref=f31e114]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e115]: Translate complex requirements into high-level and low-level designs while balancing technical quality, cloud cost optimization, performance, and stakeholder alignment
+                    - button "Delete achievement" [ref=f31e116]
+                  - generic [ref=f31e120]:
+                    - generic [ref=f31e121]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e122]: Architected an AWS Bedrock-based AI feature with reference data and safety guardrails to generate domain-specific outputs
+                    - button "Delete achievement" [ref=f31e123]
+                  - generic [ref=f31e127]:
+                    - generic [ref=f31e128]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e129]: Introduced GenAI-assisted documentation and architectural mapping with Mermaid, reducing manual overhead and keeping system blueprints aligned with code
+                    - button "Delete achievement" [ref=f31e130]
+                  - generic [ref=f31e134]:
+                    - generic [ref=f31e135]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e136]: Led architecture forums, mentored teams, and promoted TDD, AI agents, and engineering practices across account-level technical communities
+                    - button "Delete achievement" [ref=f31e137]
+                  - generic [ref=f31e141]:
+                    - generic [ref=f31e142]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e143]: Achieved zero production defects over 12 months through shift-left testing, observability, and high-frequency deployment practices
+                    - button "Delete achievement" [ref=f31e144]
+                - button "Add achievement" [ref=f31e148]
+              - button "Delete experience" [ref=f31e150]
+            - generic [ref=f31e155]:
+              - generic [ref=f31e156]:
+                - generic [ref=f31e157]:
+                  - generic [ref=f31e158]: Company
+                  - textbox "Company" [ref=f31e159]:
+                    - /placeholder: e.g. Northstar Labs
+                    - text: Thoughtworks
+                - generic [ref=f31e160]:
+                  - generic [ref=f31e161]: Position
+                  - textbox "Position" [ref=f31e162]:
+                    - /placeholder: e.g. Senior Product Designer
+                    - text: Senior Consultant - Reed Exhibitions (RX)
+              - generic [ref=f31e163]:
+                - generic [ref=f31e164]: Location
+                - textbox "Location" [ref=f31e165]:
+                  - /placeholder: e.g. Bengaluru, India or Remote
+              - generic [ref=f31e166]:
+                - generic [ref=f31e167]:
+                  - generic [ref=f31e168]: Start Date
+                  - textbox "Start Date" [ref=f31e169]: 2021-06
+                - generic [ref=f31e170]:
+                  - generic [ref=f31e171]: End Date
+                  - textbox "End Date" [ref=f31e172]: 2025-07
+              - generic [ref=f31e173]:
+                - checkbox "Currently working here" [ref=f31e174]
+                - generic [ref=f31e175] [cursor=pointer]: Currently working here
+              - generic [ref=f31e176]:
+                - heading "Achievements" [level=4] [ref=f31e177]
+                - generic [ref=f31e178]:
+                  - generic [ref=f31e179]:
+                    - generic [ref=f31e180]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e181]: Developed scalable backend systems and single-page applications using .NET, Azure, AWS, microservices, micro-frontends, and React
+                    - button "Delete achievement" [ref=f31e182]
+                  - generic [ref=f31e186]:
+                    - generic [ref=f31e187]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e188]: Transformed a tightly coupled .NET application into a decoupled Clean Architecture solution with clear Domain and Infrastructure boundaries
+                    - button "Delete achievement" [ref=f31e189]
+                  - generic [ref=f31e193]:
+                    - generic [ref=f31e194]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e195]: Isolated domain performance tests to reduce runtime and enable independent execution without waiting for other teams
+                    - button "Delete achievement" [ref=f31e196]
+                  - generic [ref=f31e200]:
+                    - generic [ref=f31e201]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e202]: Led hackathon delivery and knowledge-sharing sessions on Test-Driven Development and unit testing to improve code robustness and delivery speed
+                    - button "Delete achievement" [ref=f31e203]
+                - button "Add achievement" [ref=f31e207]
+              - button "Delete experience" [ref=f31e209]
+            - generic [ref=f31e214]:
+              - generic [ref=f31e215]:
+                - generic [ref=f31e216]:
+                  - generic [ref=f31e217]: Company
+                  - textbox "Company" [ref=f31e218]:
+                    - /placeholder: e.g. Northstar Labs
+                    - text: GlobalLogic
+                - generic [ref=f31e219]:
+                  - generic [ref=f31e220]: Position
+                  - textbox "Position" [ref=f31e221]:
+                    - /placeholder: e.g. Senior Product Designer
+                    - text: Senior Software Engineer
+              - generic [ref=f31e222]:
+                - generic [ref=f31e223]: Location
+                - textbox "Location" [ref=f31e224]:
+                  - /placeholder: e.g. Bengaluru, India or Remote
+              - generic [ref=f31e225]:
+                - generic [ref=f31e226]:
+                  - generic [ref=f31e227]: Start Date
+                  - textbox "Start Date" [ref=f31e228]: 2019-04
+                - generic [ref=f31e229]:
+                  - generic [ref=f31e230]: End Date
+                  - textbox "End Date" [ref=f31e231]: 2021-06
+              - generic [ref=f31e232]:
+                - checkbox "Currently working here" [ref=f31e233]
+                - generic [ref=f31e234] [cursor=pointer]: Currently working here
+              - generic [ref=f31e235]:
+                - heading "Achievements" [level=4] [ref=f31e236]
+                - generic [ref=f31e237]:
+                  - generic [ref=f31e238]:
+                    - generic [ref=f31e239]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e240]: Developed D365 Field Service services for resource scheduling optimization, contributing across impact analysis, design, development, and deployment
+                    - button "Delete achievement" [ref=f31e241]
+                  - generic [ref=f31e245]:
+                    - generic [ref=f31e246]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e247]: Built backend systems for a background verification platform using microservices and supported deployment through Jenkins
+                    - button "Delete achievement" [ref=f31e248]
+                  - generic [ref=f31e252]:
+                    - generic [ref=f31e253]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e254]: Developed and deployed cross-platform mobile applications using React Native
+                    - button "Delete achievement" [ref=f31e255]
+                  - generic [ref=f31e259]:
+                    - generic [ref=f31e260]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e261]: Delivered solutions using C#, .NET Core, ASP.NET Web API, Azure Functions, Service Bus, Web Apps, RabbitMQ, Azure Service Fabric, and Azure DevOps
+                    - button "Delete achievement" [ref=f31e262]
+                - button "Add achievement" [ref=f31e266]
+              - button "Delete experience" [ref=f31e268]
+            - generic [ref=f31e273]:
+              - generic [ref=f31e274]:
+                - generic [ref=f31e275]:
+                  - generic [ref=f31e276]: Company
+                  - textbox "Company" [ref=f31e277]:
+                    - /placeholder: e.g. Northstar Labs
+                    - text: OnActuate
+                - generic [ref=f31e278]:
+                  - generic [ref=f31e279]: Position
+                  - textbox "Position" [ref=f31e280]:
+                    - /placeholder: e.g. Senior Product Designer
+                    - text: Senior Analyst
+              - generic [ref=f31e281]:
+                - generic [ref=f31e282]: Location
+                - textbox "Location" [ref=f31e283]:
+                  - /placeholder: e.g. Bengaluru, India or Remote
+              - generic [ref=f31e284]:
+                - generic [ref=f31e285]:
+                  - generic [ref=f31e286]: Start Date
+                  - textbox "Start Date" [ref=f31e287]: 2015-05
+                - generic [ref=f31e288]:
+                  - generic [ref=f31e289]: End Date
+                  - textbox "End Date" [ref=f31e290]: 2019-03
+              - generic [ref=f31e291]:
+                - checkbox "Currently working here" [ref=f31e292]
+                - generic [ref=f31e293] [cursor=pointer]: Currently working here
+              - generic [ref=f31e294]:
+                - heading "Achievements" [level=4] [ref=f31e295]
+                - generic [ref=f31e296]:
+                  - generic [ref=f31e297]:
+                    - generic [ref=f31e298]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e299]: Developed large-scale integration systems using .NET and Azure iPaaS services including Logic Apps, Service Bus, Functions, and Web Apps
+                    - button "Delete achievement" [ref=f31e300]
+                  - generic [ref=f31e304]:
+                    - generic [ref=f31e305]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e306]: Built extensions for Microsoft Dynamics CRM and developed IoT solutions for monitoring and system integration
+                    - button "Delete achievement" [ref=f31e307]
+                  - generic [ref=f31e311]:
+                    - generic [ref=f31e312]: •
+                    - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e313]: Delivered web, integration, and mobile solutions using C#, ASP.NET Web API/MVC, microservices, RabbitMQ, and Azure
+                    - button "Delete achievement" [ref=f31e314]
+                - button "Add achievement" [ref=f31e318]
+              - button "Delete experience" [ref=f31e320]
+            - generic [ref=f31e325]:
+              - generic [ref=f31e326]:
+                - generic [ref=f31e327]:
+                  - generic [ref=f31e328]: Company
+                  - textbox "Company" [ref=f31e329]:
+                    - /placeholder: e.g. Northstar Labs
+                    - text: IN TECHNOLOGIES (P) LTD
+                - generic [ref=f31e330]:
+                  - generic [ref=f31e331]: Position
+                  - textbox "Position" [ref=f31e332]:
+                    - /placeholder: e.g. Senior Product Designer
+                    - text: Junior Software Engineer
+              - generic [ref=f31e333]:
+                - generic [ref=f31e334]: Location
+                - textbox "Location" [ref=f31e335]:
+                  - /placeholder: e.g. Bengaluru, India or Remote
+              - generic [ref=f31e336]:
+                - generic [ref=f31e337]:
+                  - generic [ref=f31e338]: Start Date
+                  - textbox "Start Date" [ref=f31e339]: 2014-06
+                - generic [ref=f31e340]:
+                  - generic [ref=f31e341]: End Date
+                  - textbox "End Date" [ref=f31e342]: 2014-10
+              - generic [ref=f31e343]:
+                - checkbox "Currently working here" [ref=f31e344]
+                - generic [ref=f31e345] [cursor=pointer]: Currently working here
+              - generic [ref=f31e346]:
+                - heading "Achievements" [level=4] [ref=f31e347]
+                - generic [ref=f31e349]:
+                  - generic [ref=f31e350]: •
+                  - textbox "e.g. Launched a redesign that improved activation by 28%" [ref=f31e351]: Contributed to .NET-based systems and performed feature testing for chat software
+                  - button "Delete achievement" [ref=f31e352]
+                - button "Add achievement" [ref=f31e356]
+              - button "Delete experience" [ref=f31e358]
+          - button "Add experience" [ref=f31e362]
+      - generic [ref=f31e364]:
+        - heading "Skills" [level=2] [ref=f31e367]
+        - generic [ref=f31e369]:
+          - generic [ref=f31e370]:
+            - textbox "Skill category" [ref=f31e371]:
+              - /placeholder: Category (optional)
+              - text: Programming and Frameworks
+            - textbox "Skills" [ref=f31e372]:
+              - /placeholder: Skills separated by commas
+              - text: .NET, C#, ASP.NET Core, ASP.NET MVC, Web API, React, React Native, Xamarin, Ionic
+            - button "Delete Programming and Frameworks" [ref=f31e373]
+          - generic [ref=f31e377]:
+            - textbox "Skill category" [ref=f31e378]:
+              - /placeholder: Category (optional)
+              - text: Cloud and Architecture
+            - textbox "Skills" [ref=f31e379]:
+              - /placeholder: Skills separated by commas
+              - text: AWS, Azure, Microservices, Cloud-Native Architecture, Clean Architecture, Domain-Driven Design
+            - button "Delete Cloud and Architecture" [ref=f31e380]
+          - generic [ref=f31e384]:
+            - textbox "Skill category" [ref=f31e385]:
+              - /placeholder: Category (optional)
+              - text: Data and Messaging
+            - textbox "Skills" [ref=f31e386]:
+              - /placeholder: Skills separated by commas
+              - text: Entity Framework, Dapper, SQL Server, Azure SQL, RabbitMQ, SNS, SQS, S3, GraphQL
+            - button "Delete Data and Messaging" [ref=f31e387]
+          - generic [ref=f31e391]:
+            - textbox "Skill category" [ref=f31e392]:
+              - /placeholder: Category (optional)
+              - text: Testing and Quality
+            - textbox "Skills" [ref=f31e393]:
+              - /placeholder: Skills separated by commas
+              - text: Test-Driven Development, Behavior-Driven Development, xUnit, Jest, React Testing Library, Pact, WebApplicationFactory, Cucumber, K6, Gatling
+            - button "Delete Testing and Quality" [ref=f31e394]
+          - generic [ref=f31e398]:
+            - textbox "Skill category" [ref=f31e399]:
+              - /placeholder: Category (optional)
+              - text: CI/CD and Delivery
+            - textbox "Skills" [ref=f31e400]:
+              - /placeholder: Skills separated by commas
+              - text: Bamboo, GitHub Actions, Azure DevOps, Jenkins, GitHub, Docker, Azure Service Fabric, Jira
+            - button "Delete CI/CD and Delivery" [ref=f31e401]
+          - generic [ref=f31e405]:
+            - textbox "Skill category" [ref=f31e406]:
+              - /placeholder: Category (optional)
+              - text: Observability
+            - textbox "Skills" [ref=f31e407]:
+              - /placeholder: Skills separated by commas
+              - text: Splunk Cloud, Site24x7, Sentry, WebPageTest, DTrack, SonarQube, Aikido
+            - button "Delete Observability" [ref=f31e408]
+          - generic [ref=f31e412]:
+            - textbox "Skill category" [ref=f31e413]:
+              - /placeholder: Category (optional)
+              - text: AI and Developer Tools
+            - textbox "Skills" [ref=f31e414]:
+              - /placeholder: Skills separated by commas
+              - text: AWS Bedrock, GitHub Copilot, Claude, MCPs, Lovable, Gemini Studio, Cursor, VS Code, JetBrains Rider, Visual Studio, WebStorm
+            - button "Delete AI and Developer Tools" [ref=f31e415]
+          - button "Add skill category" [ref=f31e420]
+      - generic [ref=f31e422]:
+        - heading "Education" [level=2] [ref=f31e425]
+        - generic [ref=f31e427]:
+          - generic [ref=f31e428]:
+            - generic [ref=f31e429]:
+              - textbox "Institution" [ref=f31e430]: Gautam Buddha University
+              - textbox "Degree" [ref=f31e431]:
+                - /placeholder: Degree or certificate
+                - text: Bachelor's Degree, Computer Science Engineering
+              - textbox "Grade or percentage" [ref=f31e432]:
+                - /placeholder: Grade or percentage (optional)
+              - textbox "Education location" [ref=f31e433]:
+                - /placeholder: Location
+              - generic [ref=f31e434]:
+                - textbox "Education start date" [ref=f31e435]: 2010-01
+                - textbox "Education end date" [ref=f31e436]: 2014-01
+            - button "Delete Bachelor's Degree, Computer Science Engineering" [ref=f31e437]
+          - button "Add education" [ref=f31e442]
+      - generic [ref=f31e444]:
+        - heading "Projects" [level=2] [ref=f31e447]
+        - generic [ref=f31e449]:
+          - generic [ref=f31e450]:
+            - generic [ref=f31e451]:
+              - textbox "Project name" [ref=f31e452]: RX Platform Modernization and AI Enablement
+              - textbox "Project URL" [ref=f31e453]
+            - combobox "Project organization" [ref=f31e454]:
+              - option "No organization (personal project)"
+              - option "Thoughtworks" [selected]
+              - option "GlobalLogic"
+              - option "OnActuate"
+              - option "IN TECHNOLOGIES (P) LTD"
+              - option "Gautam Buddha University"
+            - textbox "Project description" [ref=f31e455]:
+              - /placeholder: Describe the project and your impact
+              - text: Led the design and delivery of scalable .NET, React, and AWS capabilities for Reed Exhibitions, including integration of a standalone application into the core platform UI and modernization of architecture documentation with GenAI and Mermaid.
+            - textbox "Project technologies" [ref=f31e456]:
+              - /placeholder: Technologies, separated by commas
+              - text: .NET, React, AWS Lambda, AWS Bedrock, S3, SNS, SQS, GraphQL, Mermaid, GenAI
+            - button "Delete RX Platform Modernization and AI Enablement" [ref=f31e457]
+          - generic [ref=f31e461]:
+            - generic [ref=f31e462]:
+              - textbox "Project name" [ref=f31e463]: D365 Field Service Resource Scheduling
+              - textbox "Project URL" [ref=f31e464]
+            - combobox "Project organization" [ref=f31e465]:
+              - option "No organization (personal project)"
+              - option "Thoughtworks"
+              - option "GlobalLogic" [selected]
+              - option "OnActuate"
+              - option "IN TECHNOLOGIES (P) LTD"
+              - option "Gautam Buddha University"
+            - textbox "Project description" [ref=f31e466]:
+              - /placeholder: Describe the project and your impact
+              - text: Developed services for resource scheduling optimization in Dynamics 365 Field Service, mapping resources and appointments using location, requirements, and timing constraints across the full delivery lifecycle.
+            - textbox "Project technologies" [ref=f31e467]:
+              - /placeholder: Technologies, separated by commas
+              - text: C#, .NET Core, ASP.NET Web API, Azure SQL, Azure Service Bus, Azure Functions, Azure Web Apps, Dynamics 365 Field Service
+            - button "Delete D365 Field Service Resource Scheduling" [ref=f31e468]
+          - generic [ref=f31e472]:
+            - generic [ref=f31e473]:
+              - textbox "Project name" [ref=f31e474]: Background Verification Platform
+              - textbox "Project URL" [ref=f31e475]
+            - combobox "Project organization" [ref=f31e476]:
+              - option "No organization (personal project)"
+              - option "Thoughtworks"
+              - option "GlobalLogic" [selected]
+              - option "OnActuate"
+              - option "IN TECHNOLOGIES (P) LTD"
+              - option "Gautam Buddha University"
+            - textbox "Project description" [ref=f31e477]:
+              - /placeholder: Describe the project and your impact
+              - text: Developed backend services for tracking candidate background verification workflows in the transportation industry using microservices and supported deployment automation through Jenkins.
+            - textbox "Project technologies" [ref=f31e478]:
+              - /placeholder: Technologies, separated by commas
+              - text: .NET Core, Microservices, Entity Framework, Dapper, Web API, SQL Server, Jenkins, RabbitMQ
+            - button "Delete Background Verification Platform" [ref=f31e479]
+          - generic [ref=f31e483]:
+            - generic [ref=f31e484]:
+              - textbox "Project name" [ref=f31e485]: Azure Enterprise Integration Platform
+              - textbox "Project URL" [ref=f31e486]
+            - combobox "Project organization" [ref=f31e487]:
+              - option "No organization (personal project)"
+              - option "Thoughtworks"
+              - option "GlobalLogic"
+              - option "OnActuate" [selected]
+              - option "IN TECHNOLOGIES (P) LTD"
+              - option "Gautam Buddha University"
+            - textbox "Project description" [ref=f31e488]:
+              - /placeholder: Describe the project and your impact
+              - text: Developed large-scale integration systems and Microsoft Dynamics CRM extensions using Azure's integration platform services for reliable business workflows and system connectivity.
+            - textbox "Project technologies" [ref=f31e489]:
+              - /placeholder: Technologies, separated by commas
+              - text: C#, .NET Core, ASP.NET Web API, Azure Logic Apps, Azure Service Bus, Azure Functions, Azure Web Apps, Microservices, RabbitMQ
+            - button "Delete Azure Enterprise Integration Platform" [ref=f31e490]
+          - generic [ref=f31e494]:
+            - generic [ref=f31e495]:
+              - textbox "Project name" [ref=f31e496]: IoT Monitoring and System Integration
+              - textbox "Project URL" [ref=f31e497]
+            - combobox "Project organization" [ref=f31e498]:
+              - option "No organization (personal project)"
+              - option "Thoughtworks"
+              - option "GlobalLogic"
+              - option "OnActuate" [selected]
+              - option "IN TECHNOLOGIES (P) LTD"
+              - option "Gautam Buddha University"
+            - textbox "Project description" [ref=f31e499]:
+              - /placeholder: Describe the project and your impact
+              - text: Created IoT solutions for monitoring and system integration, including temperature-sensitive inventory monitoring and corrective-action workflows connected to enterprise systems.
+            - textbox "Project technologies" [ref=f31e500]:
+              - /placeholder: Technologies, separated by commas
+              - text: C#, ASP.NET MVC, Azure IoT Hub, Azure Stream Analytics, Azure Logic Apps, Arduino, RabbitMQ
+            - button "Delete IoT Monitoring and System Integration" [ref=f31e501]
+          - button "Add project" [ref=f31e506]
+      - generic [ref=f31e508]:
+        - heading "Certifications" [level=2] [ref=f31e511]
+        - generic [ref=f31e513]:
+          - generic [ref=f31e514]:
+            - generic [ref=f31e515]:
+              - textbox "Certification name" [ref=f31e516]: "Exam 70-483: Programming in C#"
+              - textbox "Issuing organization" [ref=f31e517]: Microsoft
+              - textbox "Certification issue date" [ref=f31e518]
+              - textbox "Certification URL" [ref=f31e519]:
+                - /placeholder: Verification URL (optional)
+            - 'button "Delete Exam 70-483: Programming in C#" [ref=f31e520]'
+          - button "Add certification" [ref=f31e525]
+    - generic [ref=f31e527]:
+      - generic [ref=f31e528]:
+        - generic [ref=f31e529]:
+          - generic [ref=f31e530]: Template
+          - button "Previous template" [ref=f31e531]
+          - generic "Choose resume template" [ref=f31e534]:
+            - button "Classic" [ref=f31e536]
+            - button "Modern" [ref=f31e539]
+            - button "Executive" [ref=f31e542]
+            - button "Minimal" [ref=f31e545]
+            - button "Basic" [ref=f31e548]
+            - button "Timeline" [ref=f31e551]
+            - button "Engineering" [ref=f31e554]
+            - button "Technical" [ref=f31e557]
+            - button "Compact" [ref=f31e560]
+            - button "Integrated" [active] [pressed] [ref=f31e563]
+          - button "Next template" [ref=f31e567]
+        - button "Download resume as PDF" [ref=f31e570]:
+          - generic [ref=f31e575]: Download PDF
+        - button "Download resume as DOCX" [ref=f31e576]:
+          - generic [ref=f31e580]: Download DOCX
+      - generic [ref=f31e583]:
+        - banner [ref=f31e584]:
+          - heading "Ajay Kumar" [level=1] [ref=f31e585]
+          - paragraph [ref=f31e586]: Lead Software Consultant | .NET, React and Cloud Architecture
+          - paragraph [ref=f31e587]: New Delhi, India | ajaysskumar1807@gmail.com | 9958022960
+        - generic [ref=f31e588]:
+          - heading "Professional Summary" [level=2] [ref=f31e589]
+          - paragraph [ref=f31e590]: Lead Software Consultant with 10+ years of experience designing and delivering scalable, resilient systems across web, mobile, and cloud platforms. Combines technical leadership with hands-on development across .NET, React, React Native, AWS, Azure, microservices, and modern UI architectures. Strong advocate for Test-Driven Development, Clean Architecture, and AI-augmented engineering practices that improve delivery speed, quality, and maintainability.
+        - generic [ref=f31e591]:
+          - heading "Experience and Selected Projects" [level=2] [ref=f31e592]
+          - generic [ref=f31e593]:
+            - article [ref=f31e594]:
+              - generic [ref=f31e595]:
+                - generic [ref=f31e596]:
+                  - heading "Lead - Reed Exhibitions (RX)" [level=3] [ref=f31e597]
+                  - paragraph [ref=f31e598]: Thoughtworks
+                - time [ref=f31e599]: Aug 2025 - Present
+              - list [ref=f31e600]:
+                - listitem [ref=f31e601]: Lead the design and delivery of scalable, resilient systems using .NET, React, and AWS, aligning architecture and engineering decisions with business objectives
+                - listitem [ref=f31e602]: Translate complex requirements into high-level and low-level designs while balancing technical quality, cloud cost optimization, performance, and stakeholder alignment
+                - listitem [ref=f31e603]: Architected an AWS Bedrock-based AI feature with reference data and safety guardrails to generate domain-specific outputs
+                - listitem [ref=f31e604]: Introduced GenAI-assisted documentation and architectural mapping with Mermaid, reducing manual overhead and keeping system blueprints aligned with code
+                - listitem [ref=f31e605]: Led architecture forums, mentored teams, and promoted TDD, AI agents, and engineering practices across account-level technical communities
+                - listitem [ref=f31e606]: Achieved zero production defects over 12 months through shift-left testing, observability, and high-frequency deployment practices
+              - generic [ref=f31e607]:
+                - heading "Projects" [level=4] [ref=f31e608]
+                - generic [ref=f31e610]:
+                  - heading "RX Platform Modernization and AI Enablement" [level=5] [ref=f31e612]
+                  - paragraph [ref=f31e613]: Led the design and delivery of scalable .NET, React, and AWS capabilities for Reed Exhibitions, including integration of a standalone application into the core platform UI and modernization of architecture documentation with GenAI and Mermaid.
+                  - paragraph [ref=f31e614]: .NET · React · AWS Lambda · AWS Bedrock · S3 · SNS · SQS · GraphQL · Mermaid · GenAI
+            - article [ref=f31e615]:
+              - generic [ref=f31e616]:
+                - generic [ref=f31e617]:
+                  - heading "Senior Consultant - Reed Exhibitions (RX)" [level=3] [ref=f31e618]
+                  - paragraph [ref=f31e619]: Thoughtworks
+                - time [ref=f31e620]: Jun 2021 - Jul 2025
+              - list [ref=f31e621]:
+                - listitem [ref=f31e622]: Developed scalable backend systems and single-page applications using .NET, Azure, AWS, microservices, micro-frontends, and React
+                - listitem [ref=f31e623]: Transformed a tightly coupled .NET application into a decoupled Clean Architecture solution with clear Domain and Infrastructure boundaries
+                - listitem [ref=f31e624]: Isolated domain performance tests to reduce runtime and enable independent execution without waiting for other teams
+                - listitem [ref=f31e625]: Led hackathon delivery and knowledge-sharing sessions on Test-Driven Development and unit testing to improve code robustness and delivery speed
+            - article [ref=f31e626]:
+              - generic [ref=f31e627]:
+                - generic [ref=f31e628]:
+                  - heading "Senior Software Engineer" [level=3] [ref=f31e629]
+                  - paragraph [ref=f31e630]: GlobalLogic
+                - time [ref=f31e631]: Apr 2019 - Jun 2021
+              - list [ref=f31e632]:
+                - listitem [ref=f31e633]: Developed D365 Field Service services for resource scheduling optimization, contributing across impact analysis, design, development, and deployment
+                - listitem [ref=f31e634]: Built backend systems for a background verification platform using microservices and supported deployment through Jenkins
+                - listitem [ref=f31e635]: Developed and deployed cross-platform mobile applications using React Native
+                - listitem [ref=f31e636]: Delivered solutions using C#, .NET Core, ASP.NET Web API, Azure Functions, Service Bus, Web Apps, RabbitMQ, Azure Service Fabric, and Azure DevOps
+              - generic [ref=f31e637]:
+                - heading "Projects" [level=4] [ref=f31e638]
+                - generic [ref=f31e639]:
+                  - generic [ref=f31e640]:
+                    - heading "D365 Field Service Resource Scheduling" [level=5] [ref=f31e642]
+                    - paragraph [ref=f31e643]: Developed services for resource scheduling optimization in Dynamics 365 Field Service, mapping resources and appointments using location, requirements, and timing constraints across the full delivery lifecycle.
+                    - paragraph [ref=f31e644]: C# · .NET Core · ASP.NET Web API · Azure SQL · Azure Service Bus · Azure Functions · Azure Web Apps · Dynamics 365 Field Service
+                  - generic [ref=f31e645]:
+                    - heading "Background Verification Platform" [level=5] [ref=f31e647]
+                    - paragraph [ref=f31e648]: Developed backend services for tracking candidate background verification workflows in the transportation industry using microservices and supported deployment automation through Jenkins.
+                    - paragraph [ref=f31e649]: .NET Core · Microservices · Entity Framework · Dapper · Web API · SQL Server · Jenkins · RabbitMQ
+            - article [ref=f31e650]:
+              - generic [ref=f31e651]:
+                - generic [ref=f31e652]:
+                  - heading "Senior Analyst" [level=3] [ref=f31e653]
+                  - paragraph [ref=f31e654]: OnActuate
+                - time [ref=f31e655]: May 2015 - Mar 2019
+              - list [ref=f31e656]:
+                - listitem [ref=f31e657]: Developed large-scale integration systems using .NET and Azure iPaaS services including Logic Apps, Service Bus, Functions, and Web Apps
+                - listitem [ref=f31e658]: Built extensions for Microsoft Dynamics CRM and developed IoT solutions for monitoring and system integration
+                - listitem [ref=f31e659]: Delivered web, integration, and mobile solutions using C#, ASP.NET Web API/MVC, microservices, RabbitMQ, and Azure
+              - generic [ref=f31e660]:
+                - heading "Projects" [level=4] [ref=f31e661]
+                - generic [ref=f31e662]:
+                  - generic [ref=f31e663]:
+                    - heading "Azure Enterprise Integration Platform" [level=5] [ref=f31e665]
+                    - paragraph [ref=f31e666]: Developed large-scale integration systems and Microsoft Dynamics CRM extensions using Azure's integration platform services for reliable business workflows and system connectivity.
+                    - paragraph [ref=f31e667]: C# · .NET Core · ASP.NET Web API · Azure Logic Apps · Azure Service Bus · Azure Functions · Azure Web Apps · Microservices · RabbitMQ
+                  - generic [ref=f31e668]:
+                    - heading "IoT Monitoring and System Integration" [level=5] [ref=f31e670]
+                    - paragraph [ref=f31e671]: Created IoT solutions for monitoring and system integration, including temperature-sensitive inventory monitoring and corrective-action workflows connected to enterprise systems.
+                    - paragraph [ref=f31e672]: C# · ASP.NET MVC · Azure IoT Hub · Azure Stream Analytics · Azure Logic Apps · Arduino · RabbitMQ
+            - article [ref=f31e673]:
+              - generic [ref=f31e674]:
+                - generic [ref=f31e675]:
+                  - heading "Junior Software Engineer" [level=3] [ref=f31e676]
+                  - paragraph [ref=f31e677]: IN TECHNOLOGIES (P) LTD
+                - time [ref=f31e678]: Jun 2014 - Oct 2014
+              - list [ref=f31e679]:
+                - listitem [ref=f31e680]: Contributed to .NET-based systems and performed feature testing for chat software
+        - generic [ref=f31e681]:
+          - generic [ref=f31e682]:
+            - heading "Skills" [level=2] [ref=f31e683]
+            - generic [ref=f31e684]:
+              - generic [ref=f31e685]:
+                - strong [ref=f31e686]: Programming and Frameworks
+                - generic [ref=f31e687]: .NET, C#, ASP.NET Core, ASP.NET MVC, Web API, React, React Native, Xamarin, Ionic
+              - generic [ref=f31e688]:
+                - strong [ref=f31e689]: Cloud and Architecture
+                - generic [ref=f31e690]: AWS, Azure, Microservices, Cloud-Native Architecture, Clean Architecture, Domain-Driven Design
+              - generic [ref=f31e691]:
+                - strong [ref=f31e692]: Data and Messaging
+                - generic [ref=f31e693]: Entity Framework, Dapper, SQL Server, Azure SQL, RabbitMQ, SNS, SQS, S3, GraphQL
+              - generic [ref=f31e694]:
+                - strong [ref=f31e695]: Testing and Quality
+                - generic [ref=f31e696]: Test-Driven Development, Behavior-Driven Development, xUnit, Jest, React Testing Library, Pact, WebApplicationFactory, Cucumber, K6, Gatling
+              - generic [ref=f31e697]:
+                - strong [ref=f31e698]: CI/CD and Delivery
+                - generic [ref=f31e699]: Bamboo, GitHub Actions, Azure DevOps, Jenkins, GitHub, Docker, Azure Service Fabric, Jira
+              - generic [ref=f31e700]:
+                - strong [ref=f31e701]: Observability
+                - generic [ref=f31e702]: Splunk Cloud, Site24x7, Sentry, WebPageTest, DTrack, SonarQube, Aikido
+              - generic [ref=f31e703]:
+                - strong [ref=f31e704]: AI and Developer Tools
+                - generic [ref=f31e705]: AWS Bedrock, GitHub Copilot, Claude, MCPs, Lovable, Gemini Studio, Cursor, VS Code, JetBrains Rider, Visual Studio, WebStorm
+          - generic [ref=f31e706]:
+            - heading "Education" [level=2] [ref=f31e707]
+            - article [ref=f31e709]:
+              - generic [ref=f31e710]:
+                - generic [ref=f31e711]:
+                  - heading "Bachelor's Degree, Computer Science Engineering" [level=3] [ref=f31e712]
+                  - paragraph [ref=f31e713]: Gautam Buddha University
+                - time [ref=f31e714]: Jan 2010 – Jan 2014
+          - generic [ref=f31e715]:
+            - heading "Certifications" [level=2] [ref=f31e716]
+            - article [ref=f31e718]:
+              - generic [ref=f31e719]:
+                - generic [ref=f31e720]:
+                  - 'heading "Exam 70-483: Programming in C#" [level=3] [ref=f31e721]'
+                  - paragraph [ref=f31e722]: Microsoft
+                - time
