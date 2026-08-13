@@ -1,14 +1,34 @@
 import { useEffect } from 'react'
-import { useResumeStore } from '@/features/resume/store/resumeStore'
+import { RESUME_DRAFT_STORAGE_KEY, useResumeStore } from '@/features/resume/store/resumeStore'
 import { ResumeEditor } from '@/features/resume/components/ResumeEditor'
 import { ResumePreview } from '@/features/resume/preview/ResumePreview'
 
-export function App() {
-  const { loadDemoResume, loadDraft } = useResumeStore()
+if (import.meta.hot) {
+  const hydrateDraftAfterHotUpdate = () => {
+    void useResumeStore.getState().loadDraft()
+  }
 
+  import.meta.hot.on('vite:afterUpdate', hydrateDraftAfterHotUpdate)
+  import.meta.hot.dispose(() => {
+    import.meta.hot?.off('vite:afterUpdate', hydrateDraftAfterHotUpdate)
+  })
+}
+
+export function App() {
   useEffect(() => {
-    if (!loadDraft()) loadDemoResume()
-  }, [loadDraft, loadDemoResume])
+    const loadDraft = useResumeStore.getState().loadDraft
+    void loadDraft()
+
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === RESUME_DRAFT_STORAGE_KEY) {
+        const loadDraft = useResumeStore.getState().loadDraft
+        void loadDraft()
+      }
+    }
+
+    window.addEventListener('storage', handleStorage)
+    return () => window.removeEventListener('storage', handleStorage)
+  }, [])
 
   return (
     <div className="flex flex-col h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">

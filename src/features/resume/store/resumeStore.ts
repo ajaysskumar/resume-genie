@@ -12,8 +12,12 @@ function readDraft(): Resume | null {
     if (!storedDraft?.trim()) return null
 
     const parsedDraft = resumeSchema.safeParse(JSON.parse(storedDraft))
-    return parsedDraft.success ? parsedDraft.data as Resume : null
+    if (parsedDraft.success) return parsedDraft.data as Resume
+
+    console.warn('Saved resume draft failed validation; loading the demo resume instead.', parsedDraft.error.issues)
+    return null
   } catch {
+    console.warn('Saved resume draft is not valid JSON; loading the demo resume instead.')
     return null
   }
 }
@@ -47,10 +51,14 @@ interface ResumeStore {
 }
 
 const demoResume: Resume = sampleResumeTemplate
-const initialResume = readDraft() ?? demoResume
+
+function getInitialResume(): Resume {
+  const storedResume = readDraft()
+  return storedResume ?? demoResume
+}
 
 export const useResumeStore = create<ResumeStore>((set) => ({
-  resume: initialResume,
+  resume: getInitialResume(),
 
   updatePersonal: (field, value) =>
     set((state) => ({
