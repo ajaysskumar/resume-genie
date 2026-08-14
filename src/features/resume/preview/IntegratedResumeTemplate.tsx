@@ -8,7 +8,6 @@ interface IntegratedResumeTemplateProps {
 
 export function IntegratedResumeTemplate({ resume }: IntegratedResumeTemplateProps) {
   const { personal, summary, experience } = resume
-  const renderedOrganizations = new Set<string>()
   const skillGroups = resume.skills
     .map((group) => ({
       category: group.category.trim() || 'Additional Skills',
@@ -16,17 +15,18 @@ export function IntegratedResumeTemplate({ resume }: IntegratedResumeTemplatePro
     }))
     .filter((group) => group.skills.length > 0)
 
-  const projectsForExperience = (company: string): Project[] => {
+  const projectsForExperience = (experienceId: string, company: string): Project[] => {
     const organizationKey = normalize(company)
-    if (!organizationKey || renderedOrganizations.has(organizationKey)) return []
-
-    renderedOrganizations.add(organizationKey)
-    return resume.projects.filter((project) => normalize(project.organization ?? '') === organizationKey)
+    const matchingRoles = experience.filter((item) => normalize(item.company) === organizationKey)
+    return resume.projects.filter((project) => project.experienceId === experienceId || (
+      !project.experienceId && matchingRoles.length === 1 && normalize(project.organization ?? '') === organizationKey
+    ))
   }
 
   const unmatchedProjects = resume.projects.filter((project) => {
+    if (project.experienceId) return !experience.some((item) => item.id === project.experienceId)
     const organizationKey = normalize(project.organization ?? '')
-    return !organizationKey || !experience.some((item) => normalize(item.company) === organizationKey)
+    return !organizationKey || experience.filter((item) => normalize(item.company) === organizationKey).length !== 1
   })
 
   return (
@@ -51,7 +51,7 @@ export function IntegratedResumeTemplate({ resume }: IntegratedResumeTemplatePro
           <SectionTitle>Experience and Selected Projects</SectionTitle>
           <div className="space-y-6">
             {experience.map((item) => {
-              const relatedProjects = projectsForExperience(item.company)
+              const relatedProjects = projectsForExperience(item.id, item.company)
 
               return (
                 <article key={item.id}>

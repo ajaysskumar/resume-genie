@@ -8,10 +8,14 @@ interface KyotoResumeTemplateProps {
 
 export function KyotoResumeTemplate({ resume }: KyotoResumeTemplateProps) {
   const { personal, summary, experience, education, skills, projects, certifications } = resume
-  const linkedProjects = projects.filter((project) => project.organization?.trim())
-  const personalProjects = projects.filter((project) => !project.organization?.trim())
-  const experienceCompanies = new Set(experience.map((item) => item.company.trim().toLowerCase()))
-  const unmatchedLinkedProjects = linkedProjects.filter((project) => !experienceCompanies.has(project.organization!.trim().toLowerCase()))
+  const linkedProjects = projects.filter((project) => project.organization?.trim() || project.experienceId)
+  const personalProjects = projects.filter((project) => !project.organization?.trim() && !project.experienceId)
+  const projectBelongsToExperience = (project: Project, experienceId: string, company: string) => {
+    if (project.experienceId) return project.experienceId === experienceId
+    const matchingRoles = experience.filter((item) => normalize(item.company) === normalize(company))
+    return matchingRoles.length === 1 && normalize(project.organization ?? '') === normalize(company)
+  }
+  const unmatchedLinkedProjects = linkedProjects.filter((project) => !experience.some((item) => projectBelongsToExperience(project, item.id, item.company)))
   const skillGroups = skills
     .map((group) => ({ category: group.category.trim() || 'Additional Skills', skills: group.skills.filter(Boolean) }))
     .filter((group) => group.skills.length > 0)
@@ -33,7 +37,7 @@ export function KyotoResumeTemplate({ resume }: KyotoResumeTemplateProps) {
           <SectionTitle>Work Experience</SectionTitle>
           <div className="space-y-4 px-3.5">
             {experience.map((item) => {
-              const companyProjects = linkedProjects.filter((project) => project.organization!.trim().toLowerCase() === item.company.trim().toLowerCase())
+              const companyProjects = linkedProjects.filter((project) => projectBelongsToExperience(project, item.id, item.company))
               return (
                 <article key={item.id}>
                   <ExperienceHeading company={item.company} position={item.position} startDate={item.startDate} endDate={item.endDate} current={item.current} location={item.location} />
@@ -76,6 +80,10 @@ function ProjectExperience({ project }: { project: Project }) {
 
 function ProjectCard({ project, compact = false }: { project: Project; compact?: boolean }) {
   return <div><div className="flex items-baseline justify-between gap-3"><h3 className="text-[11px] font-bold text-slate-900">{project.name}</h3>{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-slate-700 underline">View project</a>}</div><p className={`${compact ? 'text-[10px]' : 'text-[11px]'} leading-[1.38]`}>{project.description}</p>{project.technologies.length > 0 && <p className="text-[10px] text-slate-600">{project.technologies.join(' · ')}</p>}</div>
+}
+
+function normalize(value: string) {
+  return value.trim().toLocaleLowerCase().replace(/\s+/g, ' ')
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) {

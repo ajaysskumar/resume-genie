@@ -90,6 +90,9 @@ export const useResumeStore = create<ResumeStore>((set) => ({
         experience: state.resume.experience.map((exp) =>
           exp.id === id ? { ...exp, [field]: value } : exp
         ),
+        projects: field === 'company' && typeof value === 'string'
+          ? state.resume.projects.map((project) => project.experienceId === id ? { ...project, organization: value } : project)
+          : state.resume.projects,
       },
     })),
 
@@ -98,6 +101,7 @@ export const useResumeStore = create<ResumeStore>((set) => ({
       resume: {
         ...state.resume,
         experience: state.resume.experience.filter((exp) => exp.id !== id),
+        projects: state.resume.projects.map((project) => project.experienceId === id ? { ...project, experienceId: undefined } : project),
       },
     })),
 
@@ -176,7 +180,7 @@ export const useResumeStore = create<ResumeStore>((set) => ({
 
   addProject: () =>
     set((state) => ({
-      resume: { ...state.resume, projects: [...state.resume.projects, { id: generateId(), name: '', organization: '', description: '', url: '', technologies: [] }] },
+      resume: { ...state.resume, projects: [...state.resume.projects, { id: generateId(), name: '', organization: '', experienceId: '', description: '', url: '', technologies: [] }] },
     })),
 
   updateProject: (id, field, value) =>

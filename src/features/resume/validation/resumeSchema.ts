@@ -89,6 +89,7 @@ export const projectSchema = z.object({
   id: z.string(),
   name: z.string().min(1, 'Project name is required'),
   organization: z.string().optional(),
+  experienceId: z.string().optional(),
   description: z.string().min(1, 'Project description is required'),
   url: urlSchema,
   technologies: z.array(z.string()),
