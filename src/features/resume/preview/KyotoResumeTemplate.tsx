@@ -24,7 +24,7 @@ export function KyotoResumeTemplate({ resume }: KyotoResumeTemplateProps) {
     <div className="space-y-5 text-[11pt] leading-[1.35] text-slate-800">
       <header className="relative border-b-2 border-emerald-700 pb-5 pl-5">
         <div className="absolute left-0 top-0 h-full w-1 rounded-full bg-emerald-700" aria-hidden="true" />
-        <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Professional portfolio</p>
+        {/* <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.28em] text-emerald-700">Professional portfolio</p> */}
         <h1 className="text-[30px] font-bold leading-none tracking-tight text-slate-950">{personal.fullName || 'Your Name'}</h1>
         <p className="mt-1 text-[15px] font-semibold text-slate-700">{personal.headline || 'Your Headline'}</p>
         <ResumeContactLine personal={personal} separator="  ·  " className="mt-3 flex flex-wrap gap-x-1 text-[10px] leading-5 text-slate-600" />
