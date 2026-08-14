@@ -9,6 +9,10 @@ export function generateId(): string {
   return crypto.randomUUID()
 }
 
+export function parseCommaSeparatedValues(value: string): string[] {
+  return value.split(',').map((item) => item.trim()).filter(Boolean)
+}
+
 export function formatDate(dateString: string): string {
   if (!dateString) return ''
   try {

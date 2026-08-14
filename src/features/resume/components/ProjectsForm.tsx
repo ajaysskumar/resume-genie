@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import { useResumeStore } from '../store/resumeStore'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Plus, Trash2 } from 'lucide-react'
+import { parseCommaSeparatedValues } from '@/lib/utils'
 
 export function ProjectsForm() {
   const { resume, addProject, updateProject, deleteProject } = useResumeStore()
+  const [technologyInputs, setTechnologyInputs] = useState<Record<string, string>>({})
   const organizations = Array.from(new Set([
     ...resume.experience.map((experience) => experience.company.trim()),
     ...resume.education.map((education) => education.institution.trim()),
@@ -29,7 +32,25 @@ export function ProjectsForm() {
             {organizations.map((organization) => <option key={organization} value={organization}>{organization}</option>)}
           </select>
           <Textarea aria-label="Project description" value={project.description} onChange={(event) => updateProject(project.id, 'description', event.target.value)} placeholder="Describe the project and your impact" />
-          <Input aria-label="Project technologies" value={project.technologies.join(', ')} onChange={(event) => updateProject(project.id, 'technologies', event.target.value.split(',').map((technology) => technology.trim()).filter(Boolean))} placeholder="Technologies, separated by commas" />
+          <Input
+            aria-label="Project technologies"
+            value={technologyInputs[project.id] ?? project.technologies.join(', ')}
+            onChange={(event) => {
+              const value = event.target.value
+              setTechnologyInputs((current) => ({ ...current, [project.id]: value }))
+              updateProject(project.id, 'technologies', parseCommaSeparatedValues(value))
+            }}
+            onBlur={() => {
+              const value = technologyInputs[project.id] ?? project.technologies.join(', ')
+              updateProject(project.id, 'technologies', parseCommaSeparatedValues(value))
+              setTechnologyInputs((current) => {
+                const next = { ...current }
+                delete next[project.id]
+                return next
+              })
+            }}
+            placeholder="Technologies, separated by commas"
+          />
           <Button type="button" variant="ghost" size="sm" className="h-10 w-10 p-0 text-slate-500 hover:text-red-600" onClick={() => deleteProject(project.id)} aria-label={`Delete ${project.name || 'project'}`} title={`Delete ${project.name || 'project'}`}><Trash2 className="h-4 w-4" /></Button>
         </div>
       ))}
