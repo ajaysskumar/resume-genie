@@ -1,26 +1,10 @@
 import { create } from 'zustand'
 import type { Resume, Experience, Skill, Education, Project, Certification } from '../types/resume'
 import sampleResumeTemplate from '../data/sample-resume-template-1.json'
-import { resumeSchema } from '../validation/resumeSchema'
 import { generateId } from '@/lib/utils'
+import { hasDraft, readDraft, writeDraft, RESUME_DRAFT_STORAGE_KEY } from './resumePersistence'
 
-export const RESUME_DRAFT_STORAGE_KEY = 'resume-builder-draft-v1'
-
-function readDraft(): Resume | null {
-  try {
-    const storedDraft = localStorage.getItem(RESUME_DRAFT_STORAGE_KEY)
-    if (!storedDraft?.trim()) return null
-
-    const parsedDraft = resumeSchema.safeParse(JSON.parse(storedDraft))
-    if (parsedDraft.success) return parsedDraft.data as Resume
-
-    console.warn('Saved resume draft failed validation; loading the demo resume instead.', parsedDraft.error.issues)
-    return null
-  } catch {
-    console.warn('Saved resume draft is not valid JSON; loading the demo resume instead.')
-    return null
-  }
-}
+export { RESUME_DRAFT_STORAGE_KEY }
 
 interface ResumeStore {
   resume: Resume
@@ -46,15 +30,15 @@ interface ResumeStore {
   deleteCertification: (id: string) => void
   setResume: (resume: Resume) => void
   loadDemoResume: () => void
-  loadDraft: () => boolean
-  saveDraft: () => void
+  loadDraft: () => Promise<boolean>
+  hasDraft: () => Promise<boolean>
+  saveDraft: () => Promise<void>
 }
 
 const demoResume: Resume = sampleResumeTemplate
 
 function getInitialResume(): Resume {
-  const storedResume = readDraft()
-  return storedResume ?? demoResume
+  return demoResume
 }
 
 export const useResumeStore = create<ResumeStore>((set) => ({
@@ -229,8 +213,8 @@ export const useResumeStore = create<ResumeStore>((set) => ({
       resume: demoResume,
     })),
 
-  loadDraft: () => {
-    const draft = readDraft()
+  loadDraft: async () => {
+    const draft = await readDraft()
     if (!draft) return false
 
     set(() => ({
@@ -239,8 +223,10 @@ export const useResumeStore = create<ResumeStore>((set) => ({
     return true
   },
 
-  saveDraft: () => {
+  hasDraft: () => hasDraft(),
+
+  saveDraft: async () => {
     const resume = useResumeStore.getState().resume
-    localStorage.setItem(RESUME_DRAFT_STORAGE_KEY, JSON.stringify(resume))
+    await writeDraft(resume)
   },
 }))

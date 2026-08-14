@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { RESUME_DRAFT_STORAGE_KEY, useResumeStore } from '@/features/resume/store/resumeStore'
+import { useResumeStore } from '@/features/resume/store/resumeStore'
 import { ResumeEditor } from '@/features/resume/components/ResumeEditor'
 import { ResumePreview } from '@/features/resume/preview/ResumePreview'
 
@@ -18,16 +18,6 @@ export function App() {
   useEffect(() => {
     const loadDraft = useResumeStore.getState().loadDraft
     void loadDraft()
-
-    const handleStorage = (event: StorageEvent) => {
-      if (event.key === RESUME_DRAFT_STORAGE_KEY) {
-        const loadDraft = useResumeStore.getState().loadDraft
-        void loadDraft()
-      }
-    }
-
-    window.addEventListener('storage', handleStorage)
-    return () => window.removeEventListener('storage', handleStorage)
   }, [])
 
   return (

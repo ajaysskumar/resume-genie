@@ -1,7 +1,9 @@
-import { useState } from 'react'
-import { Check, Save, ShieldCheck, X } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { Check, Save, ShieldCheck, Upload, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { RESUME_DRAFT_STORAGE_KEY, useResumeStore } from '../store/resumeStore'
+import { useResumeStore } from '../store/resumeStore'
+import type { Resume } from '../types/resume'
+import { resumeSchema } from '../validation/resumeSchema'
 import { PersonalInformationForm } from './PersonalInformationForm'
 import { SummaryForm } from './SummaryForm'
 import { ExperienceForm } from './ExperienceForm'
@@ -11,33 +13,57 @@ import { ProjectsForm } from './ProjectsForm'
 import { CertificationsForm } from './CertificationsForm'
 
 export function ResumeEditor() {
+  const hasDraft = useResumeStore((state) => state.hasDraft)
   const saveDraft = useResumeStore((state) => state.saveDraft)
+  const setResume = useResumeStore((state) => state.setResume)
+  const fileInputRef = useRef<HTMLInputElement>(null)
+  const isAdvancedMode = new URLSearchParams(window.location.search).get('mode') === 'adv'
   const [isConsentOpen, setIsConsentOpen] = useState(false)
   const [saveMessage, setSaveMessage] = useState('')
 
-  const handleSaveDraft = () => {
+  const handleSaveDraft = async () => {
     try {
-      const storedDraft = localStorage.getItem(RESUME_DRAFT_STORAGE_KEY)
-      if (!storedDraft?.trim()) {
+      if (!(await hasDraft())) {
         setIsConsentOpen(true)
         return
       }
 
-      saveDraft()
+      await saveDraft()
       setSaveMessage('Draft saved locally')
     } catch {
       setSaveMessage('Unable to access browser storage')
     }
   }
 
-  const confirmSaveDraft = () => {
+  const confirmSaveDraft = async () => {
     try {
-      saveDraft()
+      await saveDraft()
       setIsConsentOpen(false)
       setSaveMessage('Draft saved locally')
     } catch {
       setIsConsentOpen(false)
       setSaveMessage('Unable to access browser storage')
+    }
+  }
+
+  const handleUploadJson = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    event.target.value = ''
+    if (!file) return
+
+    try {
+      const parsedJson = JSON.parse(await file.text())
+      const parsedResume = resumeSchema.safeParse(parsedJson)
+
+      if (!parsedResume.success) {
+        setSaveMessage('Unable to load JSON template: invalid resume structure')
+        return
+      }
+
+      setResume(parsedResume.data as Resume)
+      setSaveMessage('JSON template loaded')
+    } catch {
+      setSaveMessage('Unable to load JSON template: invalid JSON file')
     }
   }
 
@@ -50,6 +76,22 @@ export function ResumeEditor() {
         </div>
         <div className="flex items-center gap-2">
           {saveMessage && <span className="hidden items-center gap-1 text-xs text-emerald-700 sm:flex"><Check className="h-3.5 w-3.5" />{saveMessage}</span>}
+          {isAdvancedMode && (
+            <>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".json,application/json"
+                className="sr-only"
+                onChange={handleUploadJson}
+                aria-label="Upload JSON template"
+              />
+              <Button type="button" variant="outline" size="sm" className="gap-2 border-emerald-200 text-emerald-700 hover:bg-emerald-50" onClick={() => fileInputRef.current?.click()}>
+                <Upload className="h-4 w-4" />
+                <span>Upload JSON</span>
+              </Button>
+            </>
+          )}
           <Button type="button" variant="outline" size="sm" className="gap-2 border-blue-200 text-blue-700 hover:bg-blue-50" onClick={handleSaveDraft}>
             <Save className="h-4 w-4" />
             <span>Save as draft</span>
