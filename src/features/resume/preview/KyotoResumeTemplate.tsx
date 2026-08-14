@@ -63,7 +63,7 @@ export function KyotoResumeTemplate({ resume }: KyotoResumeTemplateProps) {
 }
 
 function ExperienceHeading({ company, position, startDate, endDate, current, location }: { company: string; position: string; startDate: string; endDate?: string; current: boolean; location?: string }) {
-  return <><div className="flex items-start justify-between gap-4"><h3 className="min-w-0 text-[11px] font-bold leading-5 text-slate-900">{position}, {company}</h3><time className="shrink-0 text-right text-[11px] font-semibold text-slate-800">{formatDate(startDate)}{startDate && (current || endDate) ? ' – ' : ''}{current ? 'Present' : endDate ? formatDate(endDate) : ''}</time></div>{location && <p className="text-[10px] text-slate-600">{location}</p>}</>
+  return <><div className="flex items-start justify-between gap-4"><h3 className="min-w-0 text-[11px] font-bold leading-5 text-slate-900">{position}, {company}</h3><time className="shrink-0 text-right text-[11px] font-semibold text-slate-800">{formatDate(startDate)}{startDate && (current || endDate) ? ' – ' : ''}{current ? 'Present' : endDate ? formatDate(endDate) : ''}</time></div>{location && <p className="text-[10px] text-slate-600 font-semibold">{location}</p>}</>
 }
 
 function BulletList({ bullets }: { bullets: string[] }) {

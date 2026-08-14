@@ -62,6 +62,7 @@ export function createHtmlDocument(source: HTMLElement): string {
     <style>
       @page { size: A4; margin: 0; }
       html, body { margin: 0; padding: 0; background: #ffffff; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       @media print {
         .resume-print-pages {
           position: static !important;
