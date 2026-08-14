@@ -44,6 +44,12 @@ function createHtmlDocument(source: HTMLElement): string {
   })
 
   const pseudoStyles = addPseudoElementStyles(source, clone)
+  clone.style.removeProperty('position')
+  clone.style.removeProperty('top')
+  clone.style.removeProperty('left')
+  clone.style.removeProperty('opacity')
+  clone.style.removeProperty('pointer-events')
+  clone.removeAttribute('aria-hidden')
   clone.removeAttribute('id')
   clone.setAttribute('id', 'resume-page')
 
@@ -56,6 +62,39 @@ function createHtmlDocument(source: HTMLElement): string {
     <style>
       @page { size: A4; margin: 0; }
       html, body { margin: 0; padding: 0; background: #ffffff; }
+      @media print {
+        .resume-print-pages {
+          position: static !important;
+          top: auto !important;
+          left: auto !important;
+          width: 210mm !important;
+          opacity: 1 !important;
+          pointer-events: auto !important;
+        }
+
+        .resume-print-page {
+          width: 210mm !important;
+          height: 297mm !important;
+          overflow: hidden !important;
+          break-after: page;
+          page-break-after: always;
+        }
+
+        .resume-print-page:last-child {
+          break-after: auto;
+          page-break-after: auto;
+        }
+
+        .resume-page-viewport {
+          height: calc(297mm - 16px) !important;
+          overflow: hidden !important;
+        }
+
+        .resume-page-content {
+          border-radius: 0 !important;
+          box-shadow: none !important;
+        }
+      }
       ${pseudoStyles}
     </style>
   </head>

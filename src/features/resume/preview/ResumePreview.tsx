@@ -25,7 +25,7 @@ export type ResumeTemplate = 'classic' | 'modern' | 'executive' | 'minimal' | 'b
 
 export function ResumePreview() {
   const resume = useResumeStore((state) => state.resume)
-  const [template, setTemplate] = useState<ResumeTemplate>('classic')
+  const [template, setTemplate] = useState<ResumeTemplate>('kyoto')
   const [isExporting, setIsExporting] = useState(false)
   const isAdvancedMode = new URLSearchParams(window.location.search).get('mode') === 'adv'
 
@@ -56,7 +56,7 @@ export function ResumePreview() {
   const handleExportDocx = async () => {
     setIsExporting(true)
     try {
-      await exportResumeToDocx('resume-page', `${resume.personal.fullName || 'resume'}.docx`)
+      await exportResumeToDocx('resume-source', `${resume.personal.fullName || 'resume'}.docx`)
     } finally {
       setIsExporting(false)
     }
