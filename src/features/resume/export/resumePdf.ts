@@ -3,6 +3,30 @@ import { jsPDF } from 'jspdf'
 
 const A4_WIDTH_MM = 210
 const A4_HEIGHT_MM = 297
+const PDF_MARGIN_MM = 10
+const PDF_CONTENT_WIDTH_MM = A4_WIDTH_MM - PDF_MARGIN_MM * 2
+const PDF_CONTENT_HEIGHT_MM = A4_HEIGHT_MM - PDF_MARGIN_MM * 2
+
+function getRenderedContentBottom(canvas: HTMLCanvasElement): number {
+  const context = canvas.getContext('2d')
+  if (!context) return canvas.height
+
+  const imageData = context.getImageData(0, 0, canvas.width, canvas.height).data
+  for (let y = canvas.height - 1; y >= 0; y -= 1) {
+    for (let x = 0; x < canvas.width; x += 1) {
+      const pixelIndex = (y * canvas.width + x) * 4
+      if (
+        imageData[pixelIndex] < 248 ||
+        imageData[pixelIndex + 1] < 248 ||
+        imageData[pixelIndex + 2] < 248
+      ) {
+        return y + 1
+      }
+    }
+  }
+
+  return 0
+}
 
 function getSafePageBreak(element: HTMLElement, pageStartCss: number, desiredEndCss: number): number {
   const elementTop = element.getBoundingClientRect().top
@@ -58,18 +82,19 @@ export async function exportResumeToPdf(
     format: 'a4',
     compress: true,
   })
-  const pageCanvasHeight = Math.floor((A4_HEIGHT_MM * canvas.width) / A4_WIDTH_MM)
+  const pageCanvasHeight = Math.floor((PDF_CONTENT_HEIGHT_MM * canvas.width) / PDF_CONTENT_WIDTH_MM)
   const canvasScale = canvas.width / element.getBoundingClientRect().width
+  const contentBottom = getRenderedContentBottom(canvas)
   let sourceY = 0
   let page = 0
 
-  while (sourceY < canvas.height) {
-    const desiredSourceEnd = Math.min(pageCanvasHeight + sourceY, canvas.height)
+  while (sourceY < contentBottom) {
+    const desiredSourceEnd = Math.min(pageCanvasHeight + sourceY, contentBottom)
     const desiredEndCss = desiredSourceEnd / canvasScale
     const pageStartCss = sourceY / canvasScale
     const safeEndCss = getSafePageBreak(element, pageStartCss, desiredEndCss)
     const safeSourceEnd = Math.min(
-      canvas.height,
+      contentBottom,
       Math.max(sourceY + 1, Math.round(safeEndCss * canvasScale))
     )
 
@@ -103,10 +128,10 @@ export async function exportResumeToPdf(
     pdf.addImage(
       pageCanvas.toDataURL('image/jpeg', 0.95),
       'JPEG',
-      0,
-      0,
-      A4_WIDTH_MM,
-      Math.min(A4_HEIGHT_MM, (pageCanvas.height * A4_WIDTH_MM) / canvas.width),
+      PDF_MARGIN_MM,
+      PDF_MARGIN_MM,
+      PDF_CONTENT_WIDTH_MM,
+      Math.min(PDF_CONTENT_HEIGHT_MM, (pageCanvas.height * PDF_CONTENT_WIDTH_MM) / canvas.width),
       undefined,
       'FAST'
     )
