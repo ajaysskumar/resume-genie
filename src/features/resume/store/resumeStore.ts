@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import type { Resume, Experience, Skill, Education, Project, Certification } from '../types/resume'
-import sampleResumeTemplate from '../data/sample-resume-template-2.json'
+import sampleResumeTemplate from '../data/sample-resume-template-1.json'
 import { generateId } from '@/lib/utils'
 import { hasDraft, readDraft, writeDraft, RESUME_DRAFT_STORAGE_KEY } from './resumePersistence'
 
@@ -35,7 +35,7 @@ interface ResumeStore {
   saveDraft: () => Promise<void>
 }
 
-const demoResume: Resume = sampleResumeTemplate[0]
+const demoResume: Resume = sampleResumeTemplate
 
 function getInitialResume(): Resume {
   return demoResume
