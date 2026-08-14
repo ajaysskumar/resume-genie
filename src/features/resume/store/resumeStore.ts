@@ -35,7 +35,7 @@ interface ResumeStore {
   saveDraft: () => Promise<void>
 }
 
-const demoResume: Resume = sampleResumeTemplate[0]
+const demoResume: Resume = sampleResumeTemplate
 
 function getInitialResume(): Resume {
   return demoResume
