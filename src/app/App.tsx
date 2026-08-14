@@ -33,12 +33,12 @@ export function App() {
       {/* Main Content */}
       <div className="flex flex-1 flex-col overflow-hidden md:flex-row">
         {/* Editor Panel */}
-        <div className="max-h-[55vh] w-full shrink-0 overflow-y-auto border-b border-slate-200/50 bg-white p-4 shadow-sm sm:p-8 md:max-h-none md:w-2/5 md:border-b-0 md:border-r">
+        <div id="resume-editor-panel" className="max-h-[55vh] w-full shrink-0 overflow-y-auto border-b border-slate-200/50 bg-white p-4 shadow-sm sm:p-8 md:max-h-none md:w-2/5 md:border-b-0 md:border-r">
           <ResumeEditor />
         </div>
 
         {/* Preview Panel */}
-        <div className="min-h-[45vh] min-w-0 flex-1 overflow-auto bg-gradient-to-br from-slate-100/50 via-slate-50 to-white p-3 sm:p-8 md:w-3/5 md:flex-none">
+        <div id="resume-preview-panel" className="min-h-[45vh] min-w-0 flex-1 overflow-auto bg-gradient-to-br from-slate-100/50 via-slate-50 to-white p-3 sm:p-8 md:w-3/5 md:flex-none">
           <ResumePreview />
         </div>
       </div>
