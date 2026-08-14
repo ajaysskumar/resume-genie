@@ -75,11 +75,11 @@ function ProjectList({ projects }: { projects: Project[] }) {
 }
 
 function ProjectExperience({ project }: { project: Project }) {
-  return <article><div className="flex items-baseline justify-between gap-3"><h3 className="text-[11px] font-bold text-slate-900">{project.name}, {project.organization}</h3>{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-slate-700 underline">View project</a>}</div><p className="text-[10px] text-slate-600">Project experience</p><p className="text-[11px] leading-[1.38]">{project.description}</p>{project.technologies.length > 0 && <p className="text-[10px] text-slate-600">{project.technologies.join(' · ')}</p>}</article>
+  return <article><div className="flex items-start justify-between gap-3"><h3 className="min-w-0 text-[11px] font-bold leading-[1.35] text-slate-900">{project.name}, {project.organization}</h3>{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className="shrink-0 text-[10px] text-slate-700 underline">View project</a>}</div><p className="text-[10px] text-slate-600">Project experience</p><p className="text-[11px] leading-[1.38]">{project.description}</p>{project.technologies.length > 0 && <p className="text-[10px] text-slate-600">{project.technologies.join(' · ')}</p>}</article>
 }
 
 function ProjectCard({ project, compact = false }: { project: Project; compact?: boolean }) {
-  return <div><div className="flex items-baseline justify-between gap-3"><h3 className="text-[11px] font-bold text-slate-900">{project.name}</h3>{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-slate-700 underline">View project</a>}</div><p className={`${compact ? 'text-[10px]' : 'text-[11px]'} leading-[1.38]`}>{project.description}</p>{project.technologies.length > 0 && <p className="text-[10px] text-slate-600">{project.technologies.join(' · ')}</p>}</div>
+  return <div><div className="flex items-start justify-between gap-3"><h3 className="min-w-0 text-[11px] font-bold leading-[1.35] text-slate-900">{project.name}</h3>{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className="shrink-0 text-[10px] text-slate-700 underline">View project</a>}</div><p className={`${compact ? 'text-[10px]' : 'text-[11px]'} leading-[1.38]`}>{project.description}</p>{project.technologies.length > 0 && <p className="text-[10px] text-slate-600">{project.technologies.join(' · ')}</p>}</div>
 }
 
 function normalize(value: string) {
