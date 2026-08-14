@@ -19,6 +19,7 @@ const templates: Array<{ id: ResumeTemplate; name: string; description: string; 
   { id: 'compact', name: 'Compact', description: 'Dense ATS', accent: 'bg-slate-700' },
   { id: 'integrated', name: 'Integrated', description: 'Projects by role', accent: 'bg-sky-700' },
   { id: 'structured', name: 'Structured', description: 'Section bars', accent: 'bg-slate-400' },
+  { id: 'kyoto', name: 'Kyoto', description: 'Projects by organization', accent: 'bg-emerald-700' },
 ]
 
 export function TemplateSelector({ value, onChange }: TemplateSelectorProps) {

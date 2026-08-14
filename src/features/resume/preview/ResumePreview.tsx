@@ -12,13 +12,14 @@ import { TechnicalResumeTemplate } from './TechnicalResumeTemplate'
 import { CompactResumeTemplate } from './CompactResumeTemplate'
 import { IntegratedResumeTemplate } from './IntegratedResumeTemplate'
 import { StructuredResumeTemplate } from './StructuredResumeTemplate'
+import { KyotoResumeTemplate } from './KyotoResumeTemplate'
 import { TemplateSelector } from './TemplateSelector'
 import { Printer, FileText } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { exportResumeToPdf } from '../export/resumePdf'
 import { exportResumeToDocx } from '../export/resumeDocx'
 
-export type ResumeTemplate = 'classic' | 'modern' | 'executive' | 'minimal' | 'basic' | 'timeline' | 'engineering' | 'technical' | 'compact' | 'integrated' | 'structured'
+export type ResumeTemplate = 'classic' | 'modern' | 'executive' | 'minimal' | 'basic' | 'timeline' | 'engineering' | 'technical' | 'compact' | 'integrated' | 'structured' | 'kyoto'
 
 export function ResumePreview() {
   const resume = useResumeStore((state) => state.resume)
@@ -37,6 +38,7 @@ export function ResumePreview() {
     compact: <CompactResumeTemplate resume={resume} />,
     integrated: <IntegratedResumeTemplate resume={resume} />,
     structured: <StructuredResumeTemplate resume={resume} />,
+    kyoto: <KyotoResumeTemplate resume={resume} />,
   }[template]
 
   const handleExport = async () => {
