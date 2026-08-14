@@ -32,6 +32,8 @@ export function KyotoResumeTemplate({ resume }: KyotoResumeTemplateProps) {
 
       {summary && <section><SectionTitle>Profile</SectionTitle><p className="px-3.5 text-justify text-[11px] leading-[1.45] whitespace-pre-wrap">{summary}</p></section>}
 
+      {skillGroups.length > 0 && <section><SectionTitle>Key Skills</SectionTitle><div className="space-y-1.5 px-3.5 text-[11px] text-slate-700">{skillGroups.map((group) => <div key={group.category} className="grid grid-cols-[minmax(6rem,0.8fr)_minmax(0,3fr)] items-baseline gap-x-4"><strong className="text-slate-950">{group.category}</strong><span>{group.skills.join(' · ')}</span></div>)}</div></section>}
+
       {(experience.length > 0 || unmatchedLinkedProjects.length > 0) && (
         <section>
           <SectionTitle>Work Experience</SectionTitle>
@@ -52,8 +54,6 @@ export function KyotoResumeTemplate({ resume }: KyotoResumeTemplateProps) {
       )}
 
       {education.length > 0 && <section><SectionTitle>Education</SectionTitle><div className="space-y-3 px-3.5">{education.map((item) => <article key={item.id} className="flex items-start justify-between gap-4"><div><h3 className="text-[11px] font-bold text-slate-900">{item.degree}</h3><p className="text-[11px]">{item.institution}{item.location ? `, ${item.location}` : ''}</p>{item.grade && <p className="text-[10px]">{item.grade}</p>}</div>{(item.startDate || item.endDate) && <time className="shrink-0 text-[11px] font-semibold text-slate-700">{item.startDate && formatDate(item.startDate)}{item.startDate && item.endDate ? ' – ' : ''}{item.endDate && formatDate(item.endDate)}</time>}</article>)}</div></section>}
-
-      {skillGroups.length > 0 && <section><SectionTitle>Key Skills</SectionTitle><div className="space-y-1.5 px-3.5 text-[11px] text-slate-700">{skillGroups.map((group) => <div key={group.category} className="grid grid-cols-[minmax(6rem,0.8fr)_minmax(0,3fr)] items-baseline gap-x-4"><strong className="text-slate-950">{group.category}</strong><span>{group.skills.join(' · ')}</span></div>)}</div></section>}
 
       {personalProjects.length > 0 && <section><SectionTitle>Personal Projects</SectionTitle><div className="space-y-3 px-3.5">{personalProjects.map((project) => <ProjectCard key={project.id} project={project} />)}</div></section>}
 

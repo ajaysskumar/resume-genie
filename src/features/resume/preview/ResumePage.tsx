@@ -11,6 +11,7 @@ const pageContentClassName = 'resume-page-content bg-white shadow-2xl rounded-lg
 const pageContentStyle = { boxShadow: '0 20px 60px rgba(0,0,0,0.1)' }
 const pageTopGap = 24
 const pageBottomGap = 16
+const pageBoundarySafety = 2
 
 interface ResumePageRange {
   start: number
@@ -34,7 +35,7 @@ export function ResumePage({ children }: ResumePageProps) {
         const source = sourceRef.current
         if (!pageFrame || !source) return
 
-        const nextPageHeight = Math.max(1, pageFrame.clientHeight - pageBottomGap)
+        const nextPageHeight = Math.max(1, pageFrame.clientHeight - pageBottomGap - pageBoundarySafety)
         const contentHeight = source.getBoundingClientRect().height
         const contentBottom = getContentBottom(source, contentHeight)
         if (nextPageHeight <= 0 || contentBottom <= 0) return
@@ -42,21 +43,22 @@ export function ResumePage({ children }: ResumePageProps) {
         const nextPageRanges: ResumePageRange[] = []
         let pageStart = 0
         while (pageStart < contentBottom) {
-          const pageOffset = pageStart === 0 ? 0 : pageStart - pageTopGap
-          const maxPageEnd = Math.min(contentBottom, pageOffset + nextPageHeight)
+          const continuationInset = pageStart === 0 ? 0 : pageTopGap
+          const contentPageHeight = Math.max(1, nextPageHeight - continuationInset)
+          const maxPageEnd = Math.min(contentBottom, pageStart + contentPageHeight)
           if (contentBottom <= maxPageEnd) {
-            nextPageRanges.push({ start: pageStart, end: contentBottom, viewportHeight: Math.max(1, contentBottom - pageOffset) })
+            nextPageRanges.push({ start: pageStart, end: contentBottom, viewportHeight: Math.max(1, contentBottom - pageStart + continuationInset) })
             break
           }
 
           const nextPageEnd = findBreakPoint(source, pageStart, maxPageEnd)
           if (nextPageEnd <= pageStart) {
-            nextPageRanges.push({ start: pageStart, end: maxPageEnd, viewportHeight: Math.max(1, maxPageEnd - pageOffset) })
+            nextPageRanges.push({ start: pageStart, end: maxPageEnd, viewportHeight: Math.max(1, maxPageEnd - pageStart + continuationInset) })
             pageStart = maxPageEnd
             continue
           }
 
-          nextPageRanges.push({ start: pageStart, end: nextPageEnd, viewportHeight: Math.max(1, nextPageEnd - pageOffset) })
+          nextPageRanges.push({ start: pageStart, end: nextPageEnd, viewportHeight: Math.max(1, nextPageEnd - pageStart + continuationInset) })
           pageStart = nextPageEnd
         }
 
@@ -172,9 +174,18 @@ function getContentBottom(source: HTMLDivElement, fallback: number) {
 
 function findBreakPoint(source: HTMLDivElement, pageStart: number, maxPageEnd: number) {
   const candidates = [...source.querySelectorAll('header, h1, h2, h3, h4, h5, p, li, time')]
-  const breakPoints = candidates
-    .map((element) => element.getBoundingClientRect().bottom)
-    .filter((bottom) => bottom > pageStart + 1 && bottom <= maxPageEnd)
+  const blocks = candidates
+    .map((element) => {
+      const rect = element.getBoundingClientRect()
+      return { top: rect.top, bottom: Math.ceil(rect.bottom + pageBoundarySafety) }
+    })
+    .filter((block) => block.bottom > pageStart + 1)
+  const breakPoints = blocks
+    .map((block) => block.bottom)
+    .filter((bottom) => bottom <= maxPageEnd)
 
-  return breakPoints.length > 0 ? Math.max(...breakPoints) : maxPageEnd
+  if (breakPoints.length > 0) return Math.max(...breakPoints)
+
+  const nextBlock = blocks.find((block) => block.top > pageStart + 1)
+  return nextBlock ? Math.max(pageStart + 1, Math.floor(nextBlock.top) - 1) : maxPageEnd
 }

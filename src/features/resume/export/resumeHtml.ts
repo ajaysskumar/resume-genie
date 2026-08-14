@@ -34,7 +34,7 @@ function addPseudoElementStyles(source: HTMLElement, clone: HTMLElement): string
   return rules.join('')
 }
 
-function createHtmlDocument(source: HTMLElement): string {
+export function createHtmlDocument(source: HTMLElement): string {
   const clone = source.cloneNode(true) as HTMLElement
   const sourceElements = [source, ...Array.from(source.querySelectorAll<HTMLElement>('*'))]
   const cloneElements = [clone, ...Array.from(clone.querySelectorAll<HTMLElement>('*'))]
@@ -86,7 +86,6 @@ function createHtmlDocument(source: HTMLElement): string {
         }
 
         .resume-page-viewport {
-          height: calc(297mm - 16px) !important;
           overflow: hidden !important;
         }
 
