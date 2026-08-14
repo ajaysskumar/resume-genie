@@ -4,6 +4,30 @@ import { jsPDF } from 'jspdf'
 const A4_WIDTH_MM = 210
 const A4_HEIGHT_MM = 297
 
+function getSafePageBreak(element: HTMLElement, pageStartCss: number, desiredEndCss: number): number {
+  const elementTop = element.getBoundingClientRect().top
+  const range = document.createRange()
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT)
+  let safeBreak = pageStartCss
+  let textNode = walker.nextNode()
+
+  while (textNode) {
+    range.selectNodeContents(textNode)
+
+    for (const rect of range.getClientRects()) {
+      const lineBottom = rect.bottom - elementTop
+      if (lineBottom > safeBreak + 1 && lineBottom <= desiredEndCss + 1) {
+        safeBreak = Math.max(safeBreak, lineBottom)
+      }
+    }
+
+    textNode = walker.nextNode()
+  }
+
+  range.detach()
+  return safeBreak > pageStartCss ? safeBreak : desiredEndCss
+}
+
 export async function exportResumeToPdf(
   elementId = 'resume-page',
   filename = 'resume.pdf'
@@ -34,15 +58,24 @@ export async function exportResumeToPdf(
     format: 'a4',
     compress: true,
   })
-  const imageHeight = (canvas.height * A4_WIDTH_MM) / canvas.width
   const pageCanvasHeight = Math.floor((A4_HEIGHT_MM * canvas.width) / A4_WIDTH_MM)
+  const canvasScale = canvas.width / element.getBoundingClientRect().width
   let sourceY = 0
   let page = 0
 
   while (sourceY < canvas.height) {
+    const desiredSourceEnd = Math.min(pageCanvasHeight + sourceY, canvas.height)
+    const desiredEndCss = desiredSourceEnd / canvasScale
+    const pageStartCss = sourceY / canvasScale
+    const safeEndCss = getSafePageBreak(element, pageStartCss, desiredEndCss)
+    const safeSourceEnd = Math.min(
+      canvas.height,
+      Math.max(sourceY + 1, Math.round(safeEndCss * canvasScale))
+    )
+
     const pageCanvas = document.createElement('canvas')
     pageCanvas.width = canvas.width
-    pageCanvas.height = Math.min(pageCanvasHeight, canvas.height - sourceY)
+    pageCanvas.height = safeSourceEnd - sourceY
     const context = pageCanvas.getContext('2d')
 
     if (!context) {
@@ -73,12 +106,12 @@ export async function exportResumeToPdf(
       0,
       0,
       A4_WIDTH_MM,
-      Math.min(A4_HEIGHT_MM, imageHeight - page * A4_HEIGHT_MM),
+      Math.min(A4_HEIGHT_MM, (pageCanvas.height * A4_WIDTH_MM) / canvas.width),
       undefined,
       'FAST'
     )
 
-    sourceY += pageCanvas.height
+    sourceY = safeSourceEnd
     page += 1
   }
 
