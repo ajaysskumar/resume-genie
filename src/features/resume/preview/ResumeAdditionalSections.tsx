@@ -1,5 +1,6 @@
 import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
+import { FormattedText } from './FormattedText'
 
 type AdditionalSectionsVariant = 'classic' | 'modern' | 'executive' | 'minimal' | 'basic' | 'timeline' | 'engineering' | 'technical' | 'compact'
 
@@ -40,7 +41,7 @@ export function ResumeAdditionalSections({ resume, variant, showSkills = true, s
           <SectionTitle className={style.heading}><span className={style.title}>Education</span></SectionTitle>
           <div className="space-y-3">
             {resume.education.map((item) => <article key={item.id} className={style.text}>
-              <div className="flex items-start justify-between gap-4"><div><h3 className="font-bold text-slate-950">{item.degree}</h3><p className={style.accent}>{item.institution}{item.location ? ` · ${item.location}` : ''}</p>{item.grade && <p className="mt-0.5 text-xs">Grade: {item.grade}</p>}</div><time className="whitespace-nowrap text-right">{item.startDate && formatDate(item.startDate)}{item.startDate && item.endDate ? ' – ' : ''}{item.endDate && formatDate(item.endDate)}</time></div>
+              <div className="flex items-start justify-between gap-4"><div><h3 className="font-bold text-slate-950"><FormattedText>{item.degree}</FormattedText></h3><p className={style.accent}><FormattedText>{item.institution}</FormattedText>{item.location ? ` · ${item.location}` : ''}</p>{item.grade && <p className="mt-0.5 text-xs">Grade: <FormattedText>{item.grade}</FormattedText></p>}</div><time className="whitespace-nowrap text-right">{item.startDate && formatDate(item.startDate)}{item.startDate && item.endDate ? ' – ' : ''}{item.endDate && formatDate(item.endDate)}</time></div>
             </article>)}
           </div>
         </section>
@@ -50,9 +51,9 @@ export function ResumeAdditionalSections({ resume, variant, showSkills = true, s
           <SectionTitle className={style.heading}><span className={style.title}>Projects</span></SectionTitle>
           <div className="space-y-3">
             {resume.projects.map((project) => <article key={project.id} className={style.text}>
-              <div className="flex items-baseline justify-between gap-3"><div><h3 className="font-bold text-slate-950">{project.name}</h3>{project.organization && <p className={style.accent}>{project.organization}</p>}</div>{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className={`${style.accent} underline`}>View project</a>}</div>
-              <p className="mt-1 leading-6">{project.description}</p>
-              {project.technologies.length > 0 && <p className={`mt-1 text-xs ${style.accent}`}>{project.technologies.join(' · ')}</p>}
+              <div className="flex items-baseline justify-between gap-3"><div><h3 className="font-bold text-slate-950"><FormattedText>{project.name}</FormattedText></h3>{project.organization && <p className={style.accent}><FormattedText>{project.organization}</FormattedText></p>}</div>{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className={`${style.accent} underline`}>View project</a>}</div>
+              <p className="mt-1 leading-6"><FormattedText>{project.description}</FormattedText></p>
+              {project.technologies.length > 0 && <p className={`mt-1 text-xs ${style.accent}`}><FormattedText>{project.technologies.join(' · ')}</FormattedText></p>}
             </article>)}
           </div>
         </section>
@@ -63,7 +64,7 @@ export function ResumeAdditionalSections({ resume, variant, showSkills = true, s
           <div className="space-y-2">
             {resume.certifications.map((certification) => <article key={certification.id} className={style.text}>
               <div className="flex items-baseline justify-between gap-3">
-                <div><h3 className="font-bold text-slate-950">{certification.name}</h3><p className={style.accent}>{certification.issuer}</p></div>
+                <div><h3 className="font-bold text-slate-950"><FormattedText>{certification.name}</FormattedText></h3><p className={style.accent}><FormattedText>{certification.issuer}</FormattedText></p></div>
                 <time className="whitespace-nowrap text-right">{certification.issueDate && formatDate(certification.issueDate)}</time>
               </div>
               {certification.url && <a href={certification.url} target="_blank" rel="noopener noreferrer" className={`${style.accent} text-xs underline`}>Verify credential</a>}
@@ -88,7 +89,7 @@ function SkillsContent({ resume, style }: { resume: Resume; style: (typeof style
   }
 
   return <div className="space-y-2">
-    {namedSkills.map((group) => <div key={group.id} className={`grid grid-cols-[minmax(5rem,0.7fr)_minmax(0,2fr)] gap-3 ${style.text}`}><strong className="text-slate-950">{group.category}</strong><span>{group.skills.filter(Boolean).join(', ')}</span></div>)}
-    {additionalSkills.length > 0 && <div className={`grid grid-cols-[minmax(5rem,0.7fr)_minmax(0,2fr)] gap-3 ${style.text}`}><strong className="text-slate-950">Additional Skills</strong><span>{additionalSkills.join(', ')}</span></div>}
+    {namedSkills.map((group) => <div key={group.id} className={`grid grid-cols-[minmax(5rem,0.7fr)_minmax(0,2fr)] gap-3 ${style.text}`}><strong className="text-slate-950"><FormattedText>{group.category}</FormattedText></strong><span><FormattedText>{group.skills.filter(Boolean).join(', ')}</FormattedText></span></div>)}
+    {additionalSkills.length > 0 && <div className={`grid grid-cols-[minmax(5rem,0.7fr)_minmax(0,2fr)] gap-3 ${style.text}`}><strong className="text-slate-950">Additional Skills</strong><span><FormattedText>{additionalSkills.join(', ')}</FormattedText></span></div>}
   </div>
 }

@@ -2,6 +2,7 @@ import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
 import { ResumeAdditionalSections } from './ResumeAdditionalSections'
 import { ResumeContactLine } from './ResumeContactLine'
+import { FormattedText } from './FormattedText'
 
 interface TechnicalResumeTemplateProps {
   resume: Resume
@@ -21,7 +22,7 @@ export function TechnicalResumeTemplate({ resume }: TechnicalResumeTemplateProps
       {summary && (
         <section>
           <SectionTitle>Summary</SectionTitle>
-          <p className="text-xs leading-relaxed text-slate-800">{summary}</p>
+          <p className="text-xs leading-relaxed text-slate-800"><FormattedText>{summary}</FormattedText></p>
         </section>
       )}
 
@@ -56,7 +57,7 @@ export function TechnicalResumeTemplate({ resume }: TechnicalResumeTemplateProps
                 </div>
                 {exp.bullets.length > 0 && (
                   <ul className="mt-1.5 list-disc space-y-0.5 pl-5 leading-relaxed">
-                    {exp.bullets.map((bullet) => <li key={bullet.id}>{bullet.text}</li>)}
+                    {exp.bullets.map((bullet) => <li key={bullet.id}><FormattedText>{bullet.text}</FormattedText></li>)}
                   </ul>
                 )}
               </article>

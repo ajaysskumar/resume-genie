@@ -2,6 +2,7 @@ import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
 import { ResumeAdditionalSections } from './ResumeAdditionalSections'
 import { ResumeContactLine } from './ResumeContactLine'
+import { FormattedText } from './FormattedText'
 
 interface AtsResumeTemplateProps {
   resume: Resume
@@ -14,8 +15,8 @@ export function AtsResumeTemplate({ resume }: AtsResumeTemplateProps) {
     <div className="space-y-5 text-slate-900">
       {/* Header */}
       <div className="text-center border-b-2 border-slate-900 pb-4">
-        <h1 className="text-4xl font-bold tracking-tight mb-1">{personal.fullName || 'Your Name'}</h1>
-        <p className="text-base font-semibold text-slate-700 mb-3">{personal.headline || 'Your Headline'}</p>
+        <h1 className="text-4xl font-bold tracking-tight mb-1"><FormattedText>{personal.fullName || 'Your Name'}</FormattedText></h1>
+        <p className="text-base font-semibold text-slate-700 mb-3"><FormattedText>{personal.headline || 'Your Headline'}</FormattedText></p>
         <ResumeContactLine personal={personal} separator=" • " className="flex flex-wrap justify-center gap-x-2 text-xs text-slate-600" />
       </div>
 
@@ -25,7 +26,7 @@ export function AtsResumeTemplate({ resume }: AtsResumeTemplateProps) {
           <h2 className="text-sm font-bold uppercase tracking-wide border-b border-slate-900 pb-2 mb-2">
             Professional Summary
           </h2>
-          <p className="text-xs leading-relaxed whitespace-pre-wrap text-slate-800">{summary}</p>
+          <p className="text-xs leading-relaxed whitespace-pre-wrap text-slate-800"><FormattedText>{summary}</FormattedText></p>
         </div>
       )}
 
@@ -40,8 +41,8 @@ export function AtsResumeTemplate({ resume }: AtsResumeTemplateProps) {
               <div key={exp.id} className="text-xs">
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="font-bold">{exp.position}</h3>
-                    <p className="font-semibold text-slate-700">{exp.company}</p>
+                    <h3 className="font-bold"><FormattedText>{exp.position}</FormattedText></h3>
+                    <p className="font-semibold text-slate-700"><FormattedText>{exp.company}</FormattedText></p>
                   </div>
                   <div className="text-slate-600 text-right whitespace-nowrap ml-2">
                     {formatDate(exp.startDate)}{' '}
@@ -56,7 +57,7 @@ export function AtsResumeTemplate({ resume }: AtsResumeTemplateProps) {
                     {exp.bullets.map((bullet) => (
                       <li key={bullet.id} className="leading-relaxed">
                         <span className="mr-2">•</span>
-                        {bullet.text}
+                        <FormattedText>{bullet.text}</FormattedText>
                       </li>
                     ))}
                   </ul>

@@ -2,6 +2,7 @@ import type { Resume } from '../types/resume'
 import { formatDate } from '@/lib/utils'
 import { ResumeAdditionalSections } from './ResumeAdditionalSections'
 import { ResumeContactLine } from './ResumeContactLine'
+import { FormattedText } from './FormattedText'
 
 interface ModernResumeTemplateProps { resume: Resume }
 
@@ -13,8 +14,8 @@ export function ModernResumeTemplate({ resume }: ModernResumeTemplateProps) {
         <div className="flex items-start justify-between gap-5">
           <div>
             <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-600">Professional Profile</p>
-            <h1 className="text-4xl font-black tracking-tight text-slate-950">{personal.fullName || 'Your Name'}</h1>
-            <p className="mt-1 text-lg font-medium text-cyan-700">{personal.headline || 'Your Headline'}</p>
+            <h1 className="text-4xl font-black tracking-tight text-slate-950"><FormattedText>{personal.fullName || 'Your Name'}</FormattedText></h1>
+            <p className="mt-1 text-lg font-medium text-cyan-700"><FormattedText>{personal.headline || 'Your Headline'}</FormattedText></p>
           </div>
           {personal.profileImage ? (
             <img src={personal.profileImage} alt={`${personal.fullName || 'Profile'} photo`} className="h-20 w-20 shrink-0 rounded-2xl object-cover ring-4 ring-cyan-50" />
@@ -27,12 +28,12 @@ export function ModernResumeTemplate({ resume }: ModernResumeTemplateProps) {
         <ResumeContactLine personal={personal} className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500" />
       </header>
       <div className="mt-7 space-y-7">
-        {summary && <section><SectionTitle>Profile</SectionTitle><p className="text-sm leading-7 text-slate-600">{summary}</p></section>}
+        {summary && <section><SectionTitle>Profile</SectionTitle><p className="text-sm leading-7 text-slate-600"><FormattedText>{summary}</FormattedText></p></section>}
         {experience.length > 0 && <section><SectionTitle>Experience</SectionTitle><div className="space-y-6">{experience.map((exp) => (
           <article key={exp.id}>
-            <div className="flex items-start justify-between gap-4"><div><h3 className="text-base font-bold text-slate-950">{exp.position}</h3><p className="text-sm font-semibold text-cyan-700">{exp.company}</p></div><time className="whitespace-nowrap text-xs font-semibold text-slate-500">{formatDate(exp.startDate)} – {exp.current ? 'Present' : exp.endDate ? formatDate(exp.endDate) : ''}</time></div>
+            <div className="flex items-start justify-between gap-4"><div><h3 className="text-base font-bold text-slate-950"><FormattedText>{exp.position}</FormattedText></h3><p className="text-sm font-semibold text-cyan-700"><FormattedText>{exp.company}</FormattedText></p></div><time className="whitespace-nowrap text-xs font-semibold text-slate-500">{formatDate(exp.startDate)} – {exp.current ? 'Present' : exp.endDate ? formatDate(exp.endDate) : ''}</time></div>
             {exp.location && <p className="mt-1 text-xs text-slate-500">{exp.location}</p>}
-            <ul className="mt-2 space-y-1 text-sm leading-6 text-slate-600">{exp.bullets.map((bullet) => <li key={bullet.id} className="flex gap-2"><span className="text-cyan-500">◆</span><span>{bullet.text}</span></li>)}</ul>
+            <ul className="mt-2 space-y-1 text-sm leading-6 text-slate-600">{exp.bullets.map((bullet) => <li key={bullet.id} className="flex gap-2"><span className="text-cyan-500">◆</span><span><FormattedText>{bullet.text}</FormattedText></span></li>)}</ul>
           </article>
         ))}</div></section>}
         <ResumeAdditionalSections resume={resume} variant="modern" />

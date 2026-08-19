@@ -1,6 +1,7 @@
 import type { Resume, Project } from '../types/resume'
 import { formatDate } from '@/lib/utils'
 import { ResumeAdditionalSections } from './ResumeAdditionalSections'
+import { FormattedText } from './FormattedText'
 
 interface IntegratedResumeTemplateProps {
   resume: Resume
@@ -42,7 +43,7 @@ export function IntegratedResumeTemplate({ resume }: IntegratedResumeTemplatePro
       {summary && (
         <section>
           <SectionTitle>Professional Summary</SectionTitle>
-          <p className="text-sm leading-6">{summary}</p>
+          <p className="text-sm leading-6"><FormattedText>{summary}</FormattedText></p>
         </section>
       )}
 
@@ -65,7 +66,7 @@ export function IntegratedResumeTemplate({ resume }: IntegratedResumeTemplatePro
                     </time>
                   </div>
                   <ul className="mt-2 list-disc space-y-1 pl-8 text-sm leading-5">
-                    {item.bullets.map((bullet) => <li key={bullet.id}>{bullet.text}</li>)}
+                    {item.bullets.map((bullet) => <li key={bullet.id}><FormattedText>{bullet.text}</FormattedText></li>)}
                   </ul>
                   {relatedProjects.length > 0 && (
                     <div className="mt-4 ml-3 border-l border-slate-200 pl-4">
@@ -117,7 +118,7 @@ function ProjectEntry({ project }: { project: Project }) {
         <h5 className="font-bold text-slate-950">{project.name}</h5>
         {project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" className="shrink-0 text-xs text-sky-700 underline">View project</a>}
       </div>
-      <p className="mt-1 leading-5 text-slate-700">{project.description}</p>
+      <p className="mt-1 leading-5 text-slate-700"><FormattedText>{project.description}</FormattedText></p>
       {project.technologies.length > 0 && <p className="mt-1 text-xs text-slate-500">{project.technologies.join(' · ')}</p>}
     </div>
   )

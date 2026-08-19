@@ -1,4 +1,5 @@
 import type { Resume } from '../types/resume'
+import { FormattedText } from './FormattedText'
 
 interface ResumeContactLineProps {
   personal: Resume['personal']
@@ -24,7 +25,7 @@ export function ResumeContactLine({ personal, className, separator = ' | ' }: Re
           {index > 0 && separator}
           {item.href ? (
             <a href={item.href} target={item.href.startsWith('mailto:') || item.href.startsWith('tel:') ? undefined : '_blank'} rel={item.href.startsWith('mailto:') || item.href.startsWith('tel:') ? undefined : 'noopener noreferrer'} className="text-blue-700 underline hover:no-underline">
-              {item.label}
+              <FormattedText>{item.label}</FormattedText>
             </a>
           ) : item.label}
         </span>
